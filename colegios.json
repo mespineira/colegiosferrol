@@ -102,413 +102,1221 @@
     ]
   },
   {
-  "id": 3,
-  "nombre": "Colegio Tirso de Molina",
-  "slug": "colegio-tirso-de-molina",
-  "tipo": "Concertado",
-  "zona": "Centro",
-  "direccion": "Rúa San Amaro, 10, 15403 Ferrol, A Coruña",
-  "logo": "https://tirsoferrol.org/wp-content/uploads/2020/08/Logo.png",
-  "imagen_principal": "https://www.lavozdegalicia.es/default/2021/03/16/00121615903741541599996/Foto/i14m1005.jpg",
-  "descripcion_corta": "Centro católico, mercedario y concertado con una larga trayectoria en Ferrol, que ofrece una formación integral desde Infantil hasta Bachillerato.",
-  "informacion_general": {
-    "nivel_academico": "Alto (con preparación para pruebas de certificación y ABAU)",
-    "profesorado": "Equipo docente comprometido con el proyecto educativo mercedario y en formación continua.",
-    "ninos_por_aula": 25,
-    "idiomas": ["Inglés (Certificación Cambridge)", "Francés", "Gallego"],
-    "proyecto_educativo": "Basado en los valores del humanismo cristiano y el carisma mercedario. Fomenta el desarrollo integral del alumno, la innovación pedagógica, el plurilingüismo y la atención a la diversidad."
-  },
-  "servicios": {
-    "transporte_escolar": true,
-    "comedor": true,
-    "horario_ampliado": true,
-    "gabinete_psicopedagogico": true
-  },
-  "cursos_impartidos": {
-    "infantil": true,
-    "primaria": true,
-    "eso": true,
-    "bachillerato": true
-  },
-  "instalaciones": [
-    "Pabellón polideportivo",
-    "Salón de actos",
-    "Biblioteca",
-    "Laboratorios (Física, Química, Biología)",
-    "Aulas de informática",
-    "Aula de tecnología y robótica",
-    "Comedor con cocina propia",
-    "Capilla",
-    "Patio interior y exterior"
-  ],
-  "actividades_extraescolares": [
-    "Deportes (Fútbol sala, Baloncesto, Judo)",
-    "Escuela de idiomas",
-    "Robótica y programación",
-    "Actividades artísticas",
-    "Catequesis y grupos cristianos"
-  ]
-},
-{
-  "id": 4,
-  "nombre": "CEIP de Ponzos",
-  "slug": "ceip-de-ponzos",
-  "tipo": "Público",
-  "zona": "Ponzos (Rural)",
-  "direccion": "Lugar Ponzos, 15594 Ferrol, A Coruña",
-  "logo": "https://www.edu.xunta.gal/centros/ceipponzos/system/files/logo_ponzos_web.jpg",
-  "imagen_principal": "https://www.paxinasgalegas.es/imagenes/ceip-de-ponzos_img108139t0m0w1600h800.jpg",
-  "descripcion_corta": "Colegio público de educación infantil y primaria situado en un entorno rural privilegiado de Ferrol. Destaca por su participación en programas de innovación educativa.",
-  "informacion_general": {
-    "nivel_academico": "Estándar (Público)",
-    "profesorado": "Profesorado funcionario dependiente de la Consellería de Educación.",
-    "ninos_por_aula": 20,
-    "idiomas": ["Inglés (Plurilingüe)", "Gallego", "Castellano"],
-    "proyecto_educativo": "Centro plurilingüe (PEPLI) que fomenta el aprendizaje a través de proyectos y programas de innovación como 'Polos Creativos' (audiovisual, robótica) y 'Radio na Biblio'."
-  },
-  "servicios": {
-    "transporte_escolar": true,
-    "comedor": true,
-    "horario_ampliado": false,
-    "gabinete_psicopedagogico": true
-  },
-  "cursos_impartidos": {
-    "infantil": true,
-    "primaria": true,
-    "eso": false,
-    "bachillerato": false
-  },
-  "instalaciones": [
-    "Aulas de Infantil y Primaria",
-    "Aula de Pedagoxía Terapéutica (PT)",
-    "Aula de Audición e Linguaxe (AL)",
-    "Biblioteca escolar",
-    "Gimnasio",
-    "Aula de usos múltiples",
-    "Pista polideportiva exterior cubierta",
-    "Patio de recreo con zona verde"
-  ],
-  "actividades_extraescolares": [
-    "Actividades gestionadas por el ANPA (Asociación de Nais e Pais de Alumnos)"
-  ]
-},
-{
-  "id": 5,
-  "nombre": "CPR Plurilingüe Cristo Rey",
-  "slug": "cpr-plurilingue-cristo-rey",
-  "tipo": "Concertado",
-  "zona": "Centro",
-  "direccion": "Calle de La Coruña, 37-39-41, 15401, Ferrol (A Coruña)",
-  "logo": "",
-  "imagen_principal": "https://www.gmrcamps.es/img/news/picture_13195.jpg",
-  "descripcion_corta": "Centro privado concertado y plurilingüe, bajo la titularidad de la Fundación Educativa José Gras. Ofrece una formación integral basada en una concepción cristiana de la vida, desde Infantil hasta E.S.O.",
-  "informacion_general": {
-    "nivel_academico": "Enfocado en el desarrollo del pensamiento crítico y el aprendizaje activo ('aprender a aprender') sobre la mera acumulación de contenidos.",
-    "profesorado": "Equipo directivo y docente con un modelo de liderazgo híbrido (laico y congregacional) y en continua actualización pedagógica y tecnológica.",
-    "ninos_por_aula": null,
-    "idiomas": [
-      "Inglés",
-      "Castellano",
-      "Gallego"
+    "id": 3,
+    "nombre": "Colegio Tirso de Molina",
+    "slug": "colegio-tirso-de-molina",
+    "tipo": "Concertado",
+    "zona": "Centro",
+    "direccion": "Rúa San Amaro, 10, 15403 Ferrol, A Coruña",
+    "logo": "https://tirsoferrol.org/wp-content/uploads/2020/08/Logo.png",
+    "imagen_principal": "https://www.lavozdegalicia.es/default/2021/03/16/00121615903741541599996/Foto/i14m1005.jpg",
+    "descripcion_corta": "Centro católico, mercedario y concertado con una larga trayectoria en Ferrol, que ofrece una formación integral desde Infantil hasta Bachillerato.",
+    "informacion_general": {
+      "nivel_academico": "Alto (con preparación para pruebas de certificación y ABAU)",
+      "profesorado": "Equipo docente comprometido con el proyecto educativo mercedario y en formación continua.",
+      "ninos_por_aula": 25,
+      "idiomas": [
+        "Inglés (Certificación Cambridge)",
+        "Francés",
+        "Gallego"
+      ],
+      "proyecto_educativo": "Basado en los valores del humanismo cristiano y el carisma mercedario. Fomenta el desarrollo integral del alumno, la innovación pedagógica, el plurilingüismo y la atención a la diversidad."
+    },
+    "servicios": {
+      "transporte_escolar": true,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": true,
+      "bachillerato": true
+    },
+    "instalaciones": [
+      "Pabellón polideportivo",
+      "Salón de actos",
+      "Biblioteca",
+      "Laboratorios (Física, Química, Biología)",
+      "Aulas de informática",
+      "Aula de tecnología y robótica",
+      "Comedor con cocina propia",
+      "Capilla",
+      "Patio interior y exterior"
     ],
-    "proyecto_educativo": "Basado en el 'Carácter Propio' del Padre José Gras y el lema 'CRISTO REINA'. Busca la 'formación integral y armónica' del alumno desde una concepción cristiana, fomentando una metodología activa, la educación personalizada y el desarrollo de 5 factores (Intelectual, Afectivo, Social, Corporal y Moral)."
+    "actividades_extraescolares": [
+      "Deportes (Fútbol sala, Baloncesto, Judo)",
+      "Escuela de idiomas",
+      "Robótica y programación",
+      "Actividades artísticas",
+      "Catequesis y grupos cristianos"
+    ]
   },
-  "servicios": {
-    "transporte_escolar": true,
-    "comedor": true,
-    "horario_ampliado": true,
-    "gabinete_psicopedagogico": true
-  },
-  "cursos_impartidos": {
-    "infantil": true,
-    "primaria": true,
-    "eso": true,
-    "bachillerato": false
-  },
-  "instalaciones": [
-    "Polideportivo",
-    "Gimnasio",
-    "Pistas de pádel",
-    "Campo de fútbol",
-    "Salón de Actos",
-    "Biblioteca",
-    "Laboratorios",
-    "Capilla",
-    "Comedor con cocina propia (separado por etapas)",
-    "Aulas especializadas (Aula TEA, CREAtelier, CREActiva)",
-    "Patios (interior y exterior)"
-  ],
-  "actividades_extraescolares": [
-    "Actividades lúdicas",
-    "Actividades artísticas",
-    "Actividades académicas",
-    "Actividades sociales",
-    "Actividades tecnológicas",
-    "Actividades deportivas"
-  ]
-},
-{
-  "id": 6,
-  "nombre": "IES Concepción Arenal",
-  "slug": "ies-concepcion-arenal",
-  "tipo": "Público",
-  "zona": "Centro",
-  "direccion": "Rúa Cuntis, s/n, 15403, Ferrol (A Coruña)",
-  "logo": "",
-  "imagen_principal": "https://concepcionarenal.org/wp-content/uploads/2022/11/Fachada-IES-Concepcion-Arenal-Ferrol-1024x704.jpg",
-  "descripcion_corta": "Instituto público de enseñanza que ofrece ESO, Bachillerato y FP. Destaca por sus especializaciones únicas en la comarca: Bachillerato de Artes Plásticas y FP de la familia Química.",
-  "informacion_general": {
-    "nivel_academico": "Enfoque en especializaciones estratégicas (Artes y Química) y en la aplicación práctica de la ciencia (STEM, Sostenibilidad).",
-    "profesorado": "Equipo docente implicado en la dinamización (lingüística, biblioteca) y en proyectos de innovación (STEM, Erasmus+).",
-    "ninos_por_aula": null,
-    "idiomas": [
-      "Inglés",
-      "Gallego",
-      "Castellano"
+  {
+    "id": 4,
+    "nombre": "CEIP de Ponzos",
+    "slug": "ceip-de-ponzos",
+    "tipo": "Público",
+    "zona": "Ponzos (Rural)",
+    "direccion": "Lugar Ponzos, 15594 Ferrol, A Coruña",
+    "logo": "https://www.edu.xunta.gal/centros/ceipponzos/system/files/logo_ponzos_web.jpg",
+    "imagen_principal": "https://www.paxinasgalegas.es/imagenes/ceip-de-ponzos_img108139t0m0w1600h800.jpg",
+    "descripcion_corta": "Colegio público de educación infantil y primaria situado en un entorno rural privilegiado de Ferrol. Destaca por su participación en programas de innovación educativa.",
+    "informacion_general": {
+      "nivel_academico": "Estándar (Público)",
+      "profesorado": "Profesorado funcionario dependiente de la Consellería de Educación.",
+      "ninos_por_aula": 20,
+      "idiomas": [
+        "Inglés (Plurilingüe)",
+        "Gallego",
+        "Castellano"
+      ],
+      "proyecto_educativo": "Centro plurilingüe (PEPLI) que fomenta el aprendizaje a través de proyectos y programas de innovación como 'Polos Creativos' (audiovisual, robótica) y 'Radio na Biblio'."
+    },
+    "servicios": {
+      "transporte_escolar": true,
+      "comedor": true,
+      "horario_ampliado": false,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": false,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Aulas de Infantil y Primaria",
+      "Aula de Pedagoxía Terapéutica (PT)",
+      "Aula de Audición e Linguaxe (AL)",
+      "Biblioteca escolar",
+      "Gimnasio",
+      "Aula de usos múltiples",
+      "Pista polideportiva exterior cubierta",
+      "Patio de recreo con zona verde"
     ],
-    "proyecto_educativo": "Basado en el Proxecto Educativo de Centro (PEC). Se fundamenta en valores seculares, democráticos y sociales como la tolerancia, el pluralismo y la igualdad. El objetivo prioritario es la convivencia y dar una respuesta efectiva a la diversidad del alumnado."
+    "actividades_extraescolares": [
+      "Actividades gestionadas por el ANPA (Asociación de Nais e Pais de Alumnos)"
+    ]
   },
-  "servicios": {
-    "transporte_escolar": false,
-    "comedor": false,
-    "horario_ampliado": false,
-    "gabinete_psicopedagogico": true
-  },
-  "cursos_impartidos": {
-    "infantil": false,
-    "primaria": false,
-    "eso": true,
-    "bachillerato": true
-  },
-  "instalaciones": [
-    "Biblioteca (con blog propio)",
-    "Gimnasio",
-    "Laboratorios de Química (para ciclos de FP)",
-    "Aula Virtual (AVConcepción)",
-    "Aulas para Bachillerato de Artes Plásticas"
-  ],
-  "actividades_extraescolares": [
-    "Proyectos STEM (EduTecEmprende, STEM BACH)",
-    "Competición de robótica (First Lego League)",
-    "Radio escolar (ARENAL NAS ONDAS)",
-    "Periódicos digitales (Xornais dixitais)",
-    "Club de Lectura",
-    "Equipo de Dinamización la Lingua Galega",
-    "Proyectos Erasmus+"
-  ]
-},
-{
-  "id": 7,
-  "nombre": "CEIP Cruceiro de Canido",
-  "slug": "ceip-cruceiro-de-canido",
-  "tipo": "Público",
-  "zona": "Canido (Ferrol)",
-  "direccion": "Rúa Doutor Fleming s/n, 15401 Ferrol (A Coruña)",
-  "logo": "",
-  "imagen_principal": "https://www.edu.xunta.gal/centros/ceipcruceirocanido/system/files/u31/FACHADA%20CEIP%20CRUCEIRO%20DE%20CANIDO.jpg",
-  "descripcion_corta": "Centro público de educación infantil y primaria en el barrio de Canido, Ferrol. Cuenta con una radio escolar activa ('Ondas do Cruceiro') y participa en proyectos Erasmus+.",
-  "informacion_general": {
-    "nivel_academico": "Enfoque en la comunicación (radio) y la dinamización lingüística.",
-    "profesorado": "Organizado en planes de Acción Titorial, Convivencia, Igualdad y Atención á Diversidade.",
-    "ninos_por_aula": null,
-    "idiomas": [
-      "Gallego",
-      "Castellano",
-      "Inglés"
+  {
+    "id": 5,
+    "nombre": "CPR Plurilingüe Cristo Rey",
+    "slug": "cpr-plurilingue-cristo-rey",
+    "tipo": "Concertado",
+    "zona": "Centro",
+    "direccion": "Calle de La Coruña, 37-39-41, 15401, Ferrol (A Coruña)",
+    "logo": "",
+    "imagen_principal": "https://www.gmrcamps.es/img/news/picture_13195.jpg",
+    "descripcion_corta": "Centro privado concertado y plurilingüe, bajo la titularidad de la Fundación Educativa José Gras. Ofrece una formación integral basada en una concepción cristiana de la vida, desde Infantil hasta E.S.O.",
+    "informacion_general": {
+      "nivel_academico": "Enfocado en el desarrollo del pensamiento crítico y el aprendizaje activo ('aprender a aprender') sobre la mera acumulación de contenidos.",
+      "profesorado": "Equipo directivo y docente con un modelo de liderazgo híbrido (laico y congregacional) y en continua actualización pedagógica y tecnológica.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Inglés",
+        "Castellano",
+        "Gallego"
+      ],
+      "proyecto_educativo": "Basado en el 'Carácter Propio' del Padre José Gras y el lema 'CRISTO REINA'. Busca la 'formación integral y armónica' del alumno desde una concepción cristiana, fomentando una metodología activa, la educación personalizada y el desarrollo de 5 factores (Intelectual, Afectivo, Social, Corporal y Moral)."
+    },
+    "servicios": {
+      "transporte_escolar": true,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": true,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Polideportivo",
+      "Gimnasio",
+      "Pistas de pádel",
+      "Campo de fútbol",
+      "Salón de Actos",
+      "Biblioteca",
+      "Laboratorios",
+      "Capilla",
+      "Comedor con cocina propia (separado por etapas)",
+      "Aulas especializadas (Aula TEA, CREAtelier, CREActiva)",
+      "Patios (interior y exterior)"
     ],
-    "proyecto_educativo": "Participa en el proyecto Erasmus+ 'EcoTechMus' y promueve la 'Dinamización da Lingua Galega'. Dispone de una radio escolar activa llamada 'Ondas do Cruceiro'. El Proyecto Educativo incluye planes de Acción Titorial, Convivencia, Igualdad, Lingüístico, Digital y de Atención á Diversidade."
+    "actividades_extraescolares": [
+      "Actividades lúdicas",
+      "Actividades artísticas",
+      "Actividades académicas",
+      "Actividades sociales",
+      "Actividades tecnológicas",
+      "Actividades deportivas"
+    ]
   },
-  "servicios": {
-    "transporte_escolar": false,
-    "comedor": true,
-    "horario_ampliado": false,
-    "gabinete_psicopedagogico": true
-  },
-  "cursos_impartidos": {
-    "infantil": true,
-    "primaria": true,
-    "eso": false,
-    "bachillerato": false
-  },
-  "instalaciones": [
-    "Comedor",
-    "Radio escolar (Ondas do Cruceiro)"
-  ],
-  "actividades_extraescolares": [
-    "Erasmus+ 'EcoTechMus'",
-    "Actividades complementarias",
-    "Actividades extraescolares"
-  ]
-},
-{
-  "id": 8,
-  "nombre": "IES Sofía Casanova",
-  "slug": "ies-sofia-casanova",
-  "tipo": "Público",
-  "zona": "Ferrol",
-  "direccion": "Rúa O Galego Soto s/n, 15403 Ferrol",
-  "logo": "",
-  "imagen_principal": "https://img.lavdg.com/sc/6LIYU_-v1PmhmI2jCKT-p4YqpS0=/480x/2020/02/13/00121581612362232279598/Foto/GF14P10F7_17450.jpg",
-  "descripcion_corta": "Instituto de Educación Secundaria en Ferrol que ofrece ESO y Bachillerato. Destaca por su gran implicación en proyectos como Erasmus+, STEMBach, teatro, coro y club de ciencia.",
-  "informacion_general": {
-    "nivel_academico": "Orientado a proyectos de innovación, STEM y artes.",
-    "profesorado": "Activo en la coordinación de múltiples programas extracurriculares.",
-    "ninos_por_aula": null,
-    "idiomas": [
-      "Gallego",
-      "Castellano",
-      "Inglés (Seccións bilingües)"
+  {
+    "id": 6,
+    "nombre": "IES Concepción Arenal",
+    "slug": "ies-concepcion-arenal",
+    "tipo": "Público",
+    "zona": "Centro",
+    "direccion": "Rúa Cuntis, s/n, 15403, Ferrol (A Coruña)",
+    "logo": "",
+    "imagen_principal": "https://concepcionarenal.org/wp-content/uploads/2022/11/Fachada-IES-Concepcion-Arenal-Ferrol-1024x704.jpg",
+    "descripcion_corta": "Instituto público de enseñanza que ofrece ESO, Bachillerato y FP. Destaca por sus especializaciones únicas en la comarca: Bachillerato de Artes Plásticas y FP de la familia Química.",
+    "informacion_general": {
+      "nivel_academico": "Enfoque en especializaciones estratégicas (Artes y Química) y en la aplicación práctica de la ciencia (STEM, Sostenibilidad).",
+      "profesorado": "Equipo docente implicado en la dinamización (lingüística, biblioteca) y en proyectos de innovación (STEM, Erasmus+).",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Inglés",
+        "Gallego",
+        "Castellano"
+      ],
+      "proyecto_educativo": "Basado en el Proxecto Educativo de Centro (PEC). Se fundamenta en valores seculares, democráticos y sociales como la tolerancia, el pluralismo y la igualdad. El objetivo prioritario es la convivencia y dar una respuesta efectiva a la diversidad del alumnado."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": false,
+      "horario_ampliado": false,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": false,
+      "primaria": false,
+      "eso": true,
+      "bachillerato": true
+    },
+    "instalaciones": [
+      "Biblioteca (con blog propio)",
+      "Gimnasio",
+      "Laboratorios de Química (para ciclos de FP)",
+      "Aula Virtual (AVConcepción)",
+      "Aulas para Bachillerato de Artes Plásticas"
     ],
-    "proyecto_educativo": "Participa en: Erasmus+ Robot Dance, STEMBach, Espazos maker, XOGADE, Club de ciencia, Proxecto deportivo de centro, Recreos deportivos, Club de lectura, Teatro, Coro, Seccións bilingües, Cidadanía dixital, LÓVA, Club de manga, Fundación secretariado xitano y Plan director."
+    "actividades_extraescolares": [
+      "Proyectos STEM (EduTecEmprende, STEM BACH)",
+      "Competición de robótica (First Lego League)",
+      "Radio escolar (ARENAL NAS ONDAS)",
+      "Periódicos digitales (Xornais dixitais)",
+      "Club de Lectura",
+      "Equipo de Dinamización la Lingua Galega",
+      "Proyectos Erasmus+"
+    ]
   },
-  "servicios": {
-    "transporte_escolar": false,
-    "comedor": false,
-    "horario_ampliado": false,
-    "gabinete_psicopedagogico": false
-  },
-  "cursos_impartidos": {
-    "infantil": false,
-    "primaria": false,
-    "eso": true,
-    "bachillerato": true
-  },
-  "instalaciones": [
-    "Espazos maker"
-  ],
-  "actividades_extraescolares": [
-    "Erasmus+ Robot Dance",
-    "STEMBach",
-    "XOGADE",
-    "Club de ciencia",
-    "Proxecto deportivo de centro",
-    "Recreos deportivos",
-    "Club de lectura",
-    "Teatro",
-    "Coro",
-    "Club de manga",
-    "Actividades Extraescolares",
-    "Actividades Complementarias"
-  ]
-},
-{
-  "id": 9,
-  "nombre": "IES de Catabois",
-  "slug": "ies-de-catabois",
-  "tipo": "Público",
-  "zona": "Ferrol",
-  "direccion": "Estrada de Catabois, s/n, 15405 Ferrol",
-  "logo": "",
-  "imagen_principal": "https://www.edu.xunta.gal/centros/iescatabois/system/files/04.jpg",
-  "descripcion_corta": "Instituto en Ferrol (ESO, Bachillerato, FP Básica). Destaca por su participación como 'Escola Embaixadora do Parlamento Europeo', proyectos Erasmus+ y 'POLOS CREATIVOS'.",
-  "informacion_general": {
-    "nivel_academico": "Enfoque en la ciudadanía europea, internacionalización y tecnología creativa.",
-    "profesorado": "Implicado en la gestión de programas europeos y de innovación.",
-    "ninos_por_aula": null,
-    "idiomas": [
-      "Gallego",
-      "Castellano",
-      "Inglés (Sección bilingüe)"
+  {
+    "id": 7,
+    "nombre": "CEIP Cruceiro de Canido",
+    "slug": "ceip-cruceiro-de-canido",
+    "tipo": "Público",
+    "zona": "Canido (Ferrol)",
+    "direccion": "Rúa Doutor Fleming s/n, 15401 Ferrol (A Coruña)",
+    "logo": "",
+    "imagen_principal": "https://www.edu.xunta.gal/centros/ceipcruceirocanido/system/files/u31/FACHADA%20CEIP%20CRUCEIRO%20DE%20CANIDO.jpg",
+    "descripcion_corta": "Centro público de educación infantil y primaria en el barrio de Canido, Ferrol. Cuenta con una radio escolar activa ('Ondas do Cruceiro') y participa en proyectos Erasmus+.",
+    "informacion_general": {
+      "nivel_academico": "Enfoque en la comunicación (radio) y la dinamización lingüística.",
+      "profesorado": "Organizado en planes de Acción Titorial, Convivencia, Igualdad y Atención á Diversidade.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano",
+        "Inglés"
+      ],
+      "proyecto_educativo": "Participa en el proyecto Erasmus+ 'EcoTechMus' y promueve la 'Dinamización da Lingua Galega'. Dispone de una radio escolar activa llamada 'Ondas do Cruceiro'. El Proyecto Educativo incluye planes de Acción Titorial, Convivencia, Igualdad, Lingüístico, Digital y de Atención á Diversidade."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": true,
+      "horario_ampliado": false,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": false,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Comedor",
+      "Radio escolar (Ondas do Cruceiro)"
     ],
-    "proyecto_educativo": "Ofrece 'sección bilingüe'. Participa activamente en el programa 'Escolas Embaixadoras do Parlamento Europeo' (EPAS), el proyecto Erasmus+ KA 122 'Gallaeciae Quercus', el programa 'POLOS CREATIVOS' y mantiene la emisora 'RADIO CATABOIS'."
+    "actividades_extraescolares": [
+      "Erasmus+ 'EcoTechMus'",
+      "Actividades complementarias",
+      "Actividades extraescolares"
+    ]
   },
-  "servicios": {
-    "transporte_escolar": true,
-    "comedor": false,
-    "horario_ampliado": false,
-    "gabinete_psicopedagogico": false
-  },
-  "cursos_impartidos": {
-    "infantil": false,
-    "primaria": false,
-    "eso": true,
-    "bachillerato": true
-  },
-  "instalaciones": [
-    "Transporte",
-    "POLOS CREATIVOS",
-    "Radio (RADIO CATABOIS)"
-  ],
-  "actividades_extraescolares": [
-    "Escolas Embaixadoras do Parlamento Europeo (EPAS)",
-    "Erasmus+ KA 122",
-    "Actividades Complementarias"
-  ]
-},{
-  "id": 10,
-  "nombre": "CPR Plurilingüe Arenales Compañía de María",
-  "slug": "cpr-plurilingue-arenales-compania-de-maria",
-  "tipo": "Privado Concertado",
-  "zona": "Ferrol",
-  "direccion": "Rúa SAN AMARO 18, 15403 Ferrol",
-  "logo": "",
-  "imagen_principal": "https://www.lavozdegalicia.es/default/2023/02/09/00121675959362961325234/Foto/F28O9006.jpg",
-  "descripcion_corta": "Colegio concertado plurilingüe en Ferrol (Infantil, Primaria, Secundaria), perteneciente a la Arenales Red Educativa. Destaca por su atención individualizada y el proyecto IAM.",
-  "informacion_general": {
-    "nivel_academico": "Basado en el proyecto IAM (Innovación, Autonomía y Mentoring).",
-    "profesorado": "Enfocado en la 'Identidad cristiana' y una 'Escuela de valores'.",
-    "ninos_por_aula": null,
-    "idiomas": [
-      "Gallego",
-      "Castellano",
-      "Inglés (Plurilingüe)"
+  {
+    "id": 8,
+    "nombre": "IES Sofía Casanova",
+    "slug": "ies-sofia-casanova",
+    "tipo": "Público",
+    "zona": "Ferrol",
+    "direccion": "Rúa O Galego Soto s/n, 15403 Ferrol",
+    "logo": "",
+    "imagen_principal": "https://img.lavdg.com/sc/6LIYU_-v1PmhmI2jCKT-p4YqpS0=/480x/2020/02/13/00121581612362232279598/Foto/GF14P10F7_17450.jpg",
+    "descripcion_corta": "Instituto de Educación Secundaria en Ferrol que ofrece ESO y Bachillerato. Destaca por su gran implicación en proyectos como Erasmus+, STEMBach, teatro, coro y club de ciencia.",
+    "informacion_general": {
+      "nivel_academico": "Orientado a proyectos de innovación, STEM y artes.",
+      "profesorado": "Activo en la coordinación de múltiples programas extracurriculares.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano",
+        "Inglés (Seccións bilingües)"
+      ],
+      "proyecto_educativo": "Participa en: Erasmus+ Robot Dance, STEMBach, Espazos maker, XOGADE, Club de ciencia, Proxecto deportivo de centro, Recreos deportivos, Club de lectura, Teatro, Coro, Seccións bilingües, Cidadanía dixital, LÓVA, Club de manga, Fundación secretariado xitano y Plan director."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": false,
+      "horario_ampliado": false,
+      "gabinete_psicopedagogico": false
+    },
+    "cursos_impartidos": {
+      "infantil": false,
+      "primaria": false,
+      "eso": true,
+      "bachillerato": true
+    },
+    "instalaciones": [
+      "Espazos maker"
     ],
-    "proyecto_educativo": "Designado como 'Plurilingüe'. Forma parte de la 'Arenales Red Educativa', que basa su modelo en el proyecto IAM (Innovación, Autonomía y Mentoring). Este modelo promueve una 'Identidad cristiana' y una 'Escuela de valores' (basada en el trabajo bien hecho, el afán de mejora, el respeto a la libertad y la solidaridad), y tiene como objetivo formar alumnos bilingües."
+    "actividades_extraescolares": [
+      "Erasmus+ Robot Dance",
+      "STEMBach",
+      "XOGADE",
+      "Club de ciencia",
+      "Proxecto deportivo de centro",
+      "Recreos deportivos",
+      "Club de lectura",
+      "Teatro",
+      "Coro",
+      "Club de manga",
+      "Actividades Extraescolares",
+      "Actividades Complementarias"
+    ]
   },
-  "servicios": {
-    "transporte_escolar": false,
-    "comedor": false,
-    "horario_ampliado": false,
-    "gabinete_psicopedagogico": false
-  },
-  "cursos_impartidos": {
-    "infantil": true,
-    "primaria": true,
-    "eso": true,
-    "bachillerato": false
-  },
-  "instalaciones": [],
-  "actividades_extraescolares": []
-},{
-  "id": 11,
-  "nombre": "CEIP A Gándara",
-  "slug": "ceip-a-gandara",
-  "tipo": "Público",
-  "zona": "Narón",
-  "direccion": "Rúa Colmeote s/n, 15570 Narón",
-  "logo": "",
-  "imagen_principal": "https://ferrol360.es/wp-content/uploads/2025/05/unnamed.jpg",
-  "descripcion_corta": "Centro público de educación infantil y primaria en Narón. Implementa programas de vida activa y deportiva, mejora de la convivencia y promoción del bienestar emocional.",
-  "informacion_general": {
-    "nivel_academico": "Enfocado en el bienestar, la convivencia y el deporte.",
-    "profesorado": "Organizado en Equipos de Actividades Complementarias y de Dinamización Lingüística.",
-    "ninos_por_aula": null,
-    "idiomas": [
-      "Gallego",
-      "Castellano"
+  {
+    "id": 9,
+    "nombre": "IES de Catabois",
+    "slug": "ies-de-catabois",
+    "tipo": "Público",
+    "zona": "Ferrol",
+    "direccion": "Estrada de Catabois, s/n, 15405 Ferrol",
+    "logo": "",
+    "imagen_principal": "https://www.edu.xunta.gal/centros/iescatabois/system/files/04.jpg",
+    "descripcion_corta": "Instituto en Ferrol (ESO, Bachillerato, FP Básica). Destaca por su participación como 'Escola Embaixadora do Parlamento Europeo', proyectos Erasmus+ y 'POLOS CREATIVOS'.",
+    "informacion_general": {
+      "nivel_academico": "Enfoque en la ciudadanía europea, internacionalización y tecnología creativa.",
+      "profesorado": "Implicado en la gestión de programas europeos y de innovación.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano",
+        "Inglés (Sección bilingüe)"
+      ],
+      "proyecto_educativo": "Ofrece 'sección bilingüe'. Participa activamente en el programa 'Escolas Embaixadoras do Parlamento Europeo' (EPAS), el proyecto Erasmus+ KA 122 'Gallaeciae Quercus', el programa 'POLOS CREATIVOS' y mantiene la emisora 'RADIO CATABOIS'."
+    },
+    "servicios": {
+      "transporte_escolar": true,
+      "comedor": false,
+      "horario_ampliado": false,
+      "gabinete_psicopedagogico": false
+    },
+    "cursos_impartidos": {
+      "infantil": false,
+      "primaria": false,
+      "eso": true,
+      "bachillerato": true
+    },
+    "instalaciones": [
+      "Transporte",
+      "POLOS CREATIVOS",
+      "Radio (RADIO CATABOIS)"
     ],
-    "proyecto_educativo": "El centro implementa programas educativos como PVAD (Proxectos de Vida Activa e Deportiva), Mellora da Convivencia y Promoción do benestar emocional. Dispone de un Equipo de Actividades Complementarias e Extraescolares y un Equipo de Dinamización da Lingua Galega."
+    "actividades_extraescolares": [
+      "Escolas Embaixadoras do Parlamento Europeo (EPAS)",
+      "Erasmus+ KA 122",
+      "Actividades Complementarias"
+    ]
   },
-  "servicios": {
-    "transporte_escolar": true,
-    "comedor": true,
-    "horario_ampliado": false,
-    "gabinete_psicopedagogico": true
+  {
+    "id": 10,
+    "nombre": "CPR Plurilingüe Arenales Compañía de María",
+    "slug": "cpr-plurilingue-arenales-compania-de-maria",
+    "tipo": "Privado Concertado",
+    "zona": "Ferrol",
+    "direccion": "Rúa SAN AMARO 18, 15403 Ferrol",
+    "logo": "",
+    "imagen_principal": "https://www.lavozdegalicia.es/default/2023/02/09/00121675959362961325234/Foto/F28O9006.jpg",
+    "descripcion_corta": "Colegio concertado plurilingüe en Ferrol (Infantil, Primaria, Secundaria), perteneciente a la Arenales Red Educativa. Destaca por su atención individualizada y el proyecto IAM.",
+    "informacion_general": {
+      "nivel_academico": "Basado en el proyecto IAM (Innovación, Autonomía y Mentoring).",
+      "profesorado": "Enfocado en la 'Identidad cristiana' y una 'Escuela de valores'.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano",
+        "Inglés (Plurilingüe)"
+      ],
+      "proyecto_educativo": "Designado como 'Plurilingüe'. Forma parte de la 'Arenales Red Educativa', que basa su modelo en el proyecto IAM (Innovación, Autonomía y Mentoring). Este modelo promueve una 'Identidad cristiana' y una 'Escuela de valores' (basada en el trabajo bien hecho, el afán de mejora, el respeto a la libertad y la solidaridad), y tiene como objetivo formar alumnos bilingües."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": false,
+      "horario_ampliado": false,
+      "gabinete_psicopedagogico": false
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": true,
+      "bachillerato": false
+    },
+    "instalaciones": [],
+    "actividades_extraescolares": []
   },
-  "cursos_impartidos": {
-    "infantil": true,
-    "primaria": true,
-    "eso": false,
-    "bachillerato": false
+  {
+    "id": 11,
+    "nombre": "CEIP A Gándara",
+    "slug": "ceip-a-gandara",
+    "tipo": "Público",
+    "zona": "Narón",
+    "direccion": "Rúa Colmeote s/n, 15570 Narón",
+    "logo": "",
+    "imagen_principal": "https://ferrol360.es/wp-content/uploads/2025/05/unnamed.jpg",
+    "descripcion_corta": "Centro público de educación infantil y primaria en Narón. Implementa programas de vida activa y deportiva, mejora de la convivencia y promoción del bienestar emocional.",
+    "informacion_general": {
+      "nivel_academico": "Enfocado en el bienestar, la convivencia y el deporte.",
+      "profesorado": "Organizado en Equipos de Actividades Complementarias y de Dinamización Lingüística.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano"
+      ],
+      "proyecto_educativo": "El centro implementa programas educativos como PVAD (Proxectos de Vida Activa e Deportiva), Mellora da Convivencia y Promoción do benestar emocional. Dispone de un Equipo de Actividades Complementarias e Extraescolares y un Equipo de Dinamización da Lingua Galega."
+    },
+    "servicios": {
+      "transporte_escolar": true,
+      "comedor": true,
+      "horario_ampliado": false,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": false,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Comedor",
+      "Transporte"
+    ],
+    "actividades_extraescolares": [
+      "Proxectos de Vida Activa e Deportiva (PVAD)",
+      "Actividades Complementarias",
+      "Actividades Extraescolares"
+    ]
   },
-  "instalaciones": [
-    "Comedor",
-    "Transporte"
-  ],
-  "actividades_extraescolares": [
-    "Proxectos de Vida Activa e Deportiva (PVAD)",
-    "Actividades Complementarias",
-    "Actividades Extraescolares"
-  ]
-}
+  {
+    "id": 12,
+    "nombre": "CEIP Almirante Juan de Lángara y Huarte",
+    "slug": "ceip-almirante-juan-de-langara-y-huarte",
+    "tipo": "Público",
+    "zona": "Catabois (Ferrol)",
+    "direccion": "Barrio de Catabois, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Colegio público de Infantil y Primaria en el barrio de Catabois, con un proyecto inclusivo y participativo muy vinculado a la comunidad educativa.",
+    "informacion_general": {
+      "nivel_academico": "Formación integral en las etapas de Infantil y Primaria, con especial atención a la convivencia y la participación de las familias.",
+      "profesorado": "Claustro estable e implicado en planes de acción tutorial, convivencia e inclusión educativa.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano",
+        "Inglés"
+      ],
+      "proyecto_educativo": "Proyecto educativo orientado a la escuela inclusiva y participativa, favoreciendo la atención individualizada, la educación en valores y la implicación de las familias y del entorno en la vida diaria del centro."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": false,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Comedor escolar",
+      "Biblioteca",
+      "Aula de informática",
+      "Patio y cancha deportiva",
+      "Aulas de apoyo a la inclusión"
+    ],
+    "actividades_extraescolares": [
+      "Actividades deportivas escolares",
+      "Refuerzo educativo",
+      "Talleres culturales y creativos",
+      "Actividades organizadas por el ANPA"
+    ]
+  },
+  {
+    "id": 13,
+    "nombre": "CEIP de Esteiro",
+    "slug": "ceip-de-esteiro",
+    "tipo": "Público",
+    "zona": "Esteiro (Ferrol)",
+    "direccion": "Barrio de Esteiro, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Colegio público de Infantil y Primaria en el barrio de Esteiro, con fuerte apuesta por la calidad educativa, la innovación y la participación en proyectos del entorno.",
+    "informacion_general": {
+      "nivel_academico": "Enfoque en calidad educativa, proyectos de innovación y participación ciudadana del alumnado.",
+      "profesorado": "Profesorado implicado en proyectos de convivencia, dinamización de la biblioteca y actividades con el Concello.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano",
+        "Inglés (Plurilingüe)"
+      ],
+      "proyecto_educativo": "Centro público que apuesta por una escuela de calidad, inclusiva y abierta al barrio, participando en proyectos municipales y fomentando la igualdad, la convivencia y la relación con el entorno urbano y universitario."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": false,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Comedor escolar",
+      "Biblioteca",
+      "Aula de informática",
+      "Pabellón polideportivo",
+      "Patios exteriores",
+      "Aulas con medios audiovisuales"
+    ],
+    "actividades_extraescolares": [
+      "Club de lectura y cuentacuentos",
+      "Actividades deportivas en pabellón",
+      "Talleres de informática básica",
+      "Proyectos de juegos tradicionales (Museo dos Xogos Populares)",
+      "Excursiones y visitas culturales"
+    ]
+  },
+  {
+    "id": 14,
+    "nombre": "CEIP Ledicia",
+    "slug": "ceip-ledicia",
+    "tipo": "Público",
+    "zona": "Caranza (Ferrol)",
+    "direccion": "Barrio de Caranza, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Colegio público de Infantil y Primaria en Caranza que apuesta por una escuela alegre, inclusiva y participativa, con fuerte implicación de las familias.",
+    "informacion_general": {
+      "nivel_academico": "Enfocado en la convivencia positiva, la inclusión y el acompañamiento emocional del alumnado.",
+      "profesorado": "Equipo docente comprometido con el cambio de proyecto hacia una escuela más abierta, alegre y cercana al barrio.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano",
+        "Inglés"
+      ],
+      "proyecto_educativo": "Proyecto centrado en ser una escuela 'de todos y todas', donde el clima escolar, la participación familiar y la educación en valores ocupan un papel central, incorporando metodologías activas y trabajo cooperativo."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": false,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Comedor escolar",
+      "Biblioteca",
+      "Aulas de psicomotricidad",
+      "Patio con zonas cubiertas",
+      "Aulas con recursos digitales"
+    ],
+    "actividades_extraescolares": [
+      "Refuerzo escolar",
+      "Actividades deportivas (fútbol, baloncesto)",
+      "Talleres de música y baile",
+      "Teatro infantil",
+      "Proyectos de convivencia intergeneracional"
+    ]
+  },
+  {
+    "id": 15,
+    "nombre": "CEIP Manuel Masdías",
+    "slug": "ceip-manuel-masdias",
+    "tipo": "Público",
+    "zona": "Caranza (Ferrol)",
+    "direccion": "Barrio de Caranza, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Histórico colegio público del barrio de Caranza, actualmente en proceso de cambio de denominación hacia CEIP Ledicia, con larga tradición integradora y comunitaria.",
+    "informacion_general": {
+      "nivel_academico": "Trayectoria consolidada en Infantil y Primaria, con especial énfasis en la integración y la cercanía al entorno.",
+      "profesorado": "Claustro con experiencia y fuerte compromiso con la atención a la diversidad y la comunidad de Caranza.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano",
+        "Inglés"
+      ],
+      "proyecto_educativo": "Proyecto educativo centrado en una escuela cercana, integradora y abierta al barrio, que ha evolucionado hacia una identidad más alegre y positiva sin perder su tradición y vínculo con Caranza."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": false,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Comedor",
+      "Biblioteca",
+      "Aula de informática",
+      "Patio amplio",
+      "Zonas deportivas de entorno próximo"
+    ],
+    "actividades_extraescolares": [
+      "Refuerzo educativo",
+      "Deportes escolares",
+      "Festival intercultural de centro",
+      "Actividades con familias y antiguo alumnado"
+    ]
+  },
+  {
+    "id": 16,
+    "nombre": "CEIP Recimil",
+    "slug": "ceip-recimil",
+    "tipo": "Público",
+    "zona": "Recimil (Ferrol)",
+    "direccion": "Barrio de Recimil, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Colegio público histórico de Infantil y Primaria en el barrio de Recimil, con larga tradición y apuesta por la innovación y la ciencia.",
+    "informacion_general": {
+      "nivel_academico": "Centro veterano con alto grado de consolidación y participación en proyectos de innovación y ciencia.",
+      "profesorado": "Claustro con experiencia, implicado en proyectos tecnológicos, de lectura y de dinamización cultural en el barrio.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano",
+        "Inglés",
+        "Francés (optativo en niveles superiores)"
+      ],
+      "proyecto_educativo": "Proyecto que combina tradición e innovación, con especial énfasis en la ciencia, la creatividad y el uso de recursos tecnológicos, además de la dinamización de la biblioteca y la implicación de las familias."
+    },
+    "servicios": {
+      "transporte_escolar": true,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": false,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Comedor escolar",
+      "Biblioteca amplia",
+      "Aula de informática",
+      "Aula de ciencias y tecnología",
+      "Patios interiores y exteriores",
+      "Salón de actos"
+    ],
+    "actividades_extraescolares": [
+      "Clubes de ciencia y tecnología",
+      "Actividades deportivas escolares",
+      "Coro y teatro escolar",
+      "Proyectos de biblioteca (cuentacuentos, concursos)",
+      "Talleres de estudio asistido"
+    ]
+  },
+  {
+    "id": 17,
+    "nombre": "CEIP San Xoán de Filgueira",
+    "slug": "ceip-san-xoan-de-filgueira",
+    "tipo": "Público",
+    "zona": "San Xoán / Filgueira (Ferrol)",
+    "direccion": "Zona Filgueira, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Colegio público de entorno semiurbano-rural que destaca por su ambiente familiar, la implicación de las familias y proyectos premiados de convivencia.",
+    "informacion_general": {
+      "nivel_academico": "Formación sólida en Infantil y Primaria con fuerte componente de convivencia y participación familiar.",
+      "profesorado": "Equipo docente muy implicado en proyectos de convivencia, mediación escolar y colaboración con las familias.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano",
+        "Inglés"
+      ],
+      "proyecto_educativo": "Proyecto centrado en la cooperación entre escuela y familia, con iniciativas de convivencia reconocidas, educación en valores, atención a la diversidad y uso del entorno semi-rural como recurso educativo."
+    },
+    "servicios": {
+      "transporte_escolar": true,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": false,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Comedor escolar",
+      "Biblioteca",
+      "Patio amplio con zona cubierta",
+      "Huerto escolar y espacios verdes",
+      "Aulas de apoyo y orientación"
+    ],
+    "actividades_extraescolares": [
+      "Taller de deberes y técnicas de estudio",
+      "Baile y actividades motrices",
+      "Fútbol sala y baloncesto",
+      "Huerto ecológico escolar",
+      "Proyectos de mediación y convivencia",
+      "Fiestas y actividades tradicionales (magosto, festivales)"
+    ]
+  },
+  {
+    "id": 18,
+    "nombre": "CEIP Santa María de Caranza",
+    "slug": "ceip-santa-maria-de-caranza",
+    "tipo": "Público",
+    "zona": "Caranza (Ferrol)",
+    "direccion": "Barrio de Caranza, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Colegio público de Infantil y Primaria en Caranza, muy vinculado al barrio y con foco en la igualdad de oportunidades e innovación pedagógica.",
+    "informacion_general": {
+      "nivel_academico": "Centro con buen nivel académico, orientado a la innovación metodológica y al apoyo a alumnado diverso.",
+      "profesorado": "Claustro implicado en proyectos de convivencia, apoyo a alumnado vulnerable y coordinación con entidades del barrio.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano",
+        "Inglés",
+        "Francés (talleres optativos)"
+      ],
+      "proyecto_educativo": "Proyecto basado en la igualdad de oportunidades, la innovación pedagógica y la apertura al entorno, integrando proyectos cooperativos, apoyos específicos y trabajo en red con el barrio de Caranza."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": false,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Comedor con cocina",
+      "Biblioteca",
+      "Aula de informática",
+      "Salón de actos",
+      "Aula de apoyo a la integración",
+      "Instalaciones deportivas compartidas"
+    ],
+    "actividades_extraescolares": [
+      "Escuelas deportivas (balonmano, judo, zumba infantil)",
+      "Apoyo escolar gratuito",
+      "Talleres de manualidades y pintura",
+      "Semana Cultural de Caranza",
+      "Actividades en colaboración con asociaciones del barrio"
+    ]
+  },
+  {
+    "id": 19,
+    "nombre": "CEIP Terra de Ferrol",
+    "slug": "ceip-terra-de-ferrol",
+    "tipo": "Público",
+    "zona": "San Pedro de Leixa (Ferrol)",
+    "direccion": "Zona de Leixa, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Centro público especializado en la atención a alumnado con necesidades educativas especiales, con programas de autonomía personal e inclusión social.",
+    "informacion_general": {
+      "nivel_academico": "Centro de educación especial orientado al desarrollo máximo de las capacidades de cada alumno.",
+      "profesorado": "Equipo multidisciplinar especializado (docentes, PT, AL, fisioterapia, logopedia) con enfoque individualizado.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano"
+      ],
+      "proyecto_educativo": "Proyecto centrado en la atención individualizada, la inclusión y el desarrollo de la autonomía personal y social del alumnado, con programas de habilidades de la vida diaria, estimulación multisensorial y colaboración con otros centros de la comarca."
+    },
+    "servicios": {
+      "transporte_escolar": true,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": false,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Comedor adaptado",
+      "Transporte adaptado",
+      "Sala multisensorial",
+      "Aulas de fisioterapia y logopedia",
+      "Taller de habilidades de la vida diaria",
+      "Pistas polideportivas adaptadas",
+      "Biblioteca con materiales de lectura fácil"
+    ],
+    "actividades_extraescolares": [
+      "Equinoterapia y natación adaptada",
+      "Salidas de autonomía por el entorno",
+      "Musicoterapia y arteterapia",
+      "Participación en eventos deportivos de inclusión",
+      "Actividades de convivencia con otros centros"
+    ]
+  },
+  {
+    "id": 20,
+    "nombre": "IES Canido",
+    "slug": "ies-canido",
+    "tipo": "Público",
+    "zona": "Canido (Ferrol)",
+    "direccion": "Barrio de Canido, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Instituto público de referencia en el barrio de Canido, con larga trayectoria en ESO y Bachillerato y fuerte vínculo con la vida cultural del entorno.",
+    "informacion_general": {
+      "nivel_academico": "Alto nivel académico con especial atención a la preparación para estudios superiores.",
+      "profesorado": "Profesorado estable, comprometido con la continuidad del proyecto del centro y la dinamización cultural del barrio.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano",
+        "Inglés",
+        "Francés (optativo)"
+      ],
+      "proyecto_educativo": "Proyecto que combina tradición y modernidad, con énfasis en pensamiento crítico, formación integral, participación en actividades culturales y preparación del alumnado para la universidad y la vida adulta."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": false,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": false,
+      "primaria": false,
+      "eso": true,
+      "bachillerato": true
+    },
+    "instalaciones": [
+      "Cafetería escolar",
+      "Biblioteca",
+      "Laboratorios de ciencias",
+      "Pistas polideportivas",
+      "Aulas con equipamiento digital"
+    ],
+    "actividades_extraescolares": [
+      "Club de ciencia",
+      "Club de debate",
+      "Club de lectura",
+      "Equipos deportivos escolares",
+      "Certámenes literarios y artísticos",
+      "Proyectos de voluntariado juvenil"
+    ]
+  },
+  {
+    "id": 21,
+    "nombre": "IES Ricardo Carballo Calero",
+    "slug": "ies-ricardo-carballo-calero",
+    "tipo": "Público",
+    "zona": "Caranza (Ferrol)",
+    "direccion": "Avenida Castelao, Caranza, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Instituto público en Caranza que ofrece ESO, Bachillerato y ciclos de Formación Profesional en Imagen Personal, con fuerte identidad ligada a la figura de Ricardo Carballo Calero.",
+    "informacion_general": {
+      "nivel_academico": "Centro con doble orientación: preparación académica sólida y formación profesional práctica.",
+      "profesorado": "Equipo docente con experiencia en bachillerato y formación profesional, muy implicado en orientación académica y laboral.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano",
+        "Inglés",
+        "Francés (optativo)"
+      ],
+      "proyecto_educativo": "Proyecto que combina la promoción de la cultura y lengua gallegas con una oferta diversa de itinerarios, incluyendo ciclos de Imagen Personal, fomentando el emprendimiento y la inserción laboral del alumnado."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": false,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": false,
+      "primaria": false,
+      "eso": true,
+      "bachillerato": true
+    },
+    "instalaciones": [
+      "Aulas-taller de Peluquería",
+      "Aulas-taller de Estética",
+      "Laboratorios de ciencias",
+      "Biblioteca",
+      "Aulas de informática",
+      "Salón de actos",
+      "Pista polideportiva"
+    ],
+    "actividades_extraescolares": [
+      "Talleres y concursos de estética y peluquería",
+      "Talleres de emprendimiento",
+      "Equipos deportivos",
+      "Actividades culturales en torno a la literatura gallega",
+      "Proyectos y movilidades Erasmus+ de FP"
+    ]
+  },
+  {
+    "id": 22,
+    "nombre": "CPR Belén",
+    "slug": "cpr-belen",
+    "tipo": "Concertado",
+    "zona": "Ferrol",
+    "direccion": "Zona Esteiro / Caranza, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Colegio concertado de inspiración cristiana que escolariza desde Escuela Infantil hasta Primaria, con fuerte énfasis en el bilingüismo y la educación emocional.",
+    "informacion_general": {
+      "nivel_academico": "Enfoque en el desarrollo global del alumnado (intelectual, físico, artístico y emocional) desde edades tempranas.",
+      "profesorado": "Equipo docente cercano y estable, formado en estimulación temprana, educación emocional y metodologías activas.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Castellano",
+        "Inglés (Bilingüe)",
+        "Gallego"
+      ],
+      "proyecto_educativo": "Proyecto centrado en la educación personalizada, la atención temprana y la formación en valores cristianos, combinando aprendizaje por proyectos, trabajo cooperativo y un fuerte componente afectivo en el trato con el alumnado."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": false,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Escuela Infantil",
+      "Comedor escolar",
+      "Biblioteca",
+      "Aula de informática",
+      "Patio infantil y cancha deportiva",
+      "Aula de psicomotricidad"
+    ],
+    "actividades_extraescolares": [
+      "Ballet y danza",
+      "Iniciación musical",
+      "Teatro infantil",
+      "Escuelas deportivas",
+      "Refuerzo de inglés (preparación de exámenes)",
+      "Escuela de padres y talleres para familias"
+    ]
+  },
+  {
+    "id": 23,
+    "nombre": "CPR Jesús Maestro",
+    "slug": "cpr-jesus-maestro",
+    "tipo": "Concertado",
+    "zona": "Esteiro (Ferrol)",
+    "direccion": "Avenida Emilio Antón, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Colegio concertado católico en Esteiro que ofrece Infantil, Primaria y ESO, con ambiente familiar y atención muy personalizada.",
+    "informacion_general": {
+      "nivel_academico": "Formación académica sólida en etapas obligatorias, con metodología activa y enfoque muy cercano al alumnado.",
+      "profesorado": "Claustro reducido que favorece el seguimiento individualizado, formado en aprendizaje cooperativo y educación en valores.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Castellano",
+        "Gallego",
+        "Inglés"
+      ],
+      "proyecto_educativo": "Proyecto educativo católico que combina calidad académica, educación en valores cristianos y un clima de confianza y familia, con especial cuidado de la convivencia y la atención a cada alumno."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": true,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Comedor escolar",
+      "Biblioteca",
+      "Aula de informática",
+      "Laboratorio sencillo de ciencias",
+      "Patio interior y polideportivo cubierto",
+      "Capilla"
+    ],
+    "actividades_extraescolares": [
+      "Fútbol sala y baloncesto",
+      "Baile moderno",
+      "Coro escolar",
+      "Refuerzo de Lengua y Matemáticas",
+      "Taller de técnicas de estudio",
+      "Grupos de catequesis y convivencia cristiana"
+    ]
+  },
+  {
+    "id": 24,
+    "nombre": "CPR La Salle",
+    "slug": "cpr-la-salle-ferrol",
+    "tipo": "Concertado",
+    "zona": "Inferniño (Ferrol)",
+    "direccion": "Zona Inferniño, Rúa Pardo Bazán, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Colegio concertado lasaliano con más de un siglo de historia en Ferrol, que ofrece Infantil, Primaria y ESO con fuerte apuesta por la innovación, las TIC y la educación en valores.",
+    "informacion_general": {
+      "nivel_academico": "Alto, con énfasis en competencias clave, trabajo cooperativo y proyectos STEM.",
+      "profesorado": "Equipo docente integrado en la Red La Salle, en constante formación e innovación metodológica.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Castellano",
+        "Gallego",
+        "Inglés",
+        "Francés (optativo en ESO)"
+      ],
+      "proyecto_educativo": "Proyecto lasaliano basado en una educación cristiana, innovadora y centrada en el alumno, con el objetivo de formar personas competentes, comprometidas, creativas y compasivas."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": true,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Comedor con cocina propia",
+      "Múltiples aulas de informática",
+      "Laboratorios de ciencias",
+      "Talleres de tecnología",
+      "Biblioteca",
+      "Polideportivo cubierto",
+      "Patios diferenciados por etapas"
+    ],
+    "actividades_extraescolares": [
+      "Club deportivo (baloncesto, fútbol sala, judo, atletismo)",
+      "Escuela de música",
+      "Teatro escolar",
+      "Robótica y programación",
+      "Grupo scout La Salle",
+      "Concursos y olimpiadas académicas",
+      "Semana Lasaliana y actividades solidarias"
+    ]
+  },
+  {
+    "id": 25,
+    "nombre": "CPR Ludy",
+    "slug": "cpr-ludy",
+    "tipo": "Concertado",
+    "zona": "Caranza (Ferrol)",
+    "direccion": "Barrio de Caranza, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Colegio concertado cooperativo en Caranza, especializado en Infantil y Primaria, con ambiente familiar y pedagogía activa desde 1968.",
+    "informacion_general": {
+      "nivel_academico": "Formación integral en Infantil y Primaria, con enfoque activo y cooperativo.",
+      "profesorado": "Cooperativa de docentes muy implicados en la vida del centro, con fuerte sentido de comunidad escolar.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano",
+        "Inglés"
+      ],
+      "proyecto_educativo": "Proyecto cooperativo que busca desarrollar la autonomía, la responsabilidad y la convivencia, con metodologías activas y gran implicación de familias y profesorado en la construcción de la vida escolar."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": false,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Comedor escolar",
+      "Biblioteca",
+      "Sala de informática",
+      "Patio propio",
+      "Pequeño polideportivo",
+      "Aulas adaptadas por edades"
+    ],
+    "actividades_extraescolares": [
+      "Refuerzo educativo",
+      "Patinaje en línea",
+      "Taller de arte y manualidades",
+      "Baile tradicional gallego",
+      "Salidas culturales y de convivencia",
+      "Jornadas cooperativas con familias"
+    ]
+  },
+  {
+    "id": 26,
+    "nombre": "CPR Sagrado Corazón",
+    "slug": "cpr-sagrado-corazon-ferrol",
+    "tipo": "Concertado",
+    "zona": "Ferrol Vello (Ferrol)",
+    "direccion": "Zona Ferrol Vello / Porta Nova, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Colegio concertado católico de las Madres Mercedarias que ofrece Infantil, Primaria y ESO, centrado en los valores mercedarios de libertad, solidaridad y servicio.",
+    "informacion_general": {
+      "nivel_academico": "Centro con trayectoria consolidada, combinando tradición educativa y adaptación a nuevas metodologías.",
+      "profesorado": "Claustro con fuerte identidad mercedaria, comprometido con la educación en valores y la atención cercana al alumnado.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Castellano",
+        "Gallego",
+        "Inglés",
+        "Francés (en ESO)"
+      ],
+      "proyecto_educativo": "Proyecto mercedario que busca formar buenos cristianos y ciudadanos responsables, integrando la formación académica con la vivencia de los valores de libertad, justicia, solidaridad y servicio."
+    },
+    "servicios": {
+      "transporte_escolar": true,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": true,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Comedor",
+      "Biblioteca",
+      "Laboratorio de ciencias",
+      "Aula de tecnología",
+      "Capilla",
+      "Patio y pista deportiva"
+    ],
+    "actividades_extraescolares": [
+      "Baloncesto y fútbol sala",
+      "Coro y guitarra",
+      "Teatro escolar",
+      "Voluntariado juvenil y campañas solidarias",
+      "Refuerzo de idiomas",
+      "Semana Mercedaria y actividades pastorales"
+    ]
+  },
+  {
+    "id": 27,
+    "nombre": "CPR Santa Juana de Lestonnac",
+    "slug": "cpr-santa-juana-de-lestonnac",
+    "tipo": "Concertado",
+    "zona": "Caranza (Ferrol)",
+    "direccion": "Zona Caranza, Ferrol",
+    "logo": "",
+    "imagen_principal": "",
+    "descripcion_corta": "Colegio concertado católico en Caranza, con más de medio siglo de historia, que ofrece Infantil, Primaria y ESO y forma parte de la red educativa Arenales.",
+    "informacion_general": {
+      "nivel_academico": "Centro con amplia experiencia en la formación de alumnado del barrio, con resultados estables y acompañamiento académico cercano.",
+      "profesorado": "Equipo docente vinculado históricamente al barrio, con vocación de servicio y formación continua en metodologías activas.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Castellano",
+        "Gallego",
+        "Inglés",
+        "Francés (optativo en ESO)"
+      ],
+      "proyecto_educativo": "Proyecto inspirado en la Compañía de María y actualmente integrado en la red Arenales, que combina identidad cristiana, educación en valores y uso de metodologías innovadoras con una fuerte cercanía y arraigo en Caranza."
+    },
+    "servicios": {
+      "transporte_escolar": true,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": true,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Comedor escolar",
+      "Transporte escolar",
+      "Biblioteca",
+      "Aula de informática",
+      "Laboratorios",
+      "Pabellón polideportivo",
+      "Capilla",
+      "Patios exteriores"
+    ],
+    "actividades_extraescolares": [
+      "Escuelas deportivas (fútbol, baloncesto, patinaje)",
+      "Teatro escolar",
+      "Coro y actividades musicales",
+      "Estudio dirigido y refuerzo",
+      "Robótica y club de ciencias",
+      "Grupos de convivencia cristiana",
+      "Fiestas de Santa Juana y fin de curso abiertas al barrio"
+    ]
+  }
 ]
