@@ -164,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p class="card-text">${colegio.descripcion_corta.substring(0, 90)}...</p>
                             <span class="badge bg-primary mb-2" style="width: fit-content;">${colegio.tipo}</span>
                             <div class="mt-auto pt-3">
-                                <a href="${colegio.slug}" class="btn btn-primary w-100">Ver ficha completa</a>
+                                <a href="/colegio/${colegio.slug}" class="btn btn-primary w-100">Ver ficha completa</a>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,42 @@
+# Activa el motor de reescritura de URLs
+RewriteEngine On
+
+# ===================================================================
+# == REGLAS DE REESCRITURA PARA SLUGS (¡AQUÍ ESTÁ EL CAMBIO!) ==
+# ===================================================================
+
+# Evita que las reglas se apliquen a archivos o directorios existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# --- REGLA ANTIGUA (ELIMINADA) ---
+# RewriteRule ^([a-zA-Z0-9-]+)$ colegio.html?slug=$1 [L]
+
+# --- NUEVA REGLA PARA COLEGIOS ---
+# Si la URL empieza por "colegio/", carga colegio.html
+RewriteRule ^colegio/([a-zA-Z0-9-]+)$ colegio.html?slug=$1 [L]
+
+# --- NUEVA REGLA PARA EL BLOG ---
+# Si la URL empieza por "blog/", carga entrada.html
+RewriteRule ^blog/([a-zA-Z0-9-]+)$ entrada.html?slug=$1 [L]
+
+
+# ===================================================================
+# == OTRAS REGLAS (Se mantienen como estaban) ==
+# ===================================================================
+
+# INSTRUCCIONES PARA NO CACHEAR EL ARCHIVO JSON
+<Files "colegios.json">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</Files>
+<Files "noticias.json">
+    Header set Cache-Control "no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+</Files>
+
+# FORZAR HTTPS
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

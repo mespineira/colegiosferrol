@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <h5 class="card-title">${noticia.titulo}</h5>
                             <p class="card-text">${noticia.descripcion_corta}</p>
                             <div class="mt-auto pt-3">
-                                <a href="${noticia.slug_seo}" class="btn btn-primary w-100">Leer más</a>
+                                <a href="/blog/${noticia.slug_seo}" class="btn btn-primary w-100">Leer más</a>
                             </div>
                         </div>
                     </div>
