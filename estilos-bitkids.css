@@ -180,3 +180,14 @@ body { background-color: #f8f9fa; }
         .card-colegio { transition: transform .2s; }
         .card-colegio:hover { transform: scale(1.03); }
         .badge { font-size: 0.9em; }
+/* --- ESTILOS DEL NUEVO HEADER --- */
+.app-header {
+    position: sticky;
+    top: 0;
+    z-index: 1020; /* Debajo del cookie banner (1050) pero encima del contenido */
+    width: 100%;
+}
+
+.app-header .navbar-brand {
+    font-size: 1.5rem;
+}

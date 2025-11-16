@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fichaContainer.innerHTML = '<p class="alert alert-danger">No se pudo cargar la información del colegio.</p>';
         });
 
-    // 3. Función para pintar la ficha completa en el HTML
+    // 3. Función para pintar la ficha completa en el HTML (VERSIÓN REDISEÑADA)
     function renderFicha(colegio) {
         // Actualizar el título y la metadescripción (importante para SEO)
         document.title = `${colegio.nombre} | Guía de Colegios en Ferrol`;
@@ -46,17 +46,25 @@ document.addEventListener('DOMContentLoaded', () => {
             <li class="list-group-item ${colegio.servicios.transporte_escolar ? 'list-group-item-check' : 'list-group-item-cross'}">🚌 Transporte Escolar</li>
             <li class="list-group-item ${colegio.servicios.comedor ? 'list-group-item-check' : 'list-group-item-cross'}">🍽️ Comedor</li>
             <li class="list-group-item ${colegio.servicios.horario_ampliado ? 'list-group-item-check' : 'list-group-item-cross'}">🕒 Horario Ampliado</li>
-            <li class="list-group-item ${colegio.servicios.gabinete_psicopedagogico ? 'list-group-item-check' : 'list-group-item-cross'}">🧠 Gabinete Psicopedagógico</li>
+            <li class="list-group-item ${colegio.servicios.gabinete_psicopedagogico ? 'list-group-item-check' : 'list-group-item-cross'}">🧠 Gabinete Psicopedagogico</li>
         `;
 
+        // --- INICIO DEL HTML REDISEÑADO ---
         const fichaHTML = `
             <div class="card shadow-lg">
-                <img src="${colegio.imagen_principal}" class="card-img-top" alt="Imagen de ${colegio.nombre}">
-                <div class="card-body p-4">
-                    <span class="badge bg-primary fs-6 mb-2">${colegio.tipo}</span>
-                    <h1 class="card-title display-5">${colegio.nombre}</h1>
-                    <h2 class="card-subtitle mb-3 text-muted">${colegio.direccion}</h2>
+                <div class="card-body p-4 p-md-5">
                     
+                    <div class="row g-4 align-items-center mb-4">
+                        <div class="col-lg-5">
+                            <img src="${colegio.imagen_principal}" class="img-fluid rounded shadow-sm" alt="Imagen de ${colegio.nombre}">
+                        </div>
+                        <div class="col-lg-7">
+                            <span class="badge bg-primary fs-6 mb-2">${colegio.tipo}</span>
+                            <h1 class="card-title display-5">${colegio.nombre}</h1>
+                            <h2 class="card-subtitle mb-3 text-muted">${colegio.direccion}</h2>
+                        </div>
+                    </div>
+
                     <hr class="my-4">
 
                     <div class="row">
@@ -70,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="col-md-4">
                             <ul class="list-group">
                                 <li class="list-group-item"><strong>Nivel Académico:</strong> ${colegio.informacion_general.nivel_academico}</li>
-                                <li class="list-group-item"><strong>Niños por aula:</strong> ${colegio.informacion_general.ninos_por_aula}</li>
+                                <li class="list-group-item"><strong>Niños por aula:</strong> ${colegio.informacion_general.ninos_por_aula || 'No especificado'}</li>
                                 <li class="list-group-item"><strong>Idiomas:</strong> ${colegio.informacion_general.idiomas.join(', ')}</li>
                             </ul>
                         </div>
@@ -108,8 +116,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         `;
+        // --- FIN DEL HTML REDISEÑADO ---
+        
         fichaContainer.innerHTML = fichaHTML;
     }
+    
     // =======================================================
     // == FUNCIÓN PARA MOSTRAR COLEGIOS SIMILARES ==
     // =======================================================
