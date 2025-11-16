@@ -191,3 +191,13 @@ body { background-color: #f8f9fa; }
 .app-header .navbar-brand {
     font-size: 1.5rem;
 }
+
+/* --- ESTILOS DEL NUEVO HEADER (AÑADIDO) --- */
+.app-header .nav-link {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #333;
+}
+.app-header .nav-link:hover {
+    color: var(--bitkids-color-primary);
+}
