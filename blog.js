@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const listadoContainer = document.getElementById('listado-noticias');
     const sinNoticias = document.getElementById('sin-noticias');
     
-    fetch('noticias.json?v=' + new Date().getTime())
+    // RUTA CORREGIDA
+    fetch('/noticias.json?v=' + new Date().getTime())
         .then(response => response.json())
         .then(data => {
-            // Ordenamos por fecha (de más nueva a más vieja)
             const noticiasOrdenadas = data.sort((a, b) => {
                 return new Date(b.fecha_publicacion) - new Date(a.fecha_publicacion);
             });
@@ -26,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         noticias.forEach(noticia => {
-            // Usamos la misma estructura de "card" que ya tienes
             const card = `
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm card-colegio">

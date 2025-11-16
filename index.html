@@ -5,13 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guía de Colegios en Ferrol | Encuentra el mejor centro para tus hijos</title>
     <meta name="description" content="La guía más completa de colegios en Ferrol. Filtra por tipo, servicios, cursos y encuentra toda la información que necesitas para decidir.">
-    <link rel="stylesheet" href="estilos-bitkids.css">
+    <link rel="stylesheet" href="/estilos-bitkids.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         
     </style>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T46Y37LT38"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T46Y37LT38"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -26,7 +25,7 @@
     <div class="container d-md-flex align-items-center justify-content-between">
         <p class="mb-0 me-3">
             Utilizamos cookies propias y de terceros para mejorar tu experiencia y nuestros servicios. Al hacer clic en "Aceptar todo", aceptas su uso. Puedes obtener más información en nuestra 
-            <a href="politica-de-cookies.html">Política de Cookies</a>.
+            <a href="/politica-de-cookies.html">Política de Cookies</a>.
         </p>
         <div class="cookie-buttons mt-3 mt-md-0">
             <button id="btn-cookie-accept" class="btn btn-primary">Aceptar todo</button>
@@ -79,7 +78,6 @@
         
         // Event Listeners para los botones
         acceptBtn.addEventListener('click', () => {
-            // Aquí podrías inicializar tus scripts de analytics si los tuvieras
             console.log('Consentimiento de cookies aceptado.');
             setCookie(COOKIE_NAME, 'accepted', COOKIE_EXPIRATION_DAYS);
             hideBanner();
@@ -93,7 +91,6 @@
 
         // Comprobar si la cookie de consentimiento ya existe
         if (!getCookie(COOKIE_NAME)) {
-            // Pequeña demora para que no aparezca de golpe
             setTimeout(showBanner, 500);
         }
     });
@@ -101,7 +98,7 @@
 <header class="app-header bg-white shadow-sm">
     <div class="container">
         <nav class="navbar navbar-expand">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="/index.html">
                 <span class="fw-bold text-primary">Guía</span>
                 <span class="fw-normal">Colegios Ferrol</span>
             </a>
@@ -109,10 +106,10 @@
             <div class="ms-auto">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Colegios</a>
+                        <a class="nav-link" href="/index.html">Colegios</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
+                        <a class="nav-link" href="/blog.html">Blog</a>
                     </li>
                 </ul>
             </div>
@@ -182,16 +179,16 @@
             <div id="ultimas-noticias" class="row g-4">
                 </div>
             <div class="text-center mt-4">
-                <a href="blog.html" class="btn btn-primary btn-lg">Ver todas las noticias</a>
+                <a href="/blog.html" class="btn btn-primary btn-lg">Ver todas las noticias</a>
             </div>
         </div>
     </main>
 
     <footer class="text-center text-muted py-4 mt-5">
             <p class="small">
-            <a href="aviso-legal.html" class="text-muted">Aviso Legal</a> | 
-            <a href="politica-de-privacidad.html" class="text-muted">Política de Privacidad</a> | 
-            <a href="politica-de-cookies.html" class="text-muted">Política de Cookies</a>
+            <a href="/aviso-legal.html" class="text-muted">Aviso Legal</a> | 
+            <a href="/politica-de-privacidad.html" class="text-muted">Política de Privacidad</a> | 
+            <a href="/politica-de-cookies.html" class="text-muted">Política de Cookies</a>
         </p>
         <p>&copy; 2025 Guía de Colegios de Ferrol</p>
     </footer>
@@ -202,8 +199,8 @@
             const sinResultados = document.getElementById('sin-resultados');
             let colegios = [];
 
-            // --- 1. Cargar datos del JSON ---
-            fetch('colegios.json?v=' + new Date().getTime())
+            // --- 1. Cargar datos del JSON (RUTA CORREGIDA) ---
+            fetch('/colegios.json?v=' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
                     colegios = data;
@@ -214,7 +211,7 @@
                     listadoContainer.innerHTML = '<p class="text-danger">No se pudieron cargar los datos de los colegios.</p>';
                 });
 
-            // --- 2. Función para renderizar los colegios (VERSIÓN ACTUALIZADA) ---
+            // --- 2. Función para renderizar los colegios ---
             function renderColegios(colegiosAMostrar) {
                 listadoContainer.innerHTML = '';
                 if (colegiosAMostrar.length === 0) {
@@ -238,7 +235,7 @@
                                         ${colegio.servicios.comedor ? '<span class="badge bg-info">🍽️ Comedor</span>' : ''}
                                     </div>
                                     <div class="mt-auto pt-3">
-                                        <a href="colegio/${colegio.slug}" class="btn btn-primary w-100">Ver ficha completa</a>
+                                        <a href="/colegio/${colegio.slug}" class="btn btn-primary w-100">Ver ficha completa</a>
                                     </div>
                                 </div>
                             </div>
@@ -271,27 +268,22 @@
 
                 renderColegios(colegiosFiltrados);
             }
-        });
-        // --- INICIO DEL NUEVO CÓDIGO ---
             
-            // 1. Llamamos a la nueva función al cargar la página
+            // Llamamos a la nueva función
             cargarUltimasNoticias();
 
-            // 2. Nueva función para cargar las 3 últimas noticias
+            // Función para cargar las 3 últimas noticias
             function cargarUltimasNoticias() {
                 const noticiasContainer = document.getElementById('ultimas-noticias');
-                if (!noticiasContainer) return; // Salir si no estamos en la página correcta
+                if (!noticiasContainer) return;
 
-                fetch('noticias.json?v=' + new Date().getTime())
+                // RUTA CORREGIDA
+                fetch('/noticias.json?v=' + new Date().getTime())
                     .then(response => response.json())
                     .then(data => {
-                        // Ordenar por fecha (más nueva a más vieja)
                         const noticiasOrdenadas = data.sort((a, b) => new Date(b.fecha_publicacion) - new Date(a.fecha_publicacion));
-                        
-                        // Coger solo las 3 primeras
                         const ultimasNoticias = noticiasOrdenadas.slice(0, 3);
                         
-                        // Pintar las tarjetas
                         ultimasNoticias.forEach(noticia => {
                             const card = `
                                 <div class="col-md-4">
@@ -301,7 +293,7 @@
                                             <h5 class="card-title">${noticia.titulo}</h5>
                                             <p class="card-text">${noticia.descripcion_corta}</p>
                                             <div class="mt-auto pt-3">
-                                                <a href="blog/${noticia.slug_seo}" class="btn btn-primary w-100">Leer más</a>
+                                                <a href="/blog/${noticia.slug_seo}" class="btn btn-primary w-100">Leer más</a>
                                             </div>
                                         </div>
                                     </div>
@@ -315,8 +307,7 @@
                         noticiasContainer.innerHTML = '<p class="text-warning">No se pudieron cargar las noticias.</p>';
                     });
             }
-            
-            // --- FIN DEL NUEVO CÓDIGO ---
+        }); // Cierre del DOMContentLoaded
     </script>
 
 </body>

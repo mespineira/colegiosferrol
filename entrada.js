@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fichaContainer = document.getElementById('ficha-noticia');
 
     // 1. Obtener el 'slug' de la URL (igual que en colegio.js)
-    const path = window.location.pathname;
+    const path = window.location.pathname; // Esto funciona (ej: /blog/nombre-noticia)
     const noticiaSlug = path.substring(path.lastIndexOf('/') + 1);
 
     if (!noticiaSlug) {
@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // 2. Cargar los datos y encontrar la noticia correcta
-    fetch('noticias.json?v=' + new Date().getTime())
+    // 2. Cargar los datos y encontrar la noticia correcta (RUTA CORREGIDA)
+    fetch('/noticias.json?v=' + new Date().getTime()) // <-- RUTA CORREGIDA
         .then(response => response.json())
         .then(noticias => {
             const noticia = noticias.find(n => n.slug_seo === noticiaSlug);

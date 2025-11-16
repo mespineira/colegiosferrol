@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fichaContainer = document.getElementById('ficha-colegio');
 
     // 1. Obtener el 'slug' de la URL amigable
-    const path = window.location.pathname; // Obtiene la ruta, ej: "/colegio-montecastelo"
+    const path = window.location.pathname; // Esto funciona (ej: /colegio/ceip-a-laxe)
     const colegioSlug = path.substring(path.lastIndexOf('/') + 1);
 
     if (!colegioSlug) {
@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    // 2. Cargar los datos y encontrar el colegio correcto
-    fetch('colegios.json?v=' + new Date().getTime())
+    // 2. Cargar los datos y encontrar el colegio correcto (RUTA CORREGIDA)
+    fetch('/colegios.json?v=' + new Date().getTime()) // <-- RUTA CORREGIDA
         .then(response => response.json())
         .then(colegios => {
             const colegio = colegios.find(c => c.slug === colegioSlug);
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             fichaContainer.innerHTML = '<p class="alert alert-danger">No se pudo cargar la información del colegio.</p>';
         });
 
-    // 3. Función para pintar la ficha completa en el HTML (VERSIÓN REDISEÑADA)
+    // 3. Función para pintar la ficha completa en el HTML
     function renderFicha(colegio) {
         // Actualizar el título y la metadescripción (importante para SEO)
         document.title = `${colegio.nombre} | Guía de Colegios en Ferrol`;
@@ -49,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <li class="list-group-item ${colegio.servicios.gabinete_psicopedagogico ? 'list-group-item-check' : 'list-group-item-cross'}">🧠 Gabinete Psicopedagogico</li>
         `;
 
-        // --- INICIO DEL HTML REDISEÑADO ---
         const fichaHTML = `
             <div class="card shadow-lg">
                 <div class="card-body p-4 p-md-5">
@@ -116,7 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
         `;
-        // --- FIN DEL HTML REDISEÑADO ---
         
         fichaContainer.innerHTML = fichaHTML;
     }
@@ -126,34 +124,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // =======================================================
     function renderSimilar(todosLosColegios, colegioActual) {
         const similarContainer = document.getElementById('colegios-similares-container');
-        if (!similarContainer) return; // Salir si el contenedor no existe
+        if (!similarContainer) return; 
 
         const tipoActual = colegioActual.tipo;
         const idActual = colegioActual.id;
-        const MAX_SIMILARES = 3; // Mostrar un máximo de 3
+        const MAX_SIMILARES = 3;
 
-        // Definimos "similar" como un colegio del MISMO TIPO, pero que NO sea el actual.
         const colegiosSimilares = todosLosColegios.filter(c => {
             return c.tipo === tipoActual && c.id !== idActual;
         });
 
-        // Barajamos los resultados para que no siempre salgan los mismos
         const similaresBarajados = colegiosSimilares.sort(() => 0.5 - Math.random());
-
-        // Tomamos solo los 3 primeros
         const listaFinal = similaresBarajados.slice(0, MAX_SIMILARES);
 
         if (listaFinal.length === 0) {
-            similarContainer.style.display = 'none'; // Ocultar la sección si no hay similares
+            similarContainer.style.display = 'none'; 
             return;
         }
 
-        // Construimos el HTML
         let htmlSimilares = '<h2 class="mb-4">Otros colegios que te podrían interesar</h2><div class="row g-4">';
 
         listaFinal.forEach(colegio => {
-            // Reutilizamos la estructura de "card" de tu index.html
-            // Usamos las URLs amigables que ya configuramos (href="${colegio.slug}")
             htmlSimilares += `
                 <div class="col-md-4">
                     <div class="card h-100 shadow-sm card-colegio">

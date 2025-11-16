@@ -2,30 +2,27 @@
 RewriteEngine On
 
 # ===================================================================
-# == REGLAS DE REESCRITURA PARA SLUGS (¡AQUÍ ESTÁ EL CAMBIO!) ==
+# == REGLAS DE REESCRITURA PARA SLUGS (¡VERSIÓN CORREGIDA!) ==
 # ===================================================================
 
 # Evita que las reglas se apliquen a archivos o directorios existentes
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
-# --- REGLA ANTIGUA (ELIMINADA) ---
-# RewriteRule ^([a-zA-Z0-9-]+)$ colegio.html?slug=$1 [L]
-
 # --- NUEVA REGLA PARA COLEGIOS ---
-# Si la URL empieza por "colegio/", carga colegio.html
-RewriteRule ^colegio/([a-zA-Z0-9-]+)$ colegio.html?slug=$1 [L]
+# Carga /colegio.html SIN query string. El JS leerá el path.
+RewriteRule ^colegio/([a-zA-Z0-9-]+)$ /colegio.html [L]
 
 # --- NUEVA REGLA PARA EL BLOG ---
-# Si la URL empieza por "blog/", carga entrada.html
-RewriteRule ^blog/([a-zA-Z0-9-]+)$ entrada.html?slug=$1 [L]
+# Carga /entrada.html SIN query string. El JS leerá el path.
+RewriteRule ^blog/([a-zA-Z0-9-]+)$ /entrada.html [L]
 
 
 # ===================================================================
 # == OTRAS REGLAS (Se mantienen como estaban) ==
 # ===================================================================
 
-# INSTRUCCIONES PARA NO CACHEAR EL ARCHIVO JSON
+# INSTRUCCIONES PARA NO CACHEAR LOS ARCHIVOS JSON
 <Files "colegios.json">
     Header set Cache-Control "no-cache, no-store, must-revalidate"
     Header set Pragma "no-cache"
