@@ -50,23 +50,27 @@
     "nombre": "CEIP Isaac Peral",
     "slug": "ceip-isaac-peral",
     "tipo": "Público",
-    "zona": "Esteiro",
-    "direccion": "Av. de Esteiro, 55, 15403 Ferrol",
-    "logo": "https://via.placeholder.com/150",
-    "imagen_principal": "https://via.placeholder.com/800x400",
-    "descripcion_corta": "Colegio público comprometido con la educación inclusiva y de calidad, con una fuerte implicación de la comunidad educativa.",
+    "zona": "Centro / Esteiro",
+    "direccion": "Avenida de Mac-Mahón S/N, 15403, Ferrol (A Coruña)",
+    "logo": "",
+    "imagen_principal": "https://ferrol360.es/wp-content/uploads/2024/02/Instalaciones-del-CEIP-de-Isaac-Peral.jpg",
+    "descripcion_corta": "Centro público de Educación Infantil y Primaria fundado en 1978. Destaca por ser el único centro de Ferrol en el programa de fomento del talento (Piteas) y por su apuesta digital (DIXGAL).",
     "informacion_general": {
-      "nivel_academico": "Bueno",
-      "profesorado": "Funcionarios con amplia experiencia en la enseñanza pública.",
-      "ninos_por_aula": 22,
-      "idiomas": ["Inglés", "Gallego"],
-      "proyecto_educativo": "Fomento de la participación familiar y el desarrollo integral del alumno a través de programas de innovación educativa."
+      "nivel_academico": "Enfocado en el fomento del talento (Programa Piteas), la innovación digital (Centro DIXGAL, Polos Creativos) y la atención a la diversidad. El propio centro reporta una ratio elevada de alumnos por aula.",
+      "profesorado": "Profesorado con formación específica en programas de enriquecimiento (Piteas) e integración tecnológica (TIC, Plan Dixital).",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Inglés (Sección Bilingüe en Música)",
+        "Gallego (Proyecto Lingüístico de inmersión activa)",
+        "Castellano"
+      ],
+      "proyecto_educativo": "Basado en el Proxecto Educativo (PE) y el Plan de Atención á Diversidade (PAD), con el objetivo de 'atender a diversidade en un sentido amplo'. Incluye el programa Piteas para el fomento del talento y una fuerte estrategia de inmersión en lengua gallega."
     },
     "servicios": {
       "transporte_escolar": false,
       "comedor": true,
       "horario_ampliado": true,
-      "gabinete_psicopedagogico": false
+      "gabinete_psicopedagogico": true
     },
     "cursos_impartidos": {
       "infantil": true,
@@ -75,15 +79,23 @@
       "bachillerato": false
     },
     "instalaciones": [
-      "Gimnasio",
-      "Aula de música",
-      "Huerto escolar",
-      "Patio de recreo"
+      "Biblioteca (con plan de mejora y proyectos propios)",
+      "Aula de informática",
+      "Pabellón",
+      "Pizarra digital en todas las aulas",
+      "Local de la ANPA",
+      "Polos Creativos (Espazos Maker)",
+      "Comedor"
     ],
     "actividades_extraescolares": [
+      "Gimnasia rítmica",
       "Patinaje",
-      "Ajedrez",
-      "Apoyo escolar"
+      "Guitarra",
+      "Judo",
+      "Baloncesto",
+      "Iniciación al Ajedrez (en horario lectivo)",
+      "Programa TEI (Tutoría Entre Iguales)",
+      "Patios Saudables (juegos tradicionales)"
     ]
   },
   {
