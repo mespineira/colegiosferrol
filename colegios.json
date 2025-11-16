@@ -1,48 +1,51 @@
 [
   {
     "id": 1,
-    "nombre": "Colegio Plurilingüe Montecastelo",
-    "slug": "colegio-montecastelo",
-    "tipo": "Concertado",
-    "zona": "Canido",
-    "direccion": "C/ Exemplo, 123, 15401 Ferrol",
-    "logo": "https://via.placeholder.com/150",
-    "imagen_principal": "https://via.placeholder.com/800x400",
-    "descripcion_corta": "Un centro de referencia en Ferrol, conocido por su proyecto educativo innovador y su enfoque en el plurilingüismo desde las primeras etapas.",
+    "nombre": "CEIP Plurilingüe A Laxe",
+    "slug": "ceip-plurilingue-a-laxe",
+    "tipo": "Público",
+    "zona": "Valón (Ferrol)",
+    "direccion": "Rúa A Torre s/n, 15593 - Valón (Ferrol)",
+    "logo": "",
+    "imagen_principal": "https://ferrol360.es/wp-content/uploads/2022/01/a-laxe-valon.jpg",
+    "descripcion_corta": "Centro público plurilingüe de infantil y primaria en Valón, Ferrol. Participa en una amplia gama de proyectos educativos como Erasmus+, Polos Creativos y TEI.",
     "informacion_general": {
-      "nivel_academico": "Alto",
-      "profesorado": "Equipo docente estable y altamente cualificado, con formación continua en nuevas metodologías pedagógicas.",
-      "ninos_por_aula": 25,
-      "idiomas": ["Inglés (Bilingüe)", "Francés", "Gallego"],
-      "proyecto_educativo": "Basado en el aprendizaje por proyectos, inteligencias múltiples y fomento de la creatividad y el pensamiento crítico."
+      "nivel_academico": "Enfocado en metodologías activas y proyectos de innovación.",
+      "profesorado": "Implicado en múltiples programas educativos de la Xunta y europeos.",
+      "ninos_por_aula": null,
+      "idiomas": [
+        "Gallego",
+        "Castellano",
+        "Inglés (Plurilingüe)"
+      ],
+      "proyecto_educativo": "Designado como 'Plurilingüe'. Participa activamente en: Club de Letras, Dinamización da Lingua Galega, ERASMUS+, Patios Amigos, Proxecto de Centro, Voz Natura, Ciencia Activa, Educación Responsable, Observa_acción, Polos Creativos y TEI (Titoría Entre Iguais)."
     },
     "servicios": {
       "transporte_escolar": true,
       "comedor": true,
-      "horario_ampliado": true,
+      "horario_ampliado": false,
       "gabinete_psicopedagogico": true
     },
     "cursos_impartidos": {
       "infantil": true,
       "primaria": true,
-      "eso": true,
-      "bachillerato": true
+      "eso": false,
+      "bachillerato": false
     },
     "instalaciones": [
-      "Pabellón polideportivo",
-      "Aulas de informática",
-      "Laboratorios de ciencias",
-      "Biblioteca",
-      "Comedor con cocina propia",
-      "Amplias zonas de recreo"
+      "Comedor",
+      "Transporte",
+      "Polos Creativos"
     ],
     "actividades_extraescolares": [
-      "Fútbol",
-      "Baloncesto",
-      "Judo",
-      "Música y movimiento",
-      "Robótica",
-      "Teatro"
+      "Club de Letras",
+      "ERASMUS+",
+      "Patios Amigos",
+      "Voz Natura",
+      "Ciencia Activa",
+      "Educación Responsable",
+      "TEI (Titoría Entre Iguais)",
+      "Actividades Extraescolares"
     ]
   },
   {
@@ -292,6 +295,220 @@
     "Club de Lectura",
     "Equipo de Dinamización la Lingua Galega",
     "Proyectos Erasmus+"
+  ]
+},
+{
+  "id": 7,
+  "nombre": "CEIP Cruceiro de Canido",
+  "slug": "ceip-cruceiro-de-canido",
+  "tipo": "Público",
+  "zona": "Canido (Ferrol)",
+  "direccion": "Rúa Doutor Fleming s/n, 15401 Ferrol (A Coruña)",
+  "logo": "",
+  "imagen_principal": "https://www.edu.xunta.gal/centros/ceipcruceirocanido/system/files/u31/FACHADA%20CEIP%20CRUCEIRO%20DE%20CANIDO.jpg",
+  "descripcion_corta": "Centro público de educación infantil y primaria en el barrio de Canido, Ferrol. Cuenta con una radio escolar activa ('Ondas do Cruceiro') y participa en proyectos Erasmus+.",
+  "informacion_general": {
+    "nivel_academico": "Enfoque en la comunicación (radio) y la dinamización lingüística.",
+    "profesorado": "Organizado en planes de Acción Titorial, Convivencia, Igualdad y Atención á Diversidade.",
+    "ninos_por_aula": null,
+    "idiomas": [
+      "Gallego",
+      "Castellano",
+      "Inglés"
+    ],
+    "proyecto_educativo": "Participa en el proyecto Erasmus+ 'EcoTechMus' y promueve la 'Dinamización da Lingua Galega'. Dispone de una radio escolar activa llamada 'Ondas do Cruceiro'. El Proyecto Educativo incluye planes de Acción Titorial, Convivencia, Igualdad, Lingüístico, Digital y de Atención á Diversidade."
+  },
+  "servicios": {
+    "transporte_escolar": false,
+    "comedor": true,
+    "horario_ampliado": false,
+    "gabinete_psicopedagogico": true
+  },
+  "cursos_impartidos": {
+    "infantil": true,
+    "primaria": true,
+    "eso": false,
+    "bachillerato": false
+  },
+  "instalaciones": [
+    "Comedor",
+    "Radio escolar (Ondas do Cruceiro)"
+  ],
+  "actividades_extraescolares": [
+    "Erasmus+ 'EcoTechMus'",
+    "Actividades complementarias",
+    "Actividades extraescolares"
+  ]
+},
+{
+  "id": 8,
+  "nombre": "IES Sofía Casanova",
+  "slug": "ies-sofia-casanova",
+  "tipo": "Público",
+  "zona": "Ferrol",
+  "direccion": "Rúa O Galego Soto s/n, 15403 Ferrol",
+  "logo": "",
+  "imagen_principal": "https://img.lavdg.com/sc/6LIYU_-v1PmhmI2jCKT-p4YqpS0=/480x/2020/02/13/00121581612362232279598/Foto/GF14P10F7_17450.jpg",
+  "descripcion_corta": "Instituto de Educación Secundaria en Ferrol que ofrece ESO y Bachillerato. Destaca por su gran implicación en proyectos como Erasmus+, STEMBach, teatro, coro y club de ciencia.",
+  "informacion_general": {
+    "nivel_academico": "Orientado a proyectos de innovación, STEM y artes.",
+    "profesorado": "Activo en la coordinación de múltiples programas extracurriculares.",
+    "ninos_por_aula": null,
+    "idiomas": [
+      "Gallego",
+      "Castellano",
+      "Inglés (Seccións bilingües)"
+    ],
+    "proyecto_educativo": "Participa en: Erasmus+ Robot Dance, STEMBach, Espazos maker, XOGADE, Club de ciencia, Proxecto deportivo de centro, Recreos deportivos, Club de lectura, Teatro, Coro, Seccións bilingües, Cidadanía dixital, LÓVA, Club de manga, Fundación secretariado xitano y Plan director."
+  },
+  "servicios": {
+    "transporte_escolar": false,
+    "comedor": false,
+    "horario_ampliado": false,
+    "gabinete_psicopedagogico": false
+  },
+  "cursos_impartidos": {
+    "infantil": false,
+    "primaria": false,
+    "eso": true,
+    "bachillerato": true
+  },
+  "instalaciones": [
+    "Espazos maker"
+  ],
+  "actividades_extraescolares": [
+    "Erasmus+ Robot Dance",
+    "STEMBach",
+    "XOGADE",
+    "Club de ciencia",
+    "Proxecto deportivo de centro",
+    "Recreos deportivos",
+    "Club de lectura",
+    "Teatro",
+    "Coro",
+    "Club de manga",
+    "Actividades Extraescolares",
+    "Actividades Complementarias"
+  ]
+},
+{
+  "id": 9,
+  "nombre": "IES de Catabois",
+  "slug": "ies-de-catabois",
+  "tipo": "Público",
+  "zona": "Ferrol",
+  "direccion": "Estrada de Catabois, s/n, 15405 Ferrol",
+  "logo": "",
+  "imagen_principal": "https://www.edu.xunta.gal/centros/iescatabois/system/files/04.jpg",
+  "descripcion_corta": "Instituto en Ferrol (ESO, Bachillerato, FP Básica). Destaca por su participación como 'Escola Embaixadora do Parlamento Europeo', proyectos Erasmus+ y 'POLOS CREATIVOS'.",
+  "informacion_general": {
+    "nivel_academico": "Enfoque en la ciudadanía europea, internacionalización y tecnología creativa.",
+    "profesorado": "Implicado en la gestión de programas europeos y de innovación.",
+    "ninos_por_aula": null,
+    "idiomas": [
+      "Gallego",
+      "Castellano",
+      "Inglés (Sección bilingüe)"
+    ],
+    "proyecto_educativo": "Ofrece 'sección bilingüe'. Participa activamente en el programa 'Escolas Embaixadoras do Parlamento Europeo' (EPAS), el proyecto Erasmus+ KA 122 'Gallaeciae Quercus', el programa 'POLOS CREATIVOS' y mantiene la emisora 'RADIO CATABOIS'."
+  },
+  "servicios": {
+    "transporte_escolar": true,
+    "comedor": false,
+    "horario_ampliado": false,
+    "gabinete_psicopedagogico": false
+  },
+  "cursos_impartidos": {
+    "infantil": false,
+    "primaria": false,
+    "eso": true,
+    "bachillerato": true
+  },
+  "instalaciones": [
+    "Transporte",
+    "POLOS CREATIVOS",
+    "Radio (RADIO CATABOIS)"
+  ],
+  "actividades_extraescolares": [
+    "Escolas Embaixadoras do Parlamento Europeo (EPAS)",
+    "Erasmus+ KA 122",
+    "Actividades Complementarias"
+  ]
+},{
+  "id": 10,
+  "nombre": "CPR Plurilingüe Arenales Compañía de María",
+  "slug": "cpr-plurilingue-arenales-compania-de-maria",
+  "tipo": "Privado Concertado",
+  "zona": "Ferrol",
+  "direccion": "Rúa SAN AMARO 18, 15403 Ferrol",
+  "logo": "",
+  "imagen_principal": "https://www.lavozdegalicia.es/default/2023/02/09/00121675959362961325234/Foto/F28O9006.jpg",
+  "descripcion_corta": "Colegio concertado plurilingüe en Ferrol (Infantil, Primaria, Secundaria), perteneciente a la Arenales Red Educativa. Destaca por su atención individualizada y el proyecto IAM.",
+  "informacion_general": {
+    "nivel_academico": "Basado en el proyecto IAM (Innovación, Autonomía y Mentoring).",
+    "profesorado": "Enfocado en la 'Identidad cristiana' y una 'Escuela de valores'.",
+    "ninos_por_aula": null,
+    "idiomas": [
+      "Gallego",
+      "Castellano",
+      "Inglés (Plurilingüe)"
+    ],
+    "proyecto_educativo": "Designado como 'Plurilingüe'. Forma parte de la 'Arenales Red Educativa', que basa su modelo en el proyecto IAM (Innovación, Autonomía y Mentoring). Este modelo promueve una 'Identidad cristiana' y una 'Escuela de valores' (basada en el trabajo bien hecho, el afán de mejora, el respeto a la libertad y la solidaridad), y tiene como objetivo formar alumnos bilingües."
+  },
+  "servicios": {
+    "transporte_escolar": false,
+    "comedor": false,
+    "horario_ampliado": false,
+    "gabinete_psicopedagogico": false
+  },
+  "cursos_impartidos": {
+    "infantil": true,
+    "primaria": true,
+    "eso": true,
+    "bachillerato": false
+  },
+  "instalaciones": [],
+  "actividades_extraescolares": []
+},{
+  "id": 11,
+  "nombre": "CEIP A Gándara",
+  "slug": "ceip-a-gandara",
+  "tipo": "Público",
+  "zona": "Narón",
+  "direccion": "Rúa Colmeote s/n, 15570 Narón",
+  "logo": "",
+  "imagen_principal": "https://ferrol360.es/wp-content/uploads/2025/05/unnamed.jpg",
+  "descripcion_corta": "Centro público de educación infantil y primaria en Narón. Implementa programas de vida activa y deportiva, mejora de la convivencia y promoción del bienestar emocional.",
+  "informacion_general": {
+    "nivel_academico": "Enfocado en el bienestar, la convivencia y el deporte.",
+    "profesorado": "Organizado en Equipos de Actividades Complementarias y de Dinamización Lingüística.",
+    "ninos_por_aula": null,
+    "idiomas": [
+      "Gallego",
+      "Castellano"
+    ],
+    "proyecto_educativo": "El centro implementa programas educativos como PVAD (Proxectos de Vida Activa e Deportiva), Mellora da Convivencia y Promoción do benestar emocional. Dispone de un Equipo de Actividades Complementarias e Extraescolares y un Equipo de Dinamización da Lingua Galega."
+  },
+  "servicios": {
+    "transporte_escolar": true,
+    "comedor": true,
+    "horario_ampliado": false,
+    "gabinete_psicopedagogico": true
+  },
+  "cursos_impartidos": {
+    "infantil": true,
+    "primaria": true,
+    "eso": false,
+    "bachillerato": false
+  },
+  "instalaciones": [
+    "Comedor",
+    "Transporte"
+  ],
+  "actividades_extraescolares": [
+    "Proxectos de Vida Activa e Deportiva (PVAD)",
+    "Actividades Complementarias",
+    "Actividades Extraescolares"
   ]
 }
 ]
