@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Colegios en Ferrol | Encuentra el mejor centro para tus hijos</title>
+    <meta name="description" content="La guía más completa de colegios en Ferrol. Filtra por tipo, servicios, cursos y encuentra toda la información que necesitas para decidir.">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .card-colegio { transition: transform .2s; }
+        .card-colegio:hover { transform: scale(1.03); }
+        .badge { font-size: 0.9em; }
+    </style>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T46Y37LT38"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T46Y37LT38');
+</script>
+</head>
+<style>
+    .cookie-consent-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #212529;
+        color: #fff;
+        padding: 1.5rem;
+        z-index: 1050;
+        font-size: 0.9rem;
+        transform: translateY(100%);
+        transition: transform 0.5s ease-in-out;
+        box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+    }
+    .cookie-consent-banner.active {
+        transform: translateY(0);
+    }
+    .cookie-consent-banner a {
+        color: #0d6efd;
+        text-decoration: underline;
+    }
+    .cookie-consent-banner .btn {
+        margin: 0.25rem 0.5rem;
+    }
+    /* Estilos para pantallas pequeñas */
+    @media (max-width: 768px) {
+        .cookie-consent-banner .container {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .cookie-buttons {
+            margin-top: 1rem;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+</style>
+
+<div id="cookie-consent-banner" class="cookie-consent-banner">
+    <div class="container d-md-flex align-items-center justify-content-between">
+        <p class="mb-0 me-3">
+            Utilizamos cookies propias y de terceros para mejorar tu experiencia y nuestros servicios. Al hacer clic en "Aceptar todo", aceptas su uso. Puedes obtener más información en nuestra 
+            <a href="politica-de-cookies.html">Política de Cookies</a>.
+        </p>
+        <div class="cookie-buttons mt-3 mt-md-0">
+            <button id="btn-cookie-accept" class="btn btn-primary">Aceptar todo</button>
+            <button id="btn-cookie-reject" class="btn btn-secondary">Rechazar</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const COOKIE_NAME = 'user_cookie_consent';
+        const COOKIE_EXPIRATION_DAYS = 365;
+
+        const banner = document.getElementById('cookie-consent-banner');
+        const acceptBtn = document.getElementById('btn-cookie-accept');
+        const rejectBtn = document.getElementById('btn-cookie-reject');
+
+        // Función para establecer una cookie
+        const setCookie = (name, value, days) => {
+            let expires = "";
+            if (days) {
+                const date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
+        };
+
+        // Función para obtener una cookie
+        const getCookie = (name) => {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        };
+        
+        // Ocultar el banner
+        const hideBanner = () => {
+            banner.classList.remove('active');
+        };
+
+        // Mostrar el banner
+        const showBanner = () => {
+            banner.classList.add('active');
+        };
+        
+        // Event Listeners para los botones
+        acceptBtn.addEventListener('click', () => {
+            // Aquí podrías inicializar tus scripts de analytics si los tuvieras
+            console.log('Consentimiento de cookies aceptado.');
+            setCookie(COOKIE_NAME, 'accepted', COOKIE_EXPIRATION_DAYS);
+            hideBanner();
+        });
+        
+        rejectBtn.addEventListener('click', () => {
+            console.log('Consentimiento de cookies rechazado.');
+            setCookie(COOKIE_NAME, 'rejected', COOKIE_EXPIRATION_DAYS);
+            hideBanner();
+        });
+
+        // Comprobar si la cookie de consentimiento ya existe
+        if (!getCookie(COOKIE_NAME)) {
+            // Pequeña demora para que no aparezca de golpe
+            setTimeout(showBanner, 500);
+        }
+    });
+</script>
+<body>
+
+    <header class="container text-center my-5">
+        <h1 class="display-4">Guía de Colegios en Ferrol</h1>
+        <p class="lead">Encuentra y compara los mejores centros educativos para tus hijos de forma fácil y rápida.</p>
+    </header>
+    <div class="container">
+        <div class="bg-white p-4 p-md-5 rounded shadow-sm mb-5">
+            <h2 class="mb-3">Encuentra el Colegio Ideal para tus Hijos en Ferrol</h2>
+            <p class="lead">Sabemos que elegir el centro educativo adecuado es una de las decisiones más importantes para tu familia. Por eso, hemos creado la guía más completa y fácil de usar de <strong>colegios en Ferrol</strong>. Nuestro objetivo es darte toda la información que necesitas, de forma clara y centralizada, para que puedas tomar la mejor decisión sin perder tiempo.</p>
+            <p>Desde colegios públicos y concertados hasta privados, aquí encontrarás fichas detalladas con todo lo que te interesa: el proyecto educativo, las instalaciones, los servicios como comedor o transporte, los idiomas impartidos y las actividades extraescolares. </p>
+
+            <h3 class="mt-4">¿Cómo funciona esta guía?</h3>
+            <p>Utiliza nuestros filtros para acotar tu búsqueda según tus prioridades. Puedes buscar por:</p>
+            <ul>
+                <li><strong>Tipo de centro:</strong> Filtra entre colegios públicos, concertados o privados.</li>
+                <li><strong>Niveles educativos:</strong> Encuentra fácilmente centros que ofrezcan desde educación infantil y primaria hasta ESO y bachillerato.</li>
+                <li><strong>Servicios clave:</strong> Marca si necesitas que el colegio disponga de transporte escolar, comedor, horario ampliado, etc.</li>
+            </ul>
+            <p>Una vez que encuentres un colegio que te interese, haz clic en "Ver ficha completa" para acceder a toda la información detallada. ¡Así de fácil es empezar a construir el futuro educativo de tus hijos en Ferrol y comarca!</p>
+        </div>
+    </div>
+    <main class="container">
+        <div class="card p-4 mb-5 shadow-sm">
+            <h5 class="card-title mb-3">Filtra tu búsqueda</h5>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <select id="filtro-tipo" class="form-select">
+                        <option value="">Todos los tipos</option>
+                        <option value="Público">Público</option>
+                        <option value="Concertado">Concertado</option>
+                        <option value="Privado">Privado</option>
+                    </select>
+                </div>
+                <div class="col-md-9 d-flex align-items-center flex-wrap">
+                    <div class="form-check form-switch me-3">
+                        <input class="form-check-input" type="checkbox" id="filtro-transporte">
+                        <label class="form-check-label" for="filtro-transporte">🚌 Con transporte</label>
+                    </div>
+                    <div class="form-check form-switch me-3">
+                        <input class="form-check-input" type="checkbox" id="filtro-comedor">
+                        <label class="form-check-label" for="filtro-comedor">🍽️ Con comedor</label>
+                    </div>
+                    <div class="form-check form-switch me-3">
+                        <input class="form-check-input" type="checkbox" id="filtro-eso">
+                        <label class="form-check-label" for="filtro-eso">🎓 Con ESO</label>
+                    </div>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="filtro-bachillerato">
+                        <label class="form-check-label" for="filtro-bachillerato">📚 Con Bachillerato</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="listado-colegios" class="row g-4">
+            </div>
+        <p id="sin-resultados" class="text-center lead mt-5" style="display: none;">No se han encontrado colegios que coincidan con tu búsqueda.</p>
+    </main>
+
+    <footer class="text-center text-muted py-4 mt-5">
+            <p class="small">
+            <a href="aviso-legal.html" class="text-muted">Aviso Legal</a> | 
+            <a href="politica-de-privacidad.html" class="text-muted">Política de Privacidad</a> | 
+            <a href="politica-de-cookies.html" class="text-muted">Política de Cookies</a>
+        </p>
+        <p>&copy; 2025 Guía de Colegios de Ferrol</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const listadoContainer = document.getElementById('listado-colegios');
+            const sinResultados = document.getElementById('sin-resultados');
+            let colegios = [];
+
+            // --- 1. Cargar datos del JSON ---
+            fetch('colegios.json?v=' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
+                    colegios = data;
+                    renderColegios(colegios);
+                })
+                .catch(error => {
+                    console.error('Error al cargar los colegios:', error);
+                    listadoContainer.innerHTML = '<p class="text-danger">No se pudieron cargar los datos de los colegios.</p>';
+                });
+
+            // --- 2. Función para renderizar los colegios (VERSIÓN ACTUALIZADA) ---
+            function renderColegios(colegiosAMostrar) {
+                listadoContainer.innerHTML = '';
+                if (colegiosAMostrar.length === 0) {
+                    sinResultados.style.display = 'block';
+                } else {
+                    sinResultados.style.display = 'none';
+                }
+
+                colegiosAMostrar.forEach(colegio => {
+                    const card = `
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm card-colegio">
+                                <img src="${colegio.imagen_principal}" class="card-img-top" alt="Fachada de ${colegio.nombre}">
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">${colegio.nombre}</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">${colegio.zona}</h6>
+                                    <p class="card-text">${colegio.descripcion_corta}</p>
+                                    <div>
+                                        <span class="badge bg-primary">${colegio.tipo}</span>
+                                        ${colegio.servicios.transporte_escolar ? '<span class="badge bg-success">🚌 Transporte</span>' : ''}
+                                        ${colegio.servicios.comedor ? '<span class="badge bg-info">🍽️ Comedor</span>' : ''}
+                                    </div>
+                                    <div class="mt-auto pt-3">
+                                        <a href="${colegio.slug}" class="btn btn-primary w-100">Ver ficha completa</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    listadoContainer.innerHTML += card;
+                });
+            }
+
+            // --- 3. Lógica de filtros ---
+            const filtros = document.querySelectorAll('#filtro-tipo, .form-check-input');
+            filtros.forEach(filtro => {
+                filtro.addEventListener('change', aplicarFiltros);
+            });
+
+            function aplicarFiltros() {
+                const tipo = document.getElementById('filtro-tipo').value;
+                const transporte = document.getElementById('filtro-transporte').checked;
+                const comedor = document.getElementById('filtro-comedor').checked;
+                const eso = document.getElementById('filtro-eso').checked;
+                const bachillerato = document.getElementById('filtro-bachillerato').checked;
+
+                const colegiosFiltrados = colegios.filter(colegio => {
+                    return (tipo === '' || colegio.tipo === tipo) &&
+                           (!transporte || colegio.servicios.transporte_escolar) &&
+                           (!comedor || colegio.servicios.comedor) &&
+                           (!eso || colegio.cursos_impartidos.eso) &&
+                           (!bachillerato || colegio.cursos_impartidos.bachillerato);
+                });
+
+                renderColegios(colegiosFiltrados);
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+[
+  {
+    "id": 1,
+    "nombre": "Colegio Plurilingüe Montecastelo",
+    "slug": "colegio-montecastelo",
+    "tipo": "Concertado",
+    "zona": "Canido",
+    "direccion": "C/ Exemplo, 123, 15401 Ferrol",
+    "logo": "https://via.placeholder.com/150",
+    "imagen_principal": "https://via.placeholder.com/800x400",
+    "descripcion_corta": "Un centro de referencia en Ferrol, conocido por su proyecto educativo innovador y su enfoque en el plurilingüismo desde las primeras etapas.",
+    "informacion_general": {
+      "nivel_academico": "Alto",
+      "profesorado": "Equipo docente estable y altamente cualificado, con formación continua en nuevas metodologías pedagógicas.",
+      "ninos_por_aula": 25,
+      "idiomas": ["Inglés (Bilingüe)", "Francés", "Gallego"],
+      "proyecto_educativo": "Basado en el aprendizaje por proyectos, inteligencias múltiples y fomento de la creatividad y el pensamiento crítico."
+    },
+    "servicios": {
+      "transporte_escolar": true,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": true
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": true,
+      "bachillerato": true
+    },
+    "instalaciones": [
+      "Pabellón polideportivo",
+      "Aulas de informática",
+      "Laboratorios de ciencias",
+      "Biblioteca",
+      "Comedor con cocina propia",
+      "Amplias zonas de recreo"
+    ],
+    "actividades_extraescolares": [
+      "Fútbol",
+      "Baloncesto",
+      "Judo",
+      "Música y movimiento",
+      "Robótica",
+      "Teatro"
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "CEIP Isaac Peral",
+    "slug": "ceip-isaac-peral",
+    "tipo": "Público",
+    "zona": "Esteiro",
+    "direccion": "Av. de Esteiro, 55, 15403 Ferrol",
+    "logo": "https://via.placeholder.com/150",
+    "imagen_principal": "https://via.placeholder.com/800x400",
+    "descripcion_corta": "Colegio público comprometido con la educación inclusiva y de calidad, con una fuerte implicación de la comunidad educativa.",
+    "informacion_general": {
+      "nivel_academico": "Bueno",
+      "profesorado": "Funcionarios con amplia experiencia en la enseñanza pública.",
+      "ninos_por_aula": 22,
+      "idiomas": ["Inglés", "Gallego"],
+      "proyecto_educativo": "Fomento de la participación familiar y el desarrollo integral del alumno a través de programas de innovación educativa."
+    },
+    "servicios": {
+      "transporte_escolar": false,
+      "comedor": true,
+      "horario_ampliado": true,
+      "gabinete_psicopedagogico": false
+    },
+    "cursos_impartidos": {
+      "infantil": true,
+      "primaria": true,
+      "eso": false,
+      "bachillerato": false
+    },
+    "instalaciones": [
+      "Gimnasio",
+      "Aula de música",
+      "Huerto escolar",
+      "Patio de recreo"
+    ],
+    "actividades_extraescolares": [
+      "Patinaje",
+      "Ajedrez",
+      "Apoyo escolar"
+    ]
+  },
+  {
+  "id": 3,
+  "nombre": "Colegio Tirso de Molina",
+  "slug": "colegio-tirso-de-molina",
+  "tipo": "Concertado",
+  "zona": "Centro",
+  "direccion": "Rúa San Amaro, 10, 15403 Ferrol, A Coruña",
+  "logo": "https://tirsoferrol.org/wp-content/uploads/2020/08/Logo.png",
+  "imagen_principal": "https://www.lavozdegalicia.es/default/2021/03/16/00121615903741541599996/Foto/i14m1005.jpg",
+  "descripcion_corta": "Centro católico, mercedario y concertado con una larga trayectoria en Ferrol, que ofrece una formación integral desde Infantil hasta Bachillerato.",
+  "informacion_general": {
+    "nivel_academico": "Alto (con preparación para pruebas de certificación y ABAU)",
+    "profesorado": "Equipo docente comprometido con el proyecto educativo mercedario y en formación continua.",
+    "ninos_por_aula": 25,
+    "idiomas": ["Inglés (Certificación Cambridge)", "Francés", "Gallego"],
+    "proyecto_educativo": "Basado en los valores del humanismo cristiano y el carisma mercedario. Fomenta el desarrollo integral del alumno, la innovación pedagógica, el plurilingüismo y la atención a la diversidad."
+  },
+  "servicios": {
+    "transporte_escolar": false,
+    "comedor": true,
+    "horario_ampliado": true,
+    "gabinete_psicopedagogico": true
+  },
+  "cursos_impartidos": {
+    "infantil": true,
+    "primaria": true,
+    "eso": true,
+    "bachillerato": true
+  },
+  "instalaciones": [
+    "Pabellón polideportivo",
+    "Salón de actos",
+    "Biblioteca",
+    "Laboratorios (Física, Química, Biología)",
+    "Aulas de informática",
+    "Aula de tecnología y robótica",
+    "Comedor con cocina propia",
+    "Capilla",
+    "Patio interior y exterior"
+  ],
+  "actividades_extraescolares": [
+    "Deportes (Fútbol sala, Baloncesto, Judo)",
+    "Escuela de idiomas",
+    "Robótica y programación",
+    "Actividades artísticas",
+    "Catequesis y grupos cristianos"
+  ]
+},
+{
+  "id": 4,
+  "nombre": "CEIP de Ponzos",
+  "slug": "ceip-de-ponzos",
+  "tipo": "Público",
+  "zona": "Ponzos (Rural)",
+  "direccion": "Lugar Ponzos, 15594 Ferrol, A Coruña",
+  "logo": "https://www.edu.xunta.gal/centros/ceipponzos/system/files/logo_ponzos_web.jpg",
+  "imagen_principal": "https://www.paxinasgalegas.es/imagenes/ceip-de-ponzos_img108139t0m0w1600h800.jpg",
+  "descripcion_corta": "Colegio público de educación infantil y primaria situado en un entorno rural privilegiado de Ferrol. Destaca por su participación en programas de innovación educativa.",
+  "informacion_general": {
+    "nivel_academico": "Estándar (Público)",
+    "profesorado": "Profesorado funcionario dependiente de la Consellería de Educación.",
+    "ninos_por_aula": 20,
+    "idiomas": ["Inglés (Plurilingüe)", "Gallego", "Castellano"],
+    "proyecto_educativo": "Centro plurilingüe (PEPLI) que fomenta el aprendizaje a través de proyectos y programas de innovación como 'Polos Creativos' (audiovisual, robótica) y 'Radio na Biblio'."
+  },
+  "servicios": {
+    "transporte_escolar": true,
+    "comedor": true,
+    "horario_ampliado": false,
+    "gabinete_psicopedagogico": true
+  },
+  "cursos_impartidos": {
+    "infantil": true,
+    "primaria": true,
+    "eso": false,
+    "bachillerato": false
+  },
+  "instalaciones": [
+    "Aulas de Infantil y Primaria",
+    "Aula de Pedagoxía Terapéutica (PT)",
+    "Aula de Audición e Linguaxe (AL)",
+    "Biblioteca escolar",
+    "Gimnasio",
+    "Aula de usos múltiples",
+    "Pista polideportiva exterior cubierta",
+    "Patio de recreo con zona verde"
+  ],
+  "actividades_extraescolares": [
+    "Actividades gestionadas por el ANPA (Asociación de Nais e Pais de Alumnos)"
+  ]
+}
+]
