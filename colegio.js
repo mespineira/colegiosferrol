@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (colegio) {
                 renderFicha(colegio);
+                renderSimilar(colegios, colegio);
             } else {
                 fichaContainer.innerHTML = '<p class="alert alert-warning">No se ha encontrado el colegio especificado.</p>';
                 document.title = 'Colegio no encontrado | Guía de Colegios en Ferrol';
@@ -108,5 +109,59 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
         `;
         fichaContainer.innerHTML = fichaHTML;
+    }
+    // =======================================================
+    // == FUNCIÓN PARA MOSTRAR COLEGIOS SIMILARES ==
+    // =======================================================
+    function renderSimilar(todosLosColegios, colegioActual) {
+        const similarContainer = document.getElementById('colegios-similares-container');
+        if (!similarContainer) return; // Salir si el contenedor no existe
+
+        const tipoActual = colegioActual.tipo;
+        const idActual = colegioActual.id;
+        const MAX_SIMILARES = 3; // Mostrar un máximo de 3
+
+        // Definimos "similar" como un colegio del MISMO TIPO, pero que NO sea el actual.
+        const colegiosSimilares = todosLosColegios.filter(c => {
+            return c.tipo === tipoActual && c.id !== idActual;
+        });
+
+        // Barajamos los resultados para que no siempre salgan los mismos
+        const similaresBarajados = colegiosSimilares.sort(() => 0.5 - Math.random());
+
+        // Tomamos solo los 3 primeros
+        const listaFinal = similaresBarajados.slice(0, MAX_SIMILARES);
+
+        if (listaFinal.length === 0) {
+            similarContainer.style.display = 'none'; // Ocultar la sección si no hay similares
+            return;
+        }
+
+        // Construimos el HTML
+        let htmlSimilares = '<h2 class="mb-4">Otros colegios que te podrían interesar</h2><div class="row g-4">';
+
+        listaFinal.forEach(colegio => {
+            // Reutilizamos la estructura de "card" de tu index.html
+            // Usamos las URLs amigables que ya configuramos (href="${colegio.slug}")
+            htmlSimilares += `
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm card-colegio">
+                        <img src="${colegio.imagen_principal}" class="card-img-top" alt="Fachada de ${colegio.nombre}">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">${colegio.nombre}</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">${colegio.zona}</h6>
+                            <p class="card-text">${colegio.descripcion_corta.substring(0, 90)}...</p>
+                            <span class="badge bg-primary mb-2" style="width: fit-content;">${colegio.tipo}</span>
+                            <div class="mt-auto pt-3">
+                                <a href="${colegio.slug}" class="btn btn-primary w-100">Ver ficha completa</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        htmlSimilares += '</div>';
+        similarContainer.innerHTML = htmlSimilares;
     }
 });

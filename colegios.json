@@ -104,7 +104,7 @@
     "proyecto_educativo": "Basado en los valores del humanismo cristiano y el carisma mercedario. Fomenta el desarrollo integral del alumno, la innovación pedagógica, el plurilingüismo y la atención a la diversidad."
   },
   "servicios": {
-    "transporte_escolar": false,
+    "transporte_escolar": true,
     "comedor": true,
     "horario_ampliado": true,
     "gabinete_psicopedagogico": true
@@ -175,6 +175,111 @@
   ],
   "actividades_extraescolares": [
     "Actividades gestionadas por el ANPA (Asociación de Nais e Pais de Alumnos)"
+  ]
+},
+{
+  "id": 5,
+  "nombre": "CPR Plurilingüe Cristo Rey",
+  "slug": "cpr-plurilingue-cristo-rey",
+  "tipo": "Concertado",
+  "zona": "Centro",
+  "direccion": "Calle de La Coruña, 37-39-41, 15401, Ferrol (A Coruña)",
+  "logo": "",
+  "imagen_principal": "https://www.gmrcamps.es/img/news/picture_13195.jpg",
+  "descripcion_corta": "Centro privado concertado y plurilingüe, bajo la titularidad de la Fundación Educativa José Gras. Ofrece una formación integral basada en una concepción cristiana de la vida, desde Infantil hasta E.S.O.",
+  "informacion_general": {
+    "nivel_academico": "Enfocado en el desarrollo del pensamiento crítico y el aprendizaje activo ('aprender a aprender') sobre la mera acumulación de contenidos.",
+    "profesorado": "Equipo directivo y docente con un modelo de liderazgo híbrido (laico y congregacional) y en continua actualización pedagógica y tecnológica.",
+    "ninos_por_aula": null,
+    "idiomas": [
+      "Inglés",
+      "Castellano",
+      "Gallego"
+    ],
+    "proyecto_educativo": "Basado en el 'Carácter Propio' del Padre José Gras y el lema 'CRISTO REINA'. Busca la 'formación integral y armónica' del alumno desde una concepción cristiana, fomentando una metodología activa, la educación personalizada y el desarrollo de 5 factores (Intelectual, Afectivo, Social, Corporal y Moral)."
+  },
+  "servicios": {
+    "transporte_escolar": true,
+    "comedor": true,
+    "horario_ampliado": true,
+    "gabinete_psicopedagogico": true
+  },
+  "cursos_impartidos": {
+    "infantil": true,
+    "primaria": true,
+    "eso": true,
+    "bachillerato": false
+  },
+  "instalaciones": [
+    "Polideportivo",
+    "Gimnasio",
+    "Pistas de pádel",
+    "Campo de fútbol",
+    "Salón de Actos",
+    "Biblioteca",
+    "Laboratorios",
+    "Capilla",
+    "Comedor con cocina propia (separado por etapas)",
+    "Aulas especializadas (Aula TEA, CREAtelier, CREActiva)",
+    "Patios (interior y exterior)"
+  ],
+  "actividades_extraescolares": [
+    "Actividades lúdicas",
+    "Actividades artísticas",
+    "Actividades académicas",
+    "Actividades sociales",
+    "Actividades tecnológicas",
+    "Actividades deportivas"
+  ]
+},
+{
+  "id": 6,
+  "nombre": "IES Concepción Arenal",
+  "slug": "ies-concepcion-arenal",
+  "tipo": "Público",
+  "zona": "Centro",
+  "direccion": "Rúa Cuntis, s/n, 15403, Ferrol (A Coruña)",
+  "logo": "",
+  "imagen_principal": "https://concepcionarenal.org/wp-content/uploads/2022/11/Fachada-IES-Concepcion-Arenal-Ferrol-1024x704.jpg",
+  "descripcion_corta": "Instituto público de enseñanza que ofrece ESO, Bachillerato y FP. Destaca por sus especializaciones únicas en la comarca: Bachillerato de Artes Plásticas y FP de la familia Química.",
+  "informacion_general": {
+    "nivel_academico": "Enfoque en especializaciones estratégicas (Artes y Química) y en la aplicación práctica de la ciencia (STEM, Sostenibilidad).",
+    "profesorado": "Equipo docente implicado en la dinamización (lingüística, biblioteca) y en proyectos de innovación (STEM, Erasmus+).",
+    "ninos_por_aula": null,
+    "idiomas": [
+      "Inglés",
+      "Gallego",
+      "Castellano"
+    ],
+    "proyecto_educativo": "Basado en el Proxecto Educativo de Centro (PEC). Se fundamenta en valores seculares, democráticos y sociales como la tolerancia, el pluralismo y la igualdad. El objetivo prioritario es la convivencia y dar una respuesta efectiva a la diversidad del alumnado."
+  },
+  "servicios": {
+    "transporte_escolar": false,
+    "comedor": false,
+    "horario_ampliado": false,
+    "gabinete_psicopedagogico": true
+  },
+  "cursos_impartidos": {
+    "infantil": false,
+    "primaria": false,
+    "eso": true,
+    "bachillerato": true
+  },
+  "instalaciones": [
+    "Biblioteca (con blog propio)",
+    "Gimnasio",
+    "Laboratorios de Química (para ciclos de FP)",
+    "Aula Virtual (AVConcepción)",
+    "Aulas para Bachillerato de Artes Plásticas"
+  ],
+  "actividades_extraescolares": [
+    "Proyectos STEM (EduTecEmprende, STEM BACH)",
+    "Competición de robótica (First Lego League)",
+    "Radio escolar (ARENAL NAS ONDAS)",
+    "Periódicos digitales (Xornais dixitais)",
+    "Club de Lectura",
+    "Equipo de Dinamización la Lingua Galega",
+    "Proyectos Erasmus+"
   ]
 }
 ]
