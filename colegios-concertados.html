@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colegios Concertados y Privados en Ferrol | Guía 2025</title>
+    <meta name="description" content="Listado de colegios concertados y privados en Ferrol. Compara proyectos educativos, idearios, instalaciones y servicios.">
+    <link rel="stylesheet" href="/estilos-bitkids.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T46Y37LT38"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T46Y37LT38');
+    </script>
+</head>
+
+<header class="app-header bg-white shadow-sm">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="/index.html">
+                <span class="fw-bold text-primary">Guía</span>
+                <span class="fw-normal">Colegios Ferrol</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/index.html">Todos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/colegios-publicos.html">Públicos</a></li>
+                    <li class="nav-item"><a class="nav-link active fw-bold" href="/colegios-concertados.html">Concertados</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</header>
+
+<body style="background-color: #f8f9fa;">
+    
+    <header class="container text-center my-5">
+        <h1 class="display-4">Colegios Concertados y Privados en Ferrol</h1>
+        <p class="lead">Proyectos educativos propios y valores diferenciados.</p>
+    </header>
+
+    <div class="container">
+        <div class="bg-white p-4 p-md-5 rounded shadow-sm mb-5">
+            <h2>Encuentra tu colegio concertado o privado ideal</h2>
+            <p>Ferrol cuenta con una amplia tradición de <strong>colegios concertados y privados</strong>, muchos de ellos con décadas de historia y un fuerte arraigo en la ciudad. Estos centros ofrecen proyectos educativos singulares, a menudo con un ideario propio que busca la formación integral del alumno en valores.</p>
+            <p>Al elegir un centro de esta categoría, es importante valorar aspectos como el coste de los servicios complementarios, el horario ampliado y la oferta de actividades extraescolares. Aquí encontrarás todas las opciones disponibles.</p>
+        </div>
+
+        <div class="card p-4 mb-5 shadow-sm">
+            <h5 class="card-title mb-3">Filtra tu búsqueda</h5>
+            <div class="d-flex align-items-center flex-wrap">
+                <div class="form-check form-switch me-4 mb-2">
+                    <input class="form-check-input" type="checkbox" id="filtro-transporte">
+                    <label class="form-check-label" for="filtro-transporte">🚌 Con transporte</label>
+                </div>
+                <div class="form-check form-switch me-4 mb-2">
+                    <input class="form-check-input" type="checkbox" id="filtro-comedor">
+                    <label class="form-check-label" for="filtro-comedor">🍽️ Con comedor</label>
+                </div>
+                <div class="form-check form-switch me-4 mb-2">
+                    <input class="form-check-input" type="checkbox" id="filtro-eso">
+                    <label class="form-check-label" for="filtro-eso">🎓 Con ESO</label>
+                </div>
+                <div class="form-check form-switch mb-2">
+                    <input class="form-check-input" type="checkbox" id="filtro-bachillerato">
+                    <label class="form-check-label" for="filtro-bachillerato">📚 Con Bachillerato</label>
+                </div>
+            </div>
+        </div>
+
+        <div id="listado-colegios" class="row g-4">
+            <div class="text-center">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Cargando...</span>
+                </div>
+            </div>
+        </div>
+        <p id="sin-resultados" class="text-center lead mt-5" style="display: none;">No se han encontrado colegios con esos criterios.</p>
+    </div>
+
+    <footer class="text-center text-muted py-4 mt-5">
+        <p class="small">
+            <a href="/aviso-legal.html" class="text-muted">Aviso Legal</a> | 
+            <a href="/politica-de-privacidad.html" class="text-muted">Política de Privacidad</a> | 
+            <a href="/politica-de-cookies.html" class="text-muted">Política de Cookies</a>
+        </p>
+        <p>&copy; 2025 Guía de Colegios de Ferrol</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const listadoContainer = document.getElementById('listado-colegios');
+            const sinResultados = document.getElementById('sin-resultados');
+            let colegios = [];
+
+            fetch('/colegios.json?v=' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
+                    // FILTRO INICIAL: TODO LO QUE NO SEA PÚBLICO
+                    colegios = data.filter(c => c.tipo !== 'Público');
+                    renderColegios(colegios);
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    listadoContainer.innerHTML = '<p class="text-danger">Error al cargar datos.</p>';
+                });
+
+            function renderColegios(lista) {
+                listadoContainer.innerHTML = '';
+                if (lista.length === 0) {
+                    sinResultados.style.display = 'block';
+                } else {
+                    sinResultados.style.display = 'none';
+                }
+
+                lista.forEach(colegio => {
+                    const card = `
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 shadow-sm card-colegio">
+                                <a href="/colegio/${colegio.slug}">
+                                    <img src="${colegio.imagen_principal}" class="card-img-top" alt="${colegio.nombre}">
+                                </a>
+                                <div class="card-body d-flex flex-column">
+                                    <h5 class="card-title">
+                                        <a href="/colegio/${colegio.slug}" class="text-decoration-none text-dark stretched-link">${colegio.nombre}</a>
+                                    </h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">${colegio.zona}</h6>
+                                    <p class="card-text">${colegio.descripcion_corta}</p>
+                                    <div>
+                                        <span class="badge bg-primary">${colegio.tipo}</span>
+                                        ${colegio.servicios.transporte_escolar ? '<span class="badge bg-success">🚌 Transporte</span>' : ''}
+                                        ${colegio.servicios.comedor ? '<span class="badge bg-info">🍽️ Comedor</span>' : ''}
+                                    </div>
+                                    <div class="mt-auto pt-3">
+                                        <a href="/colegio/${colegio.slug}" class="btn btn-primary w-100">Ver ficha completa</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    listadoContainer.innerHTML += card;
+                });
+            }
+
+            const filtros = document.querySelectorAll('.form-check-input');
+            filtros.forEach(f => f.addEventListener('change', () => {
+                const transporte = document.getElementById('filtro-transporte').checked;
+                const comedor = document.getElementById('filtro-comedor').checked;
+                const eso = document.getElementById('filtro-eso').checked;
+                const bachillerato = document.getElementById('filtro-bachillerato').checked;
+
+                const filtrados = colegios.filter(c => 
+                    (!transporte || c.servicios.transporte_escolar) &&
+                    (!comedor || c.servicios.comedor) &&
+                    (!eso || c.cursos_impartidos.eso) &&
+                    (!bachillerato || c.cursos_impartidos.bachillerato)
+                );
+                renderColegios(filtrados);
+            }));
+        });
+    </script>
+</body>
+</html>

@@ -150,7 +150,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="card h-100 shadow-sm card-colegio">
                         <img src="${colegio.imagen_principal}" class="card-img-top" alt="Fachada de ${colegio.nombre}">
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">${colegio.nombre}</h5>
+                            <h5 class="card-title">
+                                <a href="/colegio/${colegio.slug}" class="text-decoration-none text-dark">${colegio.nombre}</a>
+                            </h5>
                             <h6 class="card-subtitle mb-2 text-muted">${colegio.zona}</h6>
                             <p class="card-text">${colegio.descripcion_corta.substring(0, 90)}...</p>
                             <span class="badge bg-primary mb-2" style="width: fit-content;">${colegio.tipo}</span>

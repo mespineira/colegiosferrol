@@ -31,7 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="card h-100 shadow-sm card-colegio">
                         <img src="${noticia.imagen_destacada_url}" class="card-img-top" alt="${noticia.titulo}">
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">${noticia.titulo}</h5>
+                            <h5 class="card-title">
+                                <a href="/blog/${noticia.slug_seo}" class="text-decoration-none text-dark">${noticia.titulo}</a>
+                            </h5>
                             <p class="card-text">${noticia.descripcion_corta}</p>
                             <div class="mt-auto pt-3">
                                 <a href="/blog/${noticia.slug_seo}" class="btn btn-primary w-100">Leer más</a>
