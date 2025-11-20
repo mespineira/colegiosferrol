@@ -11,127 +11,67 @@
         
     </style>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T46Y37LT38"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T46Y37LT38');
-</script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-T46Y37LT38');
+    </script>
 </head>
 
+<body style="background-color: #f8f9fa;">
 
-<div id="cookie-consent-banner" class="cookie-consent-banner">
-    <div class="container d-md-flex align-items-center justify-content-between">
-        <p class="mb-0 me-3">
-            Utilizamos cookies propias y de terceros para mejorar tu experiencia y nuestros servicios. Al hacer clic en "Aceptar todo", aceptas su uso. Puedes obtener más información en nuestra 
-            <a href="/politica-de-cookies.html">Política de Cookies</a>.
-        </p>
-        <div class="cookie-buttons mt-3 mt-md-0">
-            <button id="btn-cookie-accept" class="btn btn-primary">Aceptar todo</button>
-            <button id="btn-cookie-reject" class="btn btn-secondary">Rechazar</button>
+    <div id="cookie-consent-banner" class="cookie-consent-banner">
+        <div class="container d-md-flex align-items-center justify-content-between">
+            <p class="mb-0 me-3">
+                Utilizamos cookies propias y de terceros para mejorar tu experiencia y nuestros servicios. Al hacer clic en "Aceptar todo", aceptas su uso. Puedes obtener más información en nuestra 
+                <a href="/politica-de-cookies.html">Política de Cookies</a>.
+            </p>
+            <div class="cookie-buttons mt-3 mt-md-0">
+                <button id="btn-cookie-accept" class="btn btn-primary">Aceptar todo</button>
+                <button id="btn-cookie-reject" class="btn btn-secondary">Rechazar</button>
+            </div>
         </div>
     </div>
-</div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const COOKIE_NAME = 'user_cookie_consent';
-        const COOKIE_EXPIRATION_DAYS = 365;
-
-        const banner = document.getElementById('cookie-consent-banner');
-        const acceptBtn = document.getElementById('btn-cookie-accept');
-        const rejectBtn = document.getElementById('btn-cookie-reject');
-
-        // Función para establecer una cookie
-        const setCookie = (name, value, days) => {
-            let expires = "";
-            if (days) {
-                const date = new Date();
-                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-                expires = "; expires=" + date.toUTCString();
-            }
-            document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
-        };
-
-        // Función para obtener una cookie
-        const getCookie = (name) => {
-            const nameEQ = name + "=";
-            const ca = document.cookie.split(';');
-            for (let i = 0; i < ca.length; i++) {
-                let c = ca[i];
-                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
-                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
-            }
-            return null;
-        };
-        
-        // Ocultar el banner
-        const hideBanner = () => {
-            banner.classList.remove('active');
-        };
-
-        // Mostrar el banner
-        const showBanner = () => {
-            banner.classList.add('active');
-        };
-        
-        // Event Listeners para los botones
-        acceptBtn.addEventListener('click', () => {
-            console.log('Consentimiento de cookies aceptado.');
-            setCookie(COOKIE_NAME, 'accepted', COOKIE_EXPIRATION_DAYS);
-            hideBanner();
-        });
-        
-        rejectBtn.addEventListener('click', () => {
-            console.log('Consentimiento de cookies rechazado.');
-            setCookie(COOKIE_NAME, 'rejected', COOKIE_EXPIRATION_DAYS);
-            hideBanner();
-        });
-
-        // Comprobar si la cookie de consentimiento ya existe
-        if (!getCookie(COOKIE_NAME)) {
-            setTimeout(showBanner, 500);
-        }
-    });
-</script>
-<header class="app-header bg-white shadow-sm">
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="/index.html">
-                <span class="fw-bold text-primary">Guía</span>
-                <span class="fw-normal">Colegios Ferrol</span>
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/index.html">Todos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/colegios-publicos.html">Públicos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/colegios-concertados.html">Concertados</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/blog.html">Blog</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</header>
-<body>
+    <header class="app-header bg-white shadow-sm">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light" data-bs-theme="light">
+                <a class="navbar-brand" href="/index.html">
+                    <span class="fw-bold text-primary">Guía</span>
+                    <span class="fw-normal">Colegios Ferrol</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="/index.html">Todos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/colegios-publicos.html">Públicos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/colegios-concertados.html">Concertados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog.html">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
 
     <header class="container text-center my-5">
         <h1 class="display-4">Guía de Colegios en Ferrol</h1>
         <p class="lead">Encuentra y compara los mejores centros educativos para tus hijos de forma fácil y rápida.</p>
     </header>
+
     <div class="container">
         <div class="bg-white p-4 p-md-5 rounded shadow-sm mb-5">
             <h2 class="mb-3">Encuentra el Colegio Ideal para tus Hijos en Ferrol</h2>
@@ -148,6 +88,7 @@
             <p>Una vez que encuentres un colegio que te interese, haz clic en "Ver ficha completa" para acceder a toda la información detallada. ¡Así de fácil es empezar a construir el futuro educativo de tus hijos en Ferrol y comarca!</p>
         </div>
     </div>
+
     <main class="container">
         <div class="card p-4 mb-5 shadow-sm">
             <h5 class="card-title mb-3">Filtra tu búsqueda</h5>
@@ -184,6 +125,7 @@
         <div id="listado-colegios" class="row g-4">
             </div>
         <p id="sin-resultados" class="text-center lead mt-5" style="display: none;">No se han encontrado colegios que coincidan con tu búsqueda.</p>
+        
         <div class="container mt-5 pt-4 border-top">
             <h2 class="text-center display-6 mb-4">Últimas Noticias del Blog</h2>
             <div id="ultimas-noticias" class="row g-4">
@@ -202,14 +144,71 @@
         </p>
         <p>&copy; 2025 Guía de Colegios de Ferrol</p>
     </footer>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const COOKIE_NAME = 'user_cookie_consent';
+            const COOKIE_EXPIRATION_DAYS = 365;
+
+            const banner = document.getElementById('cookie-consent-banner');
+            const acceptBtn = document.getElementById('btn-cookie-accept');
+            const rejectBtn = document.getElementById('btn-cookie-reject');
+
+            const setCookie = (name, value, days) => {
+                let expires = "";
+                if (days) {
+                    const date = new Date();
+                    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
+            };
+
+            const getCookie = (name) => {
+                const nameEQ = name + "=";
+                const ca = document.cookie.split(';');
+                for (let i = 0; i < ca.length; i++) {
+                    let c = ca[i];
+                    while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                    if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+                }
+                return null;
+            };
+            
+            const hideBanner = () => {
+                banner.classList.remove('active');
+            };
+            const showBanner = () => {
+                banner.classList.add('active');
+            };
+            
+            acceptBtn.addEventListener('click', () => {
+                console.log('Consentimiento de cookies aceptado.');
+                setCookie(COOKIE_NAME, 'accepted', COOKIE_EXPIRATION_DAYS);
+                hideBanner();
+            });
+            
+            rejectBtn.addEventListener('click', () => {
+                console.log('Consentimiento de cookies rechazado.');
+                setCookie(COOKIE_NAME, 'rejected', COOKIE_EXPIRATION_DAYS);
+                hideBanner();
+            });
+
+            if (!getCookie(COOKIE_NAME)) {
+                setTimeout(showBanner, 500);
+            }
+        });
+    </script>
+
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const listadoContainer = document.getElementById('listado-colegios');
             const sinResultados = document.getElementById('sin-resultados');
             let colegios = [];
 
-            // --- 1. Cargar datos del JSON (RUTA CORREGIDA) ---
+            // Cargar datos del JSON
             fetch('/colegios.json?v=' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {
@@ -221,7 +220,7 @@
                     listadoContainer.innerHTML = '<p class="text-danger">No se pudieron cargar los datos de los colegios.</p>';
                 });
 
-            // --- 2. Función para renderizar los colegios ---
+            // Función para renderizar los colegios
             function renderColegios(colegiosAMostrar) {
                 listadoContainer.innerHTML = '';
                 if (colegiosAMostrar.length === 0) {
@@ -234,7 +233,9 @@
                     const card = `
                         <div class="col-md-6 col-lg-4">
                             <div class="card h-100 shadow-sm card-colegio">
-                                <img src="${colegio.imagen_principal}" class="card-img-top" alt="Fachada de ${colegio.nombre}">
+                                <a href="/colegio/${colegio.slug}">
+                                    <img src="${colegio.imagen_principal}" class="card-img-top" alt="Fachada de ${colegio.nombre}">
+                                </a>
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">
                                         <a href="/colegio/${colegio.slug}" class="text-decoration-none text-dark stretched-link">${colegio.nombre}</a>
@@ -257,7 +258,7 @@
                 });
             }
 
-            // --- 3. Lógica de filtros ---
+            // Lógica de filtros
             const filtros = document.querySelectorAll('#filtro-tipo, .form-check-input');
             filtros.forEach(filtro => {
                 filtro.addEventListener('change', aplicarFiltros);
@@ -281,15 +282,13 @@
                 renderColegios(colegiosFiltrados);
             }
             
-            // Llamamos a la nueva función
+            // Cargar últimas noticias
             cargarUltimasNoticias();
 
-            // Función para cargar las 3 últimas noticias
             function cargarUltimasNoticias() {
                 const noticiasContainer = document.getElementById('ultimas-noticias');
                 if (!noticiasContainer) return;
 
-                // RUTA CORREGIDA
                 fetch('/noticias.json?v=' + new Date().getTime())
                     .then(response => response.json())
                     .then(data => {
@@ -300,10 +299,12 @@
                             const card = `
                                 <div class="col-md-4">
                                     <div class="card h-100 shadow-sm card-colegio">
-                                        <img src="${noticia.imagen_destacada_url}" class="card-img-top" alt="${noticia.titulo}">
+                                        <a href="/blog/${noticia.slug_seo}">
+                                            <img src="${noticia.imagen_destacada_url}" class="card-img-top" alt="${noticia.titulo}">
+                                        </a>
                                         <div class="card-body d-flex flex-column">
                                             <h5 class="card-title">
-                                                <a href="/colegio/${noticia.slug}" class="text-decoration-none text-dark stretched-link">${noticia.titulo}</a>
+                                                <a href="/blog/${noticia.slug_seo}" class="text-decoration-none text-dark">${noticia.titulo}</a>
                                             </h5>
                                             <p class="card-text">${noticia.descripcion_corta}</p>
                                             <div class="mt-auto pt-3">
@@ -321,7 +322,7 @@
                         noticiasContainer.innerHTML = '<p class="text-warning">No se pudieron cargar las noticias.</p>';
                     });
             }
-        }); // Cierre del DOMContentLoaded
+        });
     </script>
 
 </body>
