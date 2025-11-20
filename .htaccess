@@ -2,7 +2,7 @@
 RewriteEngine On
 
 # ===================================================================
-# == REGLAS DE REESCRITURA PARA SLUGS (¡VERSIÓN CORREGIDA!) ==
+# == REGLAS DE REESCRITURA PARA SLUGS ==
 # ===================================================================
 
 # Evita que las reglas se apliquen a archivos o directorios existentes
@@ -10,16 +10,18 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 
 # --- NUEVA REGLA PARA COLEGIOS ---
-# Carga /colegio.html SIN query string. El JS leerá el path.
+# Carga /colegio.html SIN query string.
+# El JS leerá el path.
 RewriteRule ^colegio/([a-zA-Z0-9-]+)$ /colegio.html [L]
 
 # --- NUEVA REGLA PARA EL BLOG ---
-# Carga /entrada.html SIN query string. El JS leerá el path.
+# Carga /entrada.html SIN query string.
+# El JS leerá el path.
 RewriteRule ^blog/([a-zA-Z0-9-]+)$ /entrada.html [L]
 
 
 # ===================================================================
-# == OTRAS REGLAS (Se mantienen como estaban) ==
+# == OTRAS REGLAS ==
 # ===================================================================
 
 # INSTRUCCIONES PARA NO CACHEAR LOS ARCHIVOS JSON
@@ -34,6 +36,6 @@ RewriteRule ^blog/([a-zA-Z0-9-]+)$ /entrada.html [L]
     Header set Expires "0"
 </Files>
 
-# FORZAR HTTPS
+# FORZAR HTTPS (Opcional, dependiendo de tu hosting)
 RewriteCond %{HTTP:X-Forwarded-Proto} !https
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
