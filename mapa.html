@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ficha del Colegio | Guía de Colegios en Ferrol</title>
-    <meta name="description" content="Información detallada sobre el colegio: instalaciones, proyecto educativo, servicios, cursos y más.">
+    <title>Mapa de Colegios en Ferrol | Localiza tu Centro</title>
+    <meta name="description" content="Mapa interactivo con todos los colegios públicos y concertados de Ferrol. Encuentra los centros educativos más cercanos a tu ubicación.">
     <link rel="stylesheet" href="/estilos-bitkids.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
     <style>
-        body { background-color: #f8f9fa; }
-        .list-group-item-check {
-            background-color: #e9f5ec;
-            color: #155724;
-        }
-         .list-group-item-cross {
-            background-color: #f8d7da;
-            color: #721c24;
+        #mapa-colegios {
+            height: 600px; /* Altura del mapa */
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
     </style>
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-T46Y37LT38"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
       gtag('config', 'G-T46Y37LT38');
     </script>
 </head>
@@ -54,24 +53,14 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-    
+
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link active fw-bold" href="/index.html">Todos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/colegios-publicos.html">Públicos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/colegios-concertados.html">Concertados</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/mapa.html">Mapa</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/blog.html">Blog</a>
-                        </li>
+                        <li class="nav-item"><a class="nav-link" href="/index.html">Todos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/colegios-publicos.html">Públicos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/colegios-concertados.html">Concertados</a></li>
+                        <li class="nav-item"><a class="nav-link active fw-bold" href="/mapa.html">Mapa</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/blog.html">Blog</a></li>
                     </ul>
                 </div>
             </nav>
@@ -79,44 +68,20 @@
     </header>
 
     <main class="container my-5">
-        <div id="ficha-colegio">
-            <div class="text-center">
-                <div class="spinner-border" role="status">
-                    <span class="visually-hidden">Cargando...</span>
-                </div>
-            </div>
-        </div>
-        
-        <aside class="bitkids-ad" aria-label="Anuncio de BitKids Academy">
-            <div class="bitkids-ad__logo">
-              <img width="723" height="724" src="https://bitkids.es/wp-content/uploads/2024/09/cropped-LOGO-BITKIDS.png" class="custom-logo navbar-brand" alt="Logo BitKids. Academia de programación y robótica para niños en Ferrol." decoding="async" srcset="https://bitkids.es/wp-content/uploads/2024/09/cropped-LOGO-BITKIDS.png 723w, https://bitkids.es/wp-content/uploads/2024/09/cropped-LOGO-BITKIDS-300x300.png 300w, https://bitkids.es/wp-content/uploads/2024/09/cropped-LOGO-BITKIDS-150x150.png 150w" sizes="(max-width: 723px) 100vw, 723px">
-            </div>
-            <div class="bitkids-ad__content">
-              <h3 class="bitkids-ad__headline">
-                Descubre la mejor extraescolar de robótica y programación de Ferrol
-              </h3>
-              <p class="bitkids-ad__description">
-                Fomenta su creatividad y pensamiento lógico con cursos innovadores para niños y niñas. ¡Prepara su futuro hoy!
-              </p>
-            </div>
-            <div class="bitkids-ad__cta">
-              <a href="https://www.bitkids.es/?source=anuncio_colegios_ferrol" 
-                 target="_blank" 
-                 rel="noopener sponsored" 
-                 class="bitkids-ad__button">
-                 ¡Infórmate Ya!
-              </a>
-            </div>
-        </aside>
-  
-        <div id="colegios-similares-container" class="my-5"></div>
-        <div class="text-center mt-5">
-            <a href="/index.html" class="btn btn-secondary">&larr; Volver al listado</a>
+        <header class="text-center mb-5">
+            <h1 class="display-4">Mapa de Colegios en Ferrol</h1>
+            <p class="lead">Explora la ubicación de todos los centros educativos y encuentra el más cercano a ti.</p>
+        </header>
+
+        <div id="mapa-colegios" class="mb-5"></div>
+
+        <div class="text-center">
+            <a href="/index.html" class="btn btn-primary">Ver listado completo</a>
         </div>
     </main>
 
     <footer class="text-center text-muted py-4 mt-5">
-            <p class="small">
+        <p class="small">
             <a href="/aviso-legal.html" class="text-muted">Aviso Legal</a> | 
             <a href="/politica-de-privacidad.html" class="text-muted">Política de Privacidad</a> | 
             <a href="/politica-de-cookies.html" class="text-muted">Política de Cookies</a>
@@ -125,7 +90,9 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/colegio.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/mapa.js"></script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const COOKIE_NAME = 'user_cookie_consent';
@@ -152,25 +119,17 @@
                 }
                 return null;
             };
-            const hideBanner = () => {
-                banner.classList.remove('active');
-            };
-            const showBanner = () => {
-                banner.classList.add('active');
-            };
+            const hideBanner = () => { banner.classList.remove('active'); };
+            const showBanner = () => { banner.classList.add('active'); };
             acceptBtn.addEventListener('click', () => {
-                console.log('Consentimiento de cookies aceptado.');
                 setCookie(COOKIE_NAME, 'accepted', COOKIE_EXPIRATION_DAYS);
                 hideBanner();
             });
             rejectBtn.addEventListener('click', () => {
-                console.log('Consentimiento de cookies rechazado.');
                 setCookie(COOKIE_NAME, 'rejected', COOKIE_EXPIRATION_DAYS);
                 hideBanner();
             });
-            if (!getCookie(COOKIE_NAME)) {
-                setTimeout(showBanner, 500);
-            }
+            if (!getCookie(COOKIE_NAME)) { setTimeout(showBanner, 500); }
         });
     </script>
 
