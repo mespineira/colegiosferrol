@@ -44,12 +44,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Función para pintar la ficha completa en el HTML
     function renderFicha(colegio) {
         // Actualizar el título y la metadescripción orientados al clic (SEO)
-        document.title = `${colegio.nombre} en Ferrol: Opiniones, Servicios y Plazas 2026.`;
-        let serviciosExtra = [];
-        if (colegio.servicios.comedor) serviciosExtra.push('comedor');
-        if (colegio.servicios.transporte_escolar) serviciosExtra.push('transporte escolar');
-        let txtServicios = serviciosExtra.length > 0 ? ` Cuenta con servicio de ${serviciosExtra.join(' y ')}.` : '';
-        document.querySelector('meta[name="description"]').setAttribute('content', `Descubre el ${colegio.nombre}.${txtServicios} Lee opiniones reales de otras familias aquí. ${colegio.descripcion_corta}`);
+        document.title = `▷ ${colegio.nombre} (Ferrol): Opiniones, Horarios y Servicios`;
+        
+        let metaDesc = document.querySelector('meta[name="description"]');
+        if (!metaDesc) {
+            metaDesc = document.createElement('meta');
+            metaDesc.setAttribute('name', 'description');
+            document.head.appendChild(metaDesc);
+        }
+        metaDesc.setAttribute('content', `¿Buscas información sobre ${colegio.nombre} en Ferrol? Descubre sus opiniones, horarios, servicios de comedor, transporte y actividades extraescolares para el curso 2026/2027.`);
 
         const cursosImpartidosHTML = `
             <li class="list-group-item ${colegio.cursos_impartidos.infantil ? 'list-group-item-check' : ''}">Educación Infantil</li>
@@ -148,12 +151,34 @@ document.addEventListener('DOMContentLoaded', () => {
                             <p>${colegio.informacion_general.profesorado}</p>
                         </div>
                         <div class="col-md-4">
-                            <ul class="list-group">
+                            <ul class="list-group mb-4">
                                 <li class="list-group-item"><strong>Nivel Académico:</strong> ${colegio.informacion_general.nivel_academico}</li>
                                 <li class="list-group-item"><strong>Niños por aula:</strong> ${colegio.informacion_general.ninos_por_aula || 'No especificado'}</li>
                                 <li class="list-group-item"><strong>Idiomas:</strong> ${colegio.informacion_general.idiomas.join(', ')}</li>
                                 ${colegio.telefono ? `<li class="list-group-item"><strong>Teléfono:</strong> <a href="tel:${colegio.telefono}">${colegio.telefono}</a></li>` : ''}
                             </ul>
+
+                            <!-- Tarjeta de Conversión Cruzada (Recomendación Editorial) -->
+                            <div class="card border-0 rounded-3 shadow-sm mb-4" style="background-color: #f9faff; border-left: 4px solid #41038f !important;">
+                                <div class="card-body p-3">
+                                    <div class="d-flex align-items-center justify-content-between mb-2">
+                                        <span class="badge rounded-pill text-white px-2.5 py-1.5 d-inline-flex align-items-center" style="background-color: #41038f; font-size: 0.75rem; font-weight: 600;">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-star-fill me-1" viewBox="0 0 16 16">
+                                                <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                                            </svg>
+                                            Extraescolar Recomendada
+                                        </span>
+                                        <img src="https://bitkids.es/wp-content/uploads/2024/09/cropped-LOGO-BITKIDS.png" alt="Logo BitKids" style="width: 30px; height: 30px; border-radius: 6px; object-fit: cover;" class="shadow-sm">
+                                    </div>
+                                    <h4 class="card-title h6 fw-bold text-dark mb-1">¿Buscas el complemento educativo ideal?</h4>
+                                    <p class="card-text text-secondary mb-3" style="font-size: 0.85rem; line-height: 1.5;">
+                                        Gran parte de los alumnos de los centros de Ferrol potencian su lógica y creatividad en <strong>BitKids</strong>, la academia de robótica y programación de referencia en la comarca. Reserva una Clase de Prueba Gratuita aquí.
+                                    </p>
+                                    <a href="https://bitkids.es" target="_blank" rel="noopener" class="btn text-white w-100 py-2 fw-bold" style="background-color: #508f02; border: none; border-radius: 6px; font-size: 0.8rem;">
+                                        Clase de Prueba Gratuita
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
