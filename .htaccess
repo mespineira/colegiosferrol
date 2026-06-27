@@ -56,6 +56,9 @@ RewriteRule ^mapa\.html$ /mapa-colegios-ferrol [L,R=301]
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteRule ^blog\.html$ /blog-educativo-ferrol [L,R=301]
 
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^jornadas-puertas-abiertas-colegios-ferrol-2027\.html$ /jornadas-puertas-abiertas-2027 [L,R=301]
+
 # ===================================================================
 # == REGLAS DE REESCRITURA PARA SLUGS ==
 # ===================================================================
@@ -73,6 +76,7 @@ RewriteRule ^institutos-ferrol/?$ /institutos-ferrol.html [L]
 # --- NUEVAS REGLAS PARA PÁGINAS PRINCIPALES ---
 RewriteRule ^mapa-colegios-ferrol/?$ /mapa.html [L]
 RewriteRule ^blog-educativo-ferrol/?$ /blog.html [L]
+RewriteRule ^jornadas-puertas-abiertas-2027/?$ /jornadas-puertas-abiertas-colegios-ferrol-2027.html [L]
 
 # --- NUEVA REGLA PARA COLEGIOS ---
 # Carga /colegio.html SIN query string.
