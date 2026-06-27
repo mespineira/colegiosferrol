@@ -201,3 +201,41 @@ body { background-color: #f8f9fa; }
 .app-header .nav-link:hover {
     color: var(--bitkids-color-primary);
 }
+
+/* --- ESTILOS DEL COMPARADOR --- */
+.sticky-comparador {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1040; /* Justo debajo del banner de cookies (1050) pero encima de modales/otros (1020) */
+}
+
+/* Ajustes tabla modal */
+#modal-comparador-contenido table th {
+    white-space: nowrap;
+}
+#modal-comparador-contenido table td {
+    vertical-align: middle;
+}
+
+/* --- RECOMENDACIÓN EDITORIAL NATIVA --- */
+.recomendacion-seccion h3 {
+    text-wrap: balance;
+    color: #212529;
+}
+
+.recomendacion-seccion p {
+    text-wrap: pretty;
+    line-height: 1.7;
+}
+
+.recomendacion-seccion .destacado-oferta {
+    background-color: #ffffff;
+    border-left: 4px solid var(--bs-primary, #0d6efd);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.recomendacion-seccion .destacado-oferta p {
+    color: #212529;
+}

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jornadas de Puertas Abiertas en Colegios de Ferrol 2027: Fechas y Plazos</title>
+    <meta name="description" content="Guía actualizada de las Jornadas de Puertas Abiertas de los colegios de Ferrol para el curso 2027/2028. Encuentra fechas, plazos y enlaces de centros públicos, concertados y escuelas infantiles.">
+    <link rel="stylesheet" href="/estilos-bitkids.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Google Fonts para un acabado ultra-premium -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-primary: #41038f;
+            --brand-primary-light: #f3ecfc;
+            --brand-secondary: #0d6efd;
+            --brand-cta: #508f02;
+            --brand-cta-hover: #407201;
+            --font-title: 'Outfit', sans-serif;
+            --font-body: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: #f8f9fc;
+            color: #3e445b;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-title);
+            color: #1e2229;
+            font-weight: 700;
+        }
+
+        /* Hero Header con degradado sutil */
+        .hero-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f1ecf9 100%);
+            border-bottom: 1px solid #e9e6f2;
+            padding: 5rem 0 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(65,3,143,0.05) 0%, rgba(255,255,255,0) 70%);
+            top: -100px;
+            right: -50px;
+            z-index: 0;
+        }
+
+        .hero-badge {
+            background-color: var(--brand-primary-light);
+            color: var(--brand-primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(65, 3, 143, 0.15);
+        }
+
+        /* Contenedores y Tarjetas */
+        .content-card {
+            background: #ffffff;
+            border: 1px solid #eef0f6;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(30, 34, 41, 0.035);
+            padding: 2.5rem;
+            margin-top: -2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Pestañas personalizadas (Nav Pills) */
+        .nav-pills-custom {
+            background-color: #f1f3f7;
+            padding: 0.4rem;
+            border-radius: 12px;
+            gap: 5px;
+        }
+
+        .nav-pills-custom .nav-link {
+            font-family: var(--font-title);
+            font-weight: 600;
+            color: #5a6578;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            transition: all 0.25s ease;
+        }
+
+        .nav-pills-custom .nav-link:hover {
+            color: var(--brand-primary);
+        }
+
+        .nav-pills-custom .nav-link.active {
+            background-color: var(--brand-primary);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(65, 3, 143, 0.2);
+        }
+
+        /* Tablas */
+        .table-custom {
+            border-collapse: separate;
+            border-spacing: 0 8px;
+        }
+
+        .table-custom thead th {
+            font-family: var(--font-title);
+            font-weight: 600;
+            color: #7b889b;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.8px;
+            border: none;
+            padding: 1rem 1.5rem;
+        }
+
+        .table-custom tbody tr {
+            background-color: #fcfdfe;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.015);
+            transition: all 0.2s ease;
+        }
+
+        .table-custom tbody tr:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(30, 34, 41, 0.05);
+            background-color: #ffffff;
+        }
+
+        .table-custom tbody td {
+            padding: 1.25rem 1.5rem;
+            border-top: 1px solid #f1f3f7;
+            border-bottom: 1px solid #f1f3f7;
+            vertical-align: middle;
+        }
+
+        .table-custom tbody tr td:first-child {
+            border-left: 1px solid #f1f3f7;
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+            font-weight: 600;
+            color: #1e2229;
+        }
+
+        .table-custom tbody tr td:last-child {
+            border-right: 1px solid #f1f3f7;
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+
+        /* Botón de enlace de la tabla */
+        .btn-table-link {
+            background-color: #f1ecf9;
+            color: var(--brand-primary);
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 6px;
+            padding: 0.4rem 1rem;
+            border: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.2s ease;
+            text-decoration: none;
+        }
+
+        .btn-table-link:hover {
+            background-color: var(--brand-primary);
+            color: #ffffff;
+        }
+
+        /* Sección CRO Premium BitKids */
+        .cro-bitkids-section {
+            background: linear-gradient(135deg, #180138 0%, #2f0469 100%);
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 3.5rem;
+            box-shadow: 0 15px 35px rgba(24, 1, 56, 0.25);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .cro-bitkids-section::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(124,187,45,0.08) 0%, rgba(255,255,255,0) 70%);
+            bottom: -200px;
+            left: -100px;
+            z-index: 0;
+        }
+
+        .cro-title {
+            color: #ffffff;
+            font-size: 2.2rem;
+            margin-bottom: 1.25rem;
+            line-height: 1.25;
+        }
+
+        .cro-description {
+            color: #c9bade;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .btn-cro-custom {
+            background-color: var(--brand-cta);
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            padding: 0.85rem 2.25rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 14px rgba(80, 143, 2, 0.4);
+            border: none;
+            transition: all 0.25s ease;
+        }
+
+        .btn-cro-custom:hover {
+            background-color: var(--brand-cta-hover);
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(80, 143, 2, 0.5);
+        }
+
+        .badge-cro {
+            background-color: rgba(124, 187, 45, 0.2);
+            color: #a4f542;
+            border: 1px solid rgba(124, 187, 45, 0.3);
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.25rem;
+            display: inline-block;
+        }
+    </style>
+    
+    <!-- Google Tag Manager / Analítica -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T46Y37LT38"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T46Y37LT38');
+    </script>
+</head>
+<body>
+
+    <!-- Header común -->
+    <header class="app-header bg-white shadow-sm">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light" data-bs-theme="light">
+                <a class="navbar-brand" href="/index.html">
+                    <span class="fw-bold text-primary">Guía</span>
+                    <span class="fw-normal">Colegios Ferrol</span>
+                </a>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/index.html">Todos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/colegios-publicos.html">Públicos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/colegios-concertados.html">Concertados</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active fw-bold" href="/jornadas-puertas-abiertas-2027">
+                                Puertas Abiertas 2027 📅 <span class="badge bg-danger rounded-pill align-text-top" style="font-size: 0.65rem;">Nuevo</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/mapa.html">Mapa</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/blog.html">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sección H1 / Hero -->
+    <section class="hero-section text-center text-lg-start">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <span class="hero-badge"><i class="bi bi-calendar3 me-1"></i> CURSO 2027 / 2028</span>
+                    <h1 class="display-4 mb-3">Jornadas de Puertas Abiertas en Colegios de Ferrol 2027</h1>
+                    <p class="lead text-secondary mb-0">
+                        El proceso de reserva de plaza y las visitas oficiales para el curso 2027/2028 comenzarán a principios de 2027. En esta guía exclusiva centralizaremos todas las fechas de los <strong>CEIP, EEI, institutos y colegios concertados (CPR)</strong> a medida que sean publicadas oficialmente.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido Principal con Pestañas -->
+    <main class="container my-5 pb-4">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="content-card">
+                    <div class="d-md-flex align-items-center justify-content-between mb-4">
+                        <h2 class="h4 mb-3 mb-md-0"><i class="bi bi-clock-history me-2 text-primary"></i>Fechas Oficiales Confirmadas</h2>
+                        <!-- Pestañas de Navegación -->
+                        <ul class="nav nav-pills nav-pills-custom" id="puertasAbiertasTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="publicos-tab" data-bs-toggle="pill" data-bs-target="#publicos" type="button" role="tab" aria-controls="publicos" aria-selected="true">Públicos</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="concertados-tab" data-bs-toggle="pill" data-bs-target="#concertados" type="button" role="tab" aria-controls="concertados" aria-selected="false">Concertados</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="infantiles-tab" data-bs-toggle="pill" data-bs-target="#infantiles" type="button" role="tab" aria-controls="infantiles" aria-selected="false">Escuelas Infantiles (0-3)</button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Contenido de las pestañas -->
+                    <div class="tab-content mt-4" id="puertasAbiertasTabsContent">
+                        
+                        <!-- Pestaña Colegios Públicos -->
+                        <div class="tab-pane fade show active" id="publicos" role="tabpanel" aria-labelledby="publicos-tab">
+                            <div class="table-responsive">
+                                <table class="table table-custom align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 45%;">Colegio / Instituto</th>
+                                            <th style="width: 35%;">Fecha Puertas Abiertas 2027</th>
+                                            <th style="width: 20%;" class="text-end">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- CEIP Plurilingüe A Laxe -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="bi bi-building me-2 text-muted fs-5"></i>
+                                                    <span>CEIP Plurilingüe A Laxe</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border p-2"><i class="bi bi-clock me-1 text-primary"></i>Pendiente de confirmar (Enero 2027)</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="/colegio/ceip-plurilingue-a-laxe" class="btn-table-link">Ver Ficha <i class="bi bi-arrow-right-short ms-1"></i></a>
+                                            </td>
+                                        </tr>
+                                        <!-- CEIP Isaac Peral -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="bi bi-building me-2 text-muted fs-5"></i>
+                                                    <span>CEIP Isaac Peral</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border p-2"><i class="bi bi-clock me-1 text-primary"></i>Pendiente de confirmar (Febrero 2027)</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="/colegio/ceip-isaac-peral" class="btn-table-link">Ver Ficha <i class="bi bi-arrow-right-short ms-1"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Pestaña Colegios Concertados -->
+                        <div class="tab-pane fade" id="concertados" role="tabpanel" aria-labelledby="concertados-tab">
+                            <div class="table-responsive">
+                                <table class="table table-custom align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 45%;">Colegio Concertado</th>
+                                            <th style="width: 35%;">Fecha Puertas Abiertas 2027</th>
+                                            <th style="width: 20%;" class="text-end">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Colegio Tirso de Molina -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="bi bi-building me-2 text-muted fs-5"></i>
+                                                    <span>Colegio Tirso de Molina</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border p-2"><i class="bi bi-clock me-1 text-primary"></i>Pendiente de confirmar (Enero 2027)</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="/colegio/colegio-tirso-de-molina" class="btn-table-link">Ver Ficha <i class="bi bi-arrow-right-short ms-1"></i></a>
+                                            </td>
+                                        </tr>
+                                        <!-- CPR Belén -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="bi bi-building me-2 text-muted fs-5"></i>
+                                                    <span>CPR Belén</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border p-2"><i class="bi bi-clock me-1 text-primary"></i>Pendiente de confirmar (Febrero 2027)</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <a href="/colegio/cpr-belen" class="btn-table-link">Ver Ficha <i class="bi bi-arrow-right-short ms-1"></i></a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Pestaña Escuelas Infantiles -->
+                        <div class="tab-pane fade" id="infantiles" role="tabpanel" aria-labelledby="infantiles-tab">
+                            <div class="table-responsive">
+                                <table class="table table-custom align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th style="width: 45%;">Escuela Infantil</th>
+                                            <th style="width: 35%;">Fecha Puertas Abiertas 2027</th>
+                                            <th style="width: 20%;" class="text-end">Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- Escuela Infantil Municipal Catabois -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="bi bi-building me-2 text-muted fs-5"></i>
+                                                    <span>EIM Catabois (Municipal)</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border p-2"><i class="bi bi-clock me-1 text-primary"></i>Pendiente de confirmar (Enero/Febrero 2027)</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <span class="text-muted fs-7">Ficha no disponible</span>
+                                            </td>
+                                        </tr>
+                                        <!-- EEI Virgen del Chamorro -->
+                                        <tr>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <i class="bi bi-building me-2 text-muted fs-5"></i>
+                                                    <span>EEI Virgen del Chamorro (Xunta)</span>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span class="badge bg-light text-dark border p-2"><i class="bi bi-clock me-1 text-primary"></i>Pendiente de confirmar (Enero 2027)</span>
+                                            </td>
+                                            <td class="text-end">
+                                                <span class="text-muted fs-7">Ficha no disponible</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cierre de Oro (CRO BitKids) -->
+        <div class="row mt-5">
+            <div class="col-lg-10 mx-auto">
+                <div class="cro-bitkids-section d-flex flex-column align-items-center text-center p-4 p-md-5">
+                    <span class="badge-cro"><i class="bi bi-cpu me-1"></i> Fomento del Talento Digital</span>
+                    <h3 class="cro-title">Prepárales para el futuro, elijan el colegio que elijan</h3>
+                    <p class="cro-description max-width-md mx-auto">
+                        Independientemente del centro que escojas para el curso 2027/2028, las competencias tecnológicas del mañana se entrenan hoy. En <strong>BitKids</strong>, la academia de robótica y programación de referencia en Ferrol, impulsamos el pensamiento lógico, la creatividad y la resolución de problemas en un entorno divertido y colaborativo. ¡Ven a conocer nuestras instalaciones y reserva una clase de prueba gratuita!
+                    </p>
+                    <a href="https://bitkids.es" target="_blank" rel="noopener" class="btn btn-cro-custom d-inline-flex align-items-center">
+                        <i class="bi bi-calendar-event-fill me-2"></i> Solicitar Clase de Prueba Gratuita
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer común -->
+    <footer class="text-center text-muted py-4 mt-5">
+        <p class="small">
+            <a href="/aviso-legal.html" class="text-muted">Aviso Legal</a> | 
+            <a href="/politica-de-privacidad.html" class="text-muted">Política de Privacidad</a> | 
+            <a href="/politica-de-cookies.html" class="text-muted">Política de Cookies</a>
+        </p>
+        <p>&copy; 2025 Guía de Colegios de Ferrol</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/analitica-guia.js?v=2" defer></script>
+</body>
+</html>

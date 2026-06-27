@@ -1,0 +1,59 @@
+{
+    "2026-05-27": {
+        "localhost": {
+            "pageviews": 3,
+            "sessions": 2,
+            "users": 2,
+            "bounces": 1,
+            "total_duration": 35,
+            "devices": {
+                "desktop": 2,
+                "mobile": 1
+            },
+            "referrers": {
+                "Directo": 1,
+                "Google": 1,
+                "Redes Sociales": 0,
+                "Otros": 0
+            },
+            "pages": {
+                "\/": 2,
+                "\/colegio.html": 1
+            },
+            "clicks_bitkids": 1,
+            "clicks_tel": 1,
+            "uids": [
+                "u_usuario_prueba_123",
+                "u_usuario_movil_456"
+            ]
+        },
+        "colegiosferrol.es": {
+            "pageviews": 8,
+            "sessions": 2,
+            "users": 1,
+            "bounces": 1,
+            "total_duration": 360,
+            "devices": {
+                "desktop": 8,
+                "mobile": 0
+            },
+            "referrers": {
+                "Directo": 2,
+                "Google": 0,
+                "Redes Sociales": 0,
+                "Otros": 0
+            },
+            "pages": {
+                "\/": 4,
+                "\/colegio\/ceip-isaac-peral": 1,
+                "\/colegio\/colegio-tirso-de-molina": 2,
+                "\/colegio\/ceip-de-ponzos": 1
+            },
+            "clicks_bitkids": 0,
+            "clicks_tel": 0,
+            "uids": [
+                "u_u5jby561bgymjtr505q"
+            ]
+        }
+    }
+}

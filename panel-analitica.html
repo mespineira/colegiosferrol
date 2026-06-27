@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Analítica Privada | BitKids</title>
+    
+    <!-- Google Fonts (Outfit) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <!-- Estilos Premium (Glassmorphism & Dark Mode) -->
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #0b0f19 0%, #111827 50%, #030712 100%);
+            --glass-bg: rgba(17, 24, 39, 0.6);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-border-focus: rgba(99, 102, 241, 0.4);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --color-indigo: #6366f1;
+            --color-purple: #a855f7;
+            --color-cyan: #06b6d4;
+            --color-emerald: #10b981;
+            --color-amber: #f59e0b;
+            --color-rose: #f43f5e;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-primary);
+            min-height: 100vh;
+            overflow-x: hidden;
+            padding-bottom: 3rem;
+        }
+
+        /* Scrollbar Personalizado */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(11, 15, 25, 0.5);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(99, 102, 241, 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(99, 102, 241, 0.5);
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: transparent;
+            transition: background 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px 0 rgba(99, 102, 241, 0.15);
+            border-color: rgba(99, 102, 241, 0.2);
+        }
+        
+        /* Tipos de cartas con bordes de color al pasar el cursor */
+        .card-visitors:hover::before { background: var(--color-purple); }
+        .card-sessions:hover::before { background: var(--color-cyan); }
+        .card-views:hover::before { background: var(--color-indigo); }
+        .card-bounce:hover::before { background: var(--color-rose); }
+        .card-duration:hover::before { background: var(--color-emerald); }
+
+        /* Filtros y Inputs */
+        .form-select-glass {
+            background-color: rgba(17, 24, 39, 0.8);
+            border: 1px solid var(--glass-border);
+            color: var(--text-primary);
+            border-radius: 10px;
+            padding: 0.6rem 2.5rem 0.6rem 1rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+        }
+        .form-select-glass:focus {
+            background-color: rgba(17, 24, 39, 0.95);
+            border-color: var(--glass-border-focus);
+            box-shadow: 0 0 0 0.25rem rgba(99, 102, 241, 0.25);
+            color: #fff;
+        }
+
+        /* KPIs y Métricas */
+        .metric-title {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .metric-value {
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.02em;
+        }
+        .metric-icon {
+            font-size: 1.75rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        .icon-purple { background: rgba(168, 85, 247, 0.15); color: var(--color-purple); }
+        .icon-cyan { background: rgba(6, 182, 212, 0.15); color: var(--color-cyan); }
+        .icon-indigo { background: rgba(99, 102, 241, 0.15); color: var(--color-indigo); }
+        .icon-rose { background: rgba(244, 63, 94, 0.15); color: var(--color-rose); }
+        .icon-emerald { background: rgba(16, 185, 129, 0.15); color: var(--color-emerald); }
+
+        /* Estilos de Tabla */
+        .table-responsive-glass {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+        .table-glass {
+            margin-bottom: 0;
+            background: transparent;
+            color: var(--text-primary);
+        }
+        .table-glass th {
+            background: rgba(30, 41, 59, 0.7);
+            border-bottom: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+            padding: 1rem;
+        }
+        .table-glass td {
+            padding: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+            background: rgba(17, 24, 39, 0.2);
+            font-size: 0.9rem;
+            vertical-align: middle;
+        }
+        .table-glass tr:last-child td {
+            border-bottom: none;
+        }
+        .table-glass tbody tr:hover td {
+            background: rgba(99, 102, 241, 0.08);
+        }
+
+        /* Badges de tendencia y elementos */
+        .badge-domain {
+            background: rgba(99, 102, 241, 0.15);
+            color: #a5b4fc;
+            border: 1px solid rgba(99, 102, 241, 0.3);
+            font-weight: 500;
+            font-size: 0.8rem;
+            border-radius: 6px;
+            padding: 0.3em 0.6em;
+        }
+
+        .bounce-indicator {
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Banner de Carga / Datos Vacíos */
+        .alert-demo {
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px dashed var(--color-amber);
+            border-radius: 12px;
+            color: #fde68a;
+            padding: 1rem 1.5rem;
+        }
+        
+        .glow-button {
+            background: linear-gradient(135deg, var(--color-indigo) 0%, var(--color-purple) 100%);
+            border: none;
+            color: #white;
+            font-weight: 600;
+            padding: 0.6rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.4);
+            transition: all 0.3s ease;
+        }
+        .glow-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+            opacity: 0.95;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container py-4 py-lg-5">
+        <!-- HEADER DEL PANEL -->
+        <header class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3 mb-5">
+            <div>
+                <h1 class="h2 fw-bold mb-1 d-flex align-items-center gap-2">
+                    <i class="bi bi-shield-check text-indigo" style="color: var(--color-indigo);"></i> 
+                    Panel de Analítica Privada
+                </h1>
+                <p class="text-secondary mb-0">Métricas ultra-ligeras y seguras (Privacy-First) para BitKids Network</p>
+            </div>
+            
+            <!-- FILTROS -->
+            <div class="d-flex flex-wrap gap-2">
+                <div>
+                    <select id="domainFilter" class="form-select form-select-glass">
+                        <option value="all">Global (Todos los dominios)</option>
+                    </select>
+                </div>
+                <div>
+                    <select id="timeFilter" class="form-select form-select-glass">
+                        <option value="7days" selected>Últimos 7 días</option>
+                        <option value="30days">Últimos 30 días</option>
+                        <option value="currentMonth">Mes actual</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <!-- BANNER AVISO SIN DATOS (Detección Inteligente) -->
+        <div id="noDataBanner" class="alert-demo mb-4 d-none">
+            <div class="d-flex flex-column flex-sm-row justify-content-between align-items-sm-center gap-3">
+                <div>
+                    <h5 class="fw-bold mb-1"><i class="bi bi-exclamation-triangle-fill me-2"></i>No se ha detectado el archivo metrics.json</h5>
+                    <p class="mb-0 text-secondary">El servidor aún no ha registrado visitas reales o el archivo está vacío. Puedes esperar a que entren visitas o cargar datos ficticios para explorar el dashboard.</p>
+                </div>
+                <button onclick="loadDemoDataset()" class="btn glow-button btn-sm text-white">
+                    <i class="bi bi-magic me-2"></i>Cargar Datos Demo
+                </button>
+            </div>
+        </div>
+
+        <!-- REJILLA DE KPIS (TARJETAS) -->
+        <section class="row g-4 mb-4">
+            <!-- 1. Visitantes Únicos -->
+            <div class="col-md-4 col-lg-2-4 col-xl-2-4 col-12">
+                <article class="glass-card card-visitors h-100">
+                    <div class="metric-icon icon-purple">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+                    <h2 class="metric-title">Usuarios Únicos</h2>
+                    <p id="kpiUsers" class="metric-value">0</p>
+                    <span class="bounce-indicator text-secondary">Deduplicado diario</span>
+                </article>
+            </div>
+            <!-- 2. Sesiones -->
+            <div class="col-md-4 col-lg-2-4 col-xl-2-4 col-12">
+                <article class="glass-card card-sessions h-100">
+                    <div class="metric-icon icon-cyan">
+                        <i class="bi bi-hourglass-split"></i>
+                    </div>
+                    <h2 class="metric-title">Sesiones</h2>
+                    <p id="kpiSessions" class="metric-value">0</p>
+                    <span class="bounce-indicator text-secondary">Visitas totales</span>
+                </article>
+            </div>
+            <!-- 3. Páginas Vistas -->
+            <div class="col-md-4 col-lg-2-4 col-xl-2-4 col-12">
+                <article class="glass-card card-views h-100">
+                    <div class="metric-icon icon-indigo">
+                        <i class="bi bi-eye-fill"></i>
+                    </div>
+                    <h2 class="metric-title">Páginas Vistas</h2>
+                    <p id="kpiPageviews" class="metric-value">0</p>
+                    <span id="kpiPageviewsPerSession" class="bounce-indicator text-secondary">0.0 por sesión</span>
+                </article>
+            </div>
+            <!-- 4. Tasa de Rebote -->
+            <div class="col-md-6 col-lg-2-4 col-xl-2-4 col-12">
+                <article class="glass-card card-bounce h-100">
+                    <div class="metric-icon icon-rose">
+                        <i class="bi bi-box-arrow-right"></i>
+                    </div>
+                    <h2 class="metric-title">Tasa de Rebote</h2>
+                    <p id="kpiBounceRate" class="metric-value">0%</p>
+                    <span class="bounce-indicator text-secondary">&lt;15s y 1 pág. vista</span>
+                </article>
+            </div>
+            <!-- 5. Duración Promedio -->
+            <div class="col-md-6 col-lg-2-4 col-xl-2-4 col-12">
+                <article class="glass-card card-duration h-100">
+                    <div class="metric-icon icon-emerald">
+                        <i class="bi bi-clock-history"></i>
+                    </div>
+                    <h2 class="metric-title">Tiempo Medio</h2>
+                    <p id="kpiAvgDuration" class="metric-value">0s</p>
+                    <span class="bounce-indicator text-secondary">Por sesión</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE GRÁFICOS PRINCIPALES -->
+        <section class="row g-4 mb-4">
+            <!-- Gráfico de Líneas de Evolución Temporal -->
+            <div class="col-lg-8">
+                <div class="glass-card h-100">
+                    <h3 class="h6 fw-bold mb-4 uppercase text-secondary">Evolución de Tráfico (Páginas Vistas y Sesiones)</h3>
+                    <div style="position: relative; height: 350px;">
+                        <canvas id="trafficLineChart"></canvas>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Distribución por Dispositivo -->
+            <div class="col-lg-4">
+                <div class="glass-card h-100">
+                    <h3 class="h6 fw-bold mb-4 uppercase text-secondary">Dispositivos</h3>
+                    <div class="d-flex align-items-center justify-content-center" style="position: relative; height: 250px;">
+                        <canvas id="deviceDonutChart"></canvas>
+                    </div>
+                    <div class="d-flex justify-content-around mt-3 text-center">
+                        <div>
+                            <span class="text-secondary"><i class="bi bi-laptop me-1"></i> Desktop</span>
+                            <h5 id="deviceDesktopPercent" class="fw-bold mt-1">0%</h5>
+                        </div>
+                        <div>
+                            <span class="text-secondary"><i class="bi bi-phone me-1"></i> Móvil</span>
+                            <h5 id="deviceMobilePercent" class="fw-bold mt-1">0%</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DE DETALLE: ORÍGENES, CLICS Y PÁGINAS -->
+        <section class="row g-4">
+            <!-- Páginas Más Visitadas -->
+            <div class="col-lg-7">
+                <div class="glass-card h-100">
+                    <h3 class="h6 fw-bold mb-4 uppercase text-secondary">Páginas más visitadas</h3>
+                    <div class="table-responsive table-responsive-glass">
+                        <table class="table table-glass text-nowrap">
+                            <thead>
+                                <tr>
+                                    <th>Ruta de la página</th>
+                                    <th class="text-end">Páginas Vistas</th>
+                                    <th class="text-end">% del total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="pagesTableBody">
+                                <tr>
+                                    <td colspan="3" class="text-center text-secondary py-4">No hay datos para mostrar</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fuentes de Tráfico y Conversión -->
+            <div class="col-lg-5">
+                <div class="row g-4">
+                    <!-- Procedencias / Referrers -->
+                    <div class="col-12">
+                        <div class="glass-card">
+                            <h3 class="h6 fw-bold mb-4 uppercase text-secondary">Fuentes de Tráfico</h3>
+                            <div style="position: relative; height: 180px;">
+                                <canvas id="referrerBarChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Clics de Conversión -->
+                    <div class="col-12">
+                        <div class="glass-card">
+                            <h3 class="h6 fw-bold mb-4 uppercase text-secondary">Clics Especiales (Conversiones)</h3>
+                            <div class="d-flex justify-content-around align-items-center py-2">
+                                <div class="text-center">
+                                    <div class="icon-indigo metric-icon mx-auto" style="border-radius: 50%;">
+                                        <i class="bi bi-link-45deg"></i>
+                                    </div>
+                                    <span class="text-secondary d-block mt-1">Clics a bitkids.es</span>
+                                    <h4 id="clicksBitkidsCount" class="fw-bold mt-2 text-indigo">0</h4>
+                                </div>
+                                <div class="text-center">
+                                    <div class="icon-rose metric-icon mx-auto" style="border-radius: 50%;">
+                                        <i class="bi bi-telephone-fill"></i>
+                                    </div>
+                                    <span class="text-secondary d-block mt-1">Llamadas (tel:)</span>
+                                    <h4 id="clicksTelCount" class="fw-bold mt-2 text-rose">0</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Bootstrap 5 Grid Custom Utility classes -->
+    <style>
+        @media (min-width: 992px) {
+            .col-lg-2-4 {
+                flex: 0 0 20%;
+                max-width: 20%;
+            }
+        }
+        @media (min-width: 1200px) {
+            .col-xl-2-4 {
+                flex: 0 0 20%;
+                max-width: 20%;
+            }
+        }
+    </style>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Lógica de Negocio y Renderizado -->
+    <script>
+        // Almacén de base de datos de analítica
+        let analyticsData = null;
+        
+        // Instancias de Gráficos (para destruir y crear en cada filtro)
+        let lineChartInstance = null;
+        let donutChartInstance = null;
+        let barChartInstance = null;
+
+        // Configuración de Colores de Gráficos (Chart.js)
+        const chartColors = {
+            indigo: '#6366f1',
+            indigoGlow: 'rgba(99, 102, 241, 0.2)',
+            purple: '#a855f7',
+            purpleGlow: 'rgba(168, 85, 247, 0.2)',
+            cyan: '#06b6d4',
+            cyanGlow: 'rgba(6, 182, 212, 0.2)',
+            emerald: '#10b981',
+            rose: '#f43f5e',
+            gridLines: 'rgba(255, 255, 255, 0.05)',
+            text: '#9ca3af'
+        };
+
+        // Al iniciar
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchMetricsData();
+            
+            // Event Listeners para Filtros
+            document.getElementById('domainFilter').addEventListener('change', updateDashboard);
+            document.getElementById('timeFilter').addEventListener('change', updateDashboard);
+        });
+
+        /**
+         * Obtiene las métricas desde el servidor
+         */
+        function fetchMetricsData() {
+            fetch('metrics.json?v=' + Date.now())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Archivo no encontrado');
+                    }
+                    return response.json();
+                })
+                .then(json => {
+                    if (Object.keys(json).length === 0) {
+                        showNoDataWarning();
+                    } else {
+                        analyticsData = json;
+                        initializeDomainsFilter();
+                        updateDashboard();
+                    }
+                })
+                .catch(error => {
+                    console.warn("Error leyendo metrics.json, cargando modo demostración disponible.", error);
+                    showNoDataWarning();
+                });
+        }
+
+        /**
+         * Muestra el banner explicativo cuando no hay datos
+         */
+        function showNoDataWarning() {
+            document.getElementById('noDataBanner').classList.remove('d-none');
+        }
+
+        /**
+         * Genera un conjunto de datos simulado (demo) para poder testear el dashboard inmediatamente
+         */
+        function loadDemoDataset() {
+            const mock = {};
+            const today = new Date();
+            const domains = ['colegiosferrol.es', 'bitkids.es', 'colegioscoruna.es'];
+            
+            // Generar los últimos 45 días
+            for (let i = 45; i >= 0; i--) {
+                const tempDate = new Date();
+                tempDate.setDate(today.getDate() - i);
+                const dateKey = tempDate.toISOString().split('T')[0];
+                
+                mock[dateKey] = {};
+                
+                domains.forEach(domain => {
+                    let domainMultiplier = domain === 'colegiosferrol.es' ? 1.6 : (domain === 'bitkids.es' ? 1.1 : 0.5);
+                    
+                    // Fluctuación de fin de semana (baja el tráfico en webs educativas)
+                    const dayOfWeek = tempDate.getDay();
+                    if (dayOfWeek === 0 || dayOfWeek === 6) {
+                        domainMultiplier *= 0.4;
+                    }
+
+                    const baseSessions = Math.round((50 + Math.random() * 80) * domainMultiplier);
+                    const pageviews = Math.round(baseSessions * (1.6 + Math.random() * 1.2));
+                    const users = Math.round(baseSessions * (0.75 + Math.random() * 0.18));
+                    const bounces = Math.round(baseSessions * (0.28 + Math.random() * 0.3));
+                    const totalDuration = baseSessions * (45 + Math.round(Math.random() * 110)); // Segundos totales
+                    
+                    const desktopCount = Math.round(pageviews * (0.55 + Math.random() * 0.15));
+                    const mobileCount = pageviews - desktopCount;
+                    
+                    const refGoogle = Math.round(baseSessions * (0.42 + Math.random() * 0.1));
+                    const refDirect = Math.round(baseSessions * (0.28 + Math.random() * 0.1));
+                    const refSocial = Math.round(baseSessions * (0.15 + Math.random() * 0.1));
+                    const refOtros = Math.max(0, baseSessions - refGoogle - refDirect - refSocial);
+
+                    mock[dateKey][domain] = {
+                        pageviews: pageviews,
+                        sessions: baseSessions,
+                        users: users,
+                        bounces: bounces,
+                        total_duration: totalDuration,
+                        devices: {
+                            desktop: desktopCount,
+                            mobile: mobileCount
+                        },
+                        referrers: {
+                            Directo: refDirect,
+                            Google: refGoogle,
+                            'Redes Sociales': refSocial,
+                            Otros: refOtros
+                        },
+                        pages: {
+                            '/': Math.round(pageviews * 0.40),
+                            '/colegio.html': Math.round(pageviews * 0.22),
+                            '/blog.html': Math.round(pageviews * 0.16),
+                            '/comparador.html': Math.round(pageviews * 0.14),
+                            '/aviso-legal.html': Math.round(pageviews * 0.08)
+                        },
+                        clicks_bitkids: Math.round(baseSessions * (0.18 + Math.random() * 0.25)),
+                        clicks_tel: Math.round(baseSessions * (0.04 + Math.random() * 0.09))
+                    };
+                });
+            }
+
+            analyticsData = mock;
+            
+            // Ocultar banner demo
+            document.getElementById('noDataBanner').classList.add('d-none');
+            
+            initializeDomainsFilter();
+            updateDashboard();
+        }
+
+        /**
+         * Rellena el selector de dominios basándose en los que existen en el JSON
+         */
+        function initializeDomainsFilter() {
+            const domainFilterSelect = document.getElementById('domainFilter');
+            
+            // Recolectar todos los dominios únicos de todos los registros del JSON
+            // Pre-poblamos con los dominios principales de tu red de webs
+            const domainsSet = new Set(['colegiosferrol.es', 'bitkids.es']);
+            for (const date in analyticsData) {
+                for (const dom in analyticsData[date]) {
+                    domainsSet.add(dom);
+                }
+            }
+            
+            // Limpiar dropdown y conservar solo la opción global
+            domainFilterSelect.innerHTML = '<option value="all">Global (Todos los dominios)</option>';
+            
+            // Añadir cada dominio encontrado
+            domainsSet.forEach(domain => {
+                const opt = document.createElement('option');
+                opt.value = domain;
+                opt.textContent = domain;
+                domainFilterSelect.appendChild(opt);
+            });
+        }
+
+        /**
+         * Obtiene las fechas asociadas al rango seleccionado en zona horaria local
+         */
+        function getDatesInRange(filterType) {
+            const dates = [];
+            const today = new Date();
+            
+            const formatDateLocal = (d) => {
+                const year = d.getFullYear();
+                const month = String(d.getMonth() + 1).padStart(2, '0');
+                const day = String(d.getDate()).padStart(2, '0');
+                return `${year}-${month}-${day}`;
+            };
+            
+            if (filterType === '7days') {
+                for (let i = 6; i >= 0; i--) {
+                    const temp = new Date();
+                    temp.setDate(today.getDate() - i);
+                    dates.push(formatDateLocal(temp));
+                }
+            } else if (filterType === '30days') {
+                for (let i = 29; i >= 0; i--) {
+                    const temp = new Date();
+                    temp.setDate(today.getDate() - i);
+                    dates.push(formatDateLocal(temp));
+                }
+            } else if (filterType === 'currentMonth') {
+                const year = today.getFullYear();
+                const month = today.getMonth();
+                const firstDay = new Date(year, month, 1);
+                
+                let temp = new Date(firstDay);
+                while (temp <= today) {
+                    dates.push(formatDateLocal(temp));
+                    temp.setDate(temp.getDate() + 1);
+                }
+            }
+            return dates;
+        }
+
+        /**
+         * Actualiza el dashboard aplicando los filtros actuales
+         */
+        function updateDashboard() {
+            if (!analyticsData) return;
+
+            const domainFilter = document.getElementById('domainFilter').value;
+            const timeFilter = document.getElementById('timeFilter').value;
+            
+            const datesRange = getDatesInRange(timeFilter);
+
+            // Estructura para acumular
+            let totals = {
+                pageviews: 0,
+                sessions: 0,
+                users: 0,
+                bounces: 0,
+                total_duration: 0,
+                clicks_bitkids: 0,
+                clicks_tel: 0,
+                devices: { desktop: 0, mobile: 0 },
+                referrers: { Directo: 0, Google: 0, 'Redes Sociales': 0, Otros: 0 },
+                pages: {}
+            };
+
+            // Estructura temporal para construir los datos día a día del gráfico de líneas
+            let timeline = {
+                labels: [],
+                pageviews: [],
+                sessions: []
+            };
+
+            datesRange.forEach(dateStr => {
+                // Formatear etiqueta de fecha en el gráfico a algo más amigable: "DD/MM"
+                const dateObj = new Date(dateStr + 'T00:00:00');
+                const friendlyDate = dateObj.toLocaleDateString('es-ES', { day: '2-digit', month: '2-digit' });
+                timeline.labels.push(friendlyDate);
+
+                let dailyPV = 0;
+                let dailySess = 0;
+
+                if (analyticsData[dateStr]) {
+                    // Si se seleccionaron TODOS los dominios
+                    if (domainFilter === 'all') {
+                        for (const domain in analyticsData[dateStr]) {
+                            const entry = analyticsData[dateStr][domain];
+                            accumulateMetrics(totals, entry);
+                            dailyPV += entry.pageviews;
+                            dailySess += entry.sessions;
+                        }
+                    } else if (analyticsData[dateStr][domainFilter]) {
+                        // Si se seleccionó un dominio particular
+                        const entry = analyticsData[dateStr][domainFilter];
+                        accumulateMetrics(totals, entry);
+                        dailyPV += entry.pageviews;
+                        dailySess += entry.sessions;
+                    }
+                }
+                
+                timeline.pageviews.push(dailyPV);
+                timeline.sessions.push(dailySess);
+            });
+
+            // Renderizar los KPIs calculados
+            renderKPIs(totals);
+            
+            // Renderizar los gráficos
+            renderLineChart(timeline);
+            renderDeviceChart(totals.devices);
+            renderReferrersChart(totals.referrers);
+            
+            // Renderizar tablas
+            renderPagesTable(totals.pages, totals.pageviews);
+        }
+
+        /**
+         * Acumulador de métricas auxiliares
+         */
+        function accumulateMetrics(totals, entry) {
+            totals.pageviews += entry.pageviews || 0;
+            totals.sessions += entry.sessions || 0;
+            totals.users += entry.users || 0;
+            totals.bounces += entry.bounces || 0;
+            totals.total_duration += entry.total_duration || 0;
+            totals.clicks_bitkids += entry.clicks_bitkids || 0;
+            totals.clicks_tel += entry.clicks_tel || 0;
+
+            // Dispositivos
+            if (entry.devices) {
+                totals.devices.desktop += entry.devices.desktop || 0;
+                totals.devices.mobile += entry.devices.mobile || 0;
+            }
+
+            // Referidos
+            if (entry.referrers) {
+                for (const ref in totals.referrers) {
+                    totals.referrers[ref] += entry.referrers[ref] || 0;
+                }
+            }
+
+            // Páginas vistas individuales
+            if (entry.pages) {
+                for (const path in entry.pages) {
+                    if (!totals.pages[path]) {
+                        totals.pages[path] = 0;
+                    }
+                    totals.pages[path] += entry.pages[path];
+                }
+            }
+        }
+
+        /**
+         * Rellena las tarjetas de KPI en el HTML
+         */
+        function renderKPIs(totals) {
+            // Usuarios Únicos
+            document.getElementById('kpiUsers').textContent = formatNumber(totals.users);
+            
+            // Sesiones
+            document.getElementById('kpiSessions').textContent = formatNumber(totals.sessions);
+            
+            // Páginas Vistas
+            document.getElementById('kpiPageviews').textContent = formatNumber(totals.pageviews);
+            
+            // Páginas Vistas por Sesión
+            const pvsPerSess = totals.sessions > 0 ? (totals.pageviews / totals.sessions).toFixed(1) : '0.0';
+            document.getElementById('kpiPageviewsPerSession').textContent = `${pvsPerSess} por sesión`;
+            
+            // Tasa de Rebote
+            const bounceRate = totals.sessions > 0 ? Math.round((totals.bounces / totals.sessions) * 100) : 0;
+            document.getElementById('kpiBounceRate').textContent = `${bounceRate}%`;
+            
+            // Duración Media de Sesión
+            const avgSeconds = totals.sessions > 0 ? Math.round(totals.total_duration / totals.sessions) : 0;
+            document.getElementById('kpiAvgDuration').textContent = formatDuration(avgSeconds);
+
+            // Clics especiales
+            document.getElementById('clicksBitkidsCount').textContent = formatNumber(totals.clicks_bitkids);
+            document.getElementById('clicksTelCount').textContent = formatNumber(totals.clicks_tel);
+        }
+
+        /**
+         * Renderiza el gráfico de líneas (Evolución de Tráfico)
+         */
+        function renderLineChart(timeline) {
+            if (lineChartInstance) {
+                lineChartInstance.destroy();
+            }
+
+            const ctx = document.getElementById('trafficLineChart').getContext('2d');
+            
+            // Crear gradientes hermosos para la línea de páginas vistas y sesiones
+            const gradPV = ctx.createLinearGradient(0, 0, 0, 300);
+            gradPV.addColorStop(0, 'rgba(99, 102, 241, 0.35)');
+            gradPV.addColorStop(1, 'rgba(99, 102, 241, 0.0)');
+
+            const gradSess = ctx.createLinearGradient(0, 0, 0, 300);
+            gradSess.addColorStop(0, 'rgba(6, 182, 212, 0.25)');
+            gradSess.addColorStop(1, 'rgba(6, 182, 212, 0.0)');
+
+            lineChartInstance = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: timeline.labels,
+                    datasets: [
+                        {
+                            label: 'Páginas Vistas',
+                            data: timeline.pageviews,
+                            borderColor: chartColors.indigo,
+                            backgroundColor: gradPV,
+                            borderWidth: 3,
+                            fill: true,
+                            tension: 0.35,
+                            pointBackgroundColor: chartColors.indigo,
+                            pointHoverRadius: 6
+                        },
+                        {
+                            label: 'Sesiones',
+                            data: timeline.sessions,
+                            borderColor: chartColors.cyan,
+                            backgroundColor: gradSess,
+                            borderWidth: 2,
+                            fill: true,
+                            tension: 0.35,
+                            pointBackgroundColor: chartColors.cyan,
+                            pointHoverRadius: 5
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'top',
+                            labels: {
+                                color: chartColors.text,
+                                font: { family: 'Outfit', size: 12 }
+                            }
+                        },
+                        tooltip: {
+                            backgroundColor: 'rgba(15, 23, 42, 0.95)',
+                            titleFont: { family: 'Outfit', size: 13, weight: 'bold' },
+                            bodyFont: { family: 'Outfit', size: 12 },
+                            borderColor: 'rgba(255,255,255,0.1)',
+                            borderWidth: 1,
+                            padding: 12,
+                            displayColors: true
+                        }
+                    },
+                    scales: {
+                        x: {
+                            grid: { color: chartColors.gridLines },
+                            ticks: { 
+                                color: chartColors.text, 
+                                font: { family: 'Outfit', size: 11 }
+                            }
+                        },
+                        y: {
+                            grid: { color: chartColors.gridLines },
+                            ticks: { 
+                                color: chartColors.text, 
+                                font: { family: 'Outfit', size: 11 },
+                                precision: 0
+                            },
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+
+        /**
+         * Renderiza el gráfico de donut (Dispositivos)
+         */
+        function renderDeviceChart(devices) {
+            const total = devices.desktop + devices.mobile;
+            const desktopPercent = total > 0 ? Math.round((devices.desktop / total) * 100) : 0;
+            const mobilePercent = total > 0 ? Math.round((devices.mobile / total) * 100) : 0;
+
+            document.getElementById('deviceDesktopPercent').textContent = `${desktopPercent}%`;
+            document.getElementById('deviceMobilePercent').textContent = `${mobilePercent}%`;
+
+            if (donutChartInstance) {
+                donutChartInstance.destroy();
+            }
+
+            const ctx = document.getElementById('deviceDonutChart').getContext('2d');
+            donutChartInstance = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Desktop', 'Móvil'],
+                    datasets: [{
+                        data: [devices.desktop, devices.mobile],
+                        backgroundColor: [chartColors.indigo, chartColors.purple],
+                        borderWidth: 2,
+                        borderColor: '#0f172a',
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '75%',
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+        }
+
+        /**
+         * Renderiza el gráfico de barras horizontales (Referrers)
+         */
+        function renderReferrersChart(referrers) {
+            if (barChartInstance) {
+                barChartInstance.destroy();
+            }
+
+            const labels = Object.keys(referrers);
+            const values = Object.values(referrers);
+
+            const ctx = document.getElementById('referrerBarChart').getContext('2d');
+            barChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: values,
+                        backgroundColor: [
+                            '#6366f1', // Indigo
+                            '#06b6d4', // Cyan
+                            '#a855f7', // Purple
+                            '#9ca3af'  // Gris (Otros)
+                        ],
+                        borderRadius: 5,
+                        barThickness: 15
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            grid: { display: false },
+                            ticks: { 
+                                color: chartColors.text,
+                                font: { family: 'Outfit', size: 10 }
+                            },
+                            beginAtZero: true
+                        },
+                        y: {
+                            grid: { display: false },
+                            ticks: { 
+                                color: chartColors.text,
+                                font: { family: 'Outfit', size: 11, weight: '500' }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        /**
+         * Renderiza la tabla de páginas visitadas
+         */
+        function renderPagesTable(pages, totalPV) {
+            const tbody = document.getElementById('pagesTableBody');
+            
+            // Convertir objeto pages en array y ordenar de mayor a menor visitas
+            const sortedPages = Object.entries(pages).sort((a, b) => b[1] - a[1]);
+            
+            if (sortedPages.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="3" class="text-center text-secondary py-4">No hay datos en este rango</td></tr>';
+                return;
+            }
+
+            tbody.innerHTML = '';
+            
+            // Mostrar como máximo las 10 mejores páginas
+            sortedPages.slice(0, 10).forEach(([path, pv]) => {
+                const percent = totalPV > 0 ? ((pv / totalPV) * 100).toFixed(1) : '0.0';
+                
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td class="font-monospace text-indigo" style="color: #a5b4fc;"><i class="bi bi-file-earmark-code me-2 text-secondary"></i>${path}</td>
+                    <td class="text-end fw-semibold">${formatNumber(pv)}</td>
+                    <td class="text-end text-secondary">${percent}%</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // =========================================================================
+        // UTILIDADES DE FORMATEO
+        // =========================================================================
+        
+        /**
+         * Formatea números con separador de miles
+         */
+        function formatNumber(num) {
+            return new Intl.NumberFormat('es-ES').format(num);
+        }
+
+        /**
+         * Convierte duración en segundos a formato amigable "Xm Ys"
+         */
+        function formatDuration(totalSeconds) {
+            if (totalSeconds < 60) {
+                return `${totalSeconds}s`;
+            }
+            const minutes = Math.floor(totalSeconds / 60);
+            const seconds = totalSeconds % 60;
+            return `${minutes}m ${seconds}s`;
+        }
+    </script>
+</body>
+</html>

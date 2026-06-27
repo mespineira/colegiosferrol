@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /guardar_opinion.php
+
+Sitemap: https://colegiosferrol.es/sitemap.xml

@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = `
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm card-colegio">
-                        <img src="${noticia.imagen_destacada_url}" class="card-img-top" alt="${noticia.titulo}">
+                        <img src="${noticia.imagen_destacada_url}" class="card-img-top" alt="${noticia.titulo}" loading="lazy" width="400" height="250" style="object-fit: cover;" onerror="this.onerror=null; this.src=\'/img/default-ferrol.jpg\';">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">
                                 <a href="/blog/${noticia.slug_seo}" class="text-decoration-none text-dark">${noticia.titulo}</a>

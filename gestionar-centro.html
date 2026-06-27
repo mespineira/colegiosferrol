@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionar Centro Educativo | Colegios Ferrol</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="stylesheet" href="/estilos-bitkids.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body { background-color: #f8f9fa; }
+        .dynamic-list-container .input-group { margin-bottom: 0.5rem; }
+    </style>
+</head>
+
+<body>
+    <header class="app-header bg-white shadow-sm">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light" data-bs-theme="light">
+                <a class="navbar-brand" href="/">
+                    <span class="fw-bold text-primary">Guía</span>
+                    <span class="fw-normal">Colegios Ferrol</span>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card shadow border-0">
+                    <div class="card-body p-4 p-md-5">
+                        <h2 class="mb-2 text-primary" id="titulo-centro">Cargando centro...</h2>
+                        <p class="text-muted mb-4">Bienvenido al panel privado. Realice las modificaciones oportunas en su ficha; asegúrese de que la información sea exacta para las familias de Ferrol y comarca.</p>
+
+                        <div id="loading-spinner" class="text-center my-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Cargando...</span>
+                            </div>
+                        </div>
+
+                        <div id="mensaje-feedback" class="alert d-none" role="alert"></div>
+
+                        <form id="form-gestionar" class="d-none">
+                            <input type="hidden" id="admin-id">
+                            <input type="hidden" id="admin-slug">
+
+                            <h4 class="border-bottom pb-2 mt-4">Información Básica</h4>
+                            <div class="mb-3">
+                                <label class="form-label">Nombre del centro</label>
+                                <input type="text" class="form-control" id="admin-nombre" required>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Tipo</label>
+                                <select class="form-select" id="admin-tipo">
+                                    <option value="Público">Público</option>
+                                    <option value="Concertado">Concertado</option>
+                                    <option value="Privado">Privado</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Zona</label>
+                                    <input type="text" class="form-control" id="admin-zona">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Dirección completa</label>
+                                    <input type="text" class="form-control" id="admin-direccion">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Latitud Mapa</label>
+                                    <input type="number" step="any" class="form-control" id="admin-latitud">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Longitud Mapa</label>
+                                    <input type="number" step="any" class="form-control" id="admin-longitud">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">URL Foto Principal</label>
+                                <input type="url" class="form-control" id="admin-imagen">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Teléfono</label>
+                                <input type="text" class="form-control" id="admin-telefono">
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Resumen principal (Short desc)</label>
+                                <textarea class="form-control" id="admin-desc-corta" rows="3"></textarea>
+                            </div>
+
+                            <h4 class="border-bottom pb-2 mt-5">Información General</h4>
+                            <div class="mb-3">
+                                <label class="form-label">Metodología y nivel académico</label>
+                                <textarea class="form-control" id="admin-nivel-acad" rows="2"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Perfil del Profesorado</label>
+                                <textarea class="form-control" id="admin-profesorado" rows="2"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Proyecto Educativo Exclusivo</label>
+                                <textarea class="form-control" id="admin-proy-educ" rows="2"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Ratio: Alumnos por aula</label>
+                                <input type="number" class="form-control" id="admin-ratio">
+                            </div>
+                            
+                            <h4 class="border-bottom pb-2 mt-5">Cursos Impartidos</h4>
+                            <div class="row g-3 px-3 mb-4">
+                                <div class="col-6 col-md-3 form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="admin-curso-inf">
+                                    <label class="form-check-label">Infantil</label>
+                                </div>
+                                <div class="col-6 col-md-3 form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="admin-curso-pri">
+                                    <label class="form-check-label">Primaria</label>
+                                </div>
+                                <div class="col-6 col-md-3 form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="admin-curso-eso">
+                                    <label class="form-check-label">ESO</label>
+                                </div>
+                                <div class="col-6 col-md-3 form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="admin-curso-bac">
+                                    <label class="form-check-label">Bachillerato</label>
+                                </div>
+                                <div class="col-6 col-md-3 form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="admin-curso-fp">
+                                    <label class="form-check-label">FP</label>
+                                </div>
+                            </div>
+
+                            <h4 class="border-bottom pb-2 mt-5">Idiomas Estructurales</h4>
+                            <div id="admin-idiomas-container" class="dynamic-list-container mb-2"></div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary mb-4" onclick="addDynamicField('admin-idiomas-container')">+ Añadir idioma</button>
+
+                            <h4 class="border-bottom pb-2 mt-4">Servicios e Infraestructura Básica</h4>
+                            <div class="row g-3 px-3 mb-4">
+                                <div class="col-6 col-md-4 form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="admin-serv-com">
+                                    <label class="form-check-label">Comedor</label>
+                                </div>
+                                <div class="col-6 col-md-4 form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="admin-serv-tra">
+                                    <label class="form-check-label">Transporte Escolar</label>
+                                </div>
+                                <div class="col-6 col-md-4 form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="admin-serv-hor">
+                                    <label class="form-check-label">Horario Ampliado</label>
+                                </div>
+                                <div class="col-6 col-md-4 form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="admin-serv-psi">
+                                    <label class="form-check-label">Gabinete Psico.</label>
+                                </div>
+                            </div>
+
+                            <h4 class="border-bottom pb-2 mt-4">Instalaciones Relevantes</h4>
+                            <div id="admin-instalaciones-container" class="dynamic-list-container mb-2"></div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary mb-4" onclick="addDynamicField('admin-instalaciones-container')">+ Añadir instalación</button>
+
+                            <h4 class="border-bottom pb-2 mt-4">Actividades Extraescolares</h4>
+                            <div id="admin-extraes-container" class="dynamic-list-container mb-2"></div>
+                            <button type="button" class="btn btn-sm btn-outline-secondary mb-4" onclick="addDynamicField('admin-extraes-container')">+ Añadir actividad</button>
+
+                            <h4 class="border-bottom pb-2 mt-5">Horarios Estándar</h4>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Secretaría / Administración</label>
+                                    <input type="text" class="form-control" id="admin-horario-sec">
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Horario Lectivo de Alumnos</label>
+                                    <input type="text" class="form-control" id="admin-horario-lec">
+                                </div>
+                            </div>
+
+                            <div class="d-grid mt-5">
+                                <button type="submit" id="btn-guardar-ficha" class="btn btn-primary btn-lg shadow-sm">Enviar Actualización de la Ficha</button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="text-center text-muted py-4 mt-5 border-top bg-light">
+        <p class="small">&copy; Gestor Interno - Guía de Colegios de Ferrol</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/gestionar.js"></script>
+</body>
+</html>

@@ -1,5 +1,60 @@
 # Activa el motor de reescritura de URLs
 RewriteEngine On
+ErrorDocument 404 /404.html
+
+# ===================================================================
+# == CABECERAS DE SEGURIDAD (SECURITY HEADERS) ==
+# ===================================================================
+<IfModule mod_headers.c>
+    # Strict-Transport-Security (HSTS)
+    Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+    # Protección Clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+    # Protección MIME-sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    # Filtro Cross-site scripting (XSS)
+    Header always set X-XSS-Protection "1; mode=block"
+    # Referrer policy estricta
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# ===================================================================
+# == COMPRESIÓN BROTLI Y GZIP (Fallback) ==
+# ===================================================================
+<IfModule mod_brotli.c>
+    AddOutputFilterByType BROTLI_COMPRESS text/plain text/html text/xml text/css application/xml application/xhtml+xml application/rss+xml application/javascript application/x-javascript application/json
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css application/xml application/xhtml+xml application/rss+xml application/javascript application/x-javascript application/json
+</IfModule>
+
+# ===================================================================
+# == REDIRECCIONES 301 (Legacy URL a Pretty URL) ==
+# ===================================================================
+# Condición para evitar bucles de redirección cuando el Apache resuelve el archivo internamente.
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^index\.html$ / [L,R=301]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^colegios-concertados\.html$ /colegios-concertados-ferrol [L,R=301]
+
+# Consolidación temporal de colegios privados hacia concertados según estrategia de nicho
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^colegios-privados\.html$ /colegios-concertados-ferrol [L,R=301]
+RewriteRule ^colegios-privados-ferrol/?$ /colegios-concertados-ferrol [L,R=301]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^colegios-publicos\.html$ /colegios-publicos-ferrol [L,R=301]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^institutos-ferrol\.html$ /institutos-ferrol [L,R=301]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^mapa\.html$ /mapa-colegios-ferrol [L,R=301]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteRule ^blog\.html$ /blog-educativo-ferrol [L,R=301]
 
 # ===================================================================
 # == REGLAS DE REESCRITURA PARA SLUGS ==
@@ -8,6 +63,16 @@ RewriteEngine On
 # Evita que las reglas se apliquen a archivos o directorios existentes
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+
+# --- NUEVAS REGLAS PARA CATEGORÍAS (Pretty URLs) ---
+# Sirven internamente el archivo html original manteniendo la URL bonita
+RewriteRule ^colegios-concertados-ferrol/?$ /colegios-concertados.html [L]
+RewriteRule ^colegios-publicos-ferrol/?$ /colegios-publicos.html [L]
+RewriteRule ^institutos-ferrol/?$ /institutos-ferrol.html [L]
+
+# --- NUEVAS REGLAS PARA PÁGINAS PRINCIPALES ---
+RewriteRule ^mapa-colegios-ferrol/?$ /mapa.html [L]
+RewriteRule ^blog-educativo-ferrol/?$ /blog.html [L]
 
 # --- NUEVA REGLA PARA COLEGIOS ---
 # Carga /colegio.html SIN query string.

@@ -1,6 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const fichaContainer = document.getElementById('ficha-noticia');
 
+    // Inyectar URL Canónica dinámicamente
+    const canonicalLink = document.createElement('link');
+    canonicalLink.rel = 'canonical';
+    canonicalLink.href = 'https://colegiosferrol.es' + window.location.pathname;
+    document.head.appendChild(canonicalLink);
+
     // 1. Obtener el 'slug' de la URL (igual que en colegio.js)
     const path = window.location.pathname; // Esto funciona (ej: /blog/nombre-noticia)
     const noticiaSlug = path.substring(path.lastIndexOf('/') + 1);
@@ -43,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="row justify-content-center">
                 <div class="col-lg-10">
                     <div class="card shadow-lg">
-                        <img src="${noticia.imagen_destacada_url}" class="card-img-top" alt="${noticia.titulo}">
+                        <img src="${noticia.imagen_destacada_url}" class="card-img-top" alt="${noticia.titulo}" loading="lazy" width="400" height="250" style="object-fit: cover;" onerror="this.onerror=null; this.src=\'/img/default-ferrol.jpg\';">
                         <div class="card-body p-4 p-md-5">
                             <h1 class="card-title display-5">${noticia.titulo}</h1>
                             <h2 class="card-subtitle mb-3 text-muted">Publicado el ${fecha}</h2>
