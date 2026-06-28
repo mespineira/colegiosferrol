@@ -219,8 +219,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         fichaContainer.innerHTML = fichaHTML;
 
-        // Inyectar Schema.org JSON-LD
-        inyectarSchemaOrg(colegio);
+        // Inyectar Schema.org JSON-LD (RAG/GEO Optimization)
+        generarSchemaColegio(colegio);
 
         // Inicializar sistema de opiniones
         inicializarOpiniones(colegio.id);
@@ -234,52 +234,91 @@ document.addEventListener('DOMContentLoaded', () => {
     // =======================================================
     // == FUNCIÓN PARA GENERAR SCHEMA.ORG (JSON-LD) ==
     // =======================================================
-    function inyectarSchemaOrg(colegio) {
-        // Eliminar script anterior si existe
+    function generarSchemaColegio(datosColegio) {
+        // 1. Prevención de Duplicados: Eliminar tag anterior si existía
         const scriptPrevio = document.getElementById('schema-colegio');
         if (scriptPrevio) {
             scriptPrevio.remove();
         }
 
-        // Mapear AmenityFeatures basados en los servicios
+        // 2. Extraer automáticamente el código postal de 5 dígitos de la dirección o usar valor por defecto
+        const cpMatch = datosColegio.direccion ? datosColegio.direccion.match(/\b\d{5}\b/) : null;
+        const postalCode = cpMatch ? cpMatch[0] : "1540X";
+
+        // 2.5 Limpiar el streetAddress eliminando el código postal y la localidad/provincia redundantes
+        let streetAddress = datosColegio.direccion || "";
+        if (cpMatch) {
+            const cpIndex = streetAddress.indexOf(cpMatch[0]);
+            if (cpIndex !== -1) {
+                streetAddress = streetAddress.substring(0, cpIndex).trim();
+                if (streetAddress.endsWith(',')) {
+                    streetAddress = streetAddress.slice(0, -1).trim();
+                }
+            }
+        }
+
+        // 3. Mapear AmenityFeatures basados en servicios opcionales del centro (si existen)
         let amenities = [];
-        if (colegio.servicios) {
-            if (colegio.servicios.comedor) {
+        if (datosColegio.servicios) {
+            if (datosColegio.servicios.comedor) {
                 amenities.push({ "@type": "LocationFeatureSpecification", "name": "Comedor Escolar", "value": true });
             }
-            if (colegio.servicios.transporte_escolar) {
+            if (datosColegio.servicios.transporte_escolar) {
                 amenities.push({ "@type": "LocationFeatureSpecification", "name": "Transporte Escolar", "value": true });
             }
-            if (colegio.servicios.horario_ampliado) {
+            if (datosColegio.servicios.horario_ampliado) {
                 amenities.push({ "@type": "LocationFeatureSpecification", "name": "Horario Ampliado / Madrugadores", "value": true });
             }
-            if (colegio.servicios.gabinete_psicopedagogico) {
+            if (datosColegio.servicios.gabinete_psicopedagogico) {
                 amenities.push({ "@type": "LocationFeatureSpecification", "name": "Gabinete Psicopedagógico", "value": true });
             }
         }
 
+        // 4. Construir objeto base estructurado (@type: School)
         const schemaJSON = {
             "@context": "https://schema.org",
             "@type": "School",
-            "name": colegio.nombre,
-            "description": colegio.descripcion_corta,
+            "name": datosColegio.nombre,
+            "description": datosColegio.descripcion_corta,
             "address": {
                 "@type": "PostalAddress",
-                "streetAddress": colegio.direccion,
+                "streetAddress": streetAddress,
                 "addressLocality": "Ferrol",
-                "addressRegion": "Galicia",
+                "addressRegion": "A Coruña / Galicia",
+                "postalCode": postalCode,
                 "addressCountry": "ES"
-            },
-            "image": colegio.imagen_principal || null,
-            "telephone": colegio.telefono || "", // Por si en el JSON en un futuro se añade telefono directo
-            "url": window.location.href,
-            "amenityFeature": amenities
+            }
         };
 
+        // 5. Tratamiento de Datos Vacíos: Añadir propiedades solo si están presentes y no están vacías
+        
+        // Imagen principal (URL absoluta de origen)
+        if (datosColegio.imagen_principal && datosColegio.imagen_principal.trim() !== "") {
+            schemaJSON.image = datosColegio.imagen_principal.startsWith("http")
+                ? datosColegio.imagen_principal
+                : `https://colegiosferrol.es${datosColegio.imagen_principal.startsWith("/") ? "" : "/"}${datosColegio.imagen_principal}`;
+        }
+
+        // Teléfono del centro (limpiar espacios y verificar existencia)
+        if (datosColegio.telefono && datosColegio.telefono.trim() !== "") {
+            schemaJSON.telephone = datosColegio.telefono.trim();
+        }
+
+        // Sitio web oficial (si no existe, se enlaza a la propia ficha en colegiosferrol.es)
+        schemaJSON.url = (datosColegio.web && datosColegio.web.trim() !== "") 
+            ? datosColegio.web.trim() 
+            : window.location.href;
+
+        // Inclusión de características/servicios si se han mapeado
+        if (amenities.length > 0) {
+            schemaJSON.amenityFeature = amenities;
+        }
+
+        // 6. Inyección Segura: Crear elemento de script e inyectar usando textContent para escapar caracteres especiales
         const script = document.createElement('script');
         script.type = 'application/ld+json';
         script.id = 'schema-colegio';
-        script.text = JSON.stringify(schemaJSON, null, 2);
+        script.textContent = JSON.stringify(schemaJSON, null, 2);
 
         document.head.appendChild(script);
     }
