@@ -43,6 +43,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Función para pintar la ficha completa en el HTML
     function renderFicha(colegio) {
+        // Calcular dinámicamente servicios disponibles de conciliación para las FAQ
+        let serviciosDisponibles = [];
+        if (colegio.servicios.comedor) serviciosDisponibles.push("comedor escolar");
+        if (colegio.servicios.transporte_escolar) serviciosDisponibles.push("transporte escolar");
+        if (colegio.servicios.horario_ampliado) serviciosDisponibles.push("horario ampliado (servicio de madrugadores)");
+        if (colegio.servicios.gabinete_psicopedagogico) serviciosDisponibles.push("gabinete psicopedagógico");
+
+        let conciliacionText = "";
+        if (serviciosDisponibles.length > 0) {
+            conciliacionText = `El <strong>${colegio.nombre}</strong> facilita la conciliación de la vida laboral y familiar a través de los siguientes servicios: ${serviciosDisponibles.join(", ").replace(/,([^,]*)$/, " y$1")}.`;
+        } else {
+            conciliacionText = `Actualmente, el <strong>${colegio.nombre}</strong> no ha reportado servicios especiales de comedor, transporte o madrugadores. Te recomendamos contactar directamente con la secretaría del centro para consultar cualquier servicio complementario de conciliación.`;
+        }
+
         // Actualizar el título y la metadescripción orientados al clic (SEO)
         document.title = `▷ ${colegio.nombre} (Ferrol): Opiniones, Horarios y Servicios`;
         
@@ -213,6 +227,36 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
 
                     ${mapaHTML}
+
+                    <!-- ESTRATEGIA 4: Bloque FAQ Dinámico -->
+                    <hr class="my-4">
+                    <h3 class="mb-3 text-dark fw-bold h4">❓ Preguntas Frecuentes sobre ${colegio.nombre}</h3>
+                    <div class="accordion shadow-sm mb-2" id="faqAccordion">
+                        <div class="accordion-item border-0 rounded-3 overflow-hidden mb-2">
+                            <h4 class="accordion-header" id="faqHeadingOne">
+                                <button class="accordion-button collapsed fw-semibold text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseOne" aria-expanded="false" aria-controls="faqCollapseOne">
+                                    ¿Qué servicios de conciliación ofrece el ${colegio.nombre}?
+                                </button>
+                            </h4>
+                            <div id="faqCollapseOne" class="accordion-collapse collapse" aria-labelledby="faqHeadingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body bg-white text-secondary" style="font-size: 0.95rem; line-height: 1.6;">
+                                    ${conciliacionText}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 rounded-3 overflow-hidden">
+                            <h4 class="accordion-header" id="faqHeadingTwo">
+                                <button class="accordion-button collapsed fw-semibold text-dark bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapseTwo" aria-expanded="false" aria-controls="faqCollapseTwo">
+                                    ¿Cómo solicitar plaza en el ${colegio.nombre} para el curso 2027?
+                                </button>
+                            </h4>
+                            <div id="faqCollapseTwo" class="accordion-collapse collapse" aria-labelledby="faqHeadingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body bg-white text-secondary" style="font-size: 0.95rem; line-height: 1.6;">
+                                    El proceso de solicitud de plaza en el <strong>${colegio.nombre}</strong> para el curso escolar 2027/2028 se gestiona principalmente a través de la aplicación oficial <em>'admisionalumnado'</em> de la Xunta de Galicia o entregando la documentación física en la secretaría del centro. El plazo de presentación de solicitudes suele abrirse anualmente durante el mes de marzo. Es fundamental estar atento a las fechas oficiales publicadas por la Consellería de Educación y aportar los documentos justificativos (padronamiento, rentas, etc.) para el baremo de puntos de admisión.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         `;
@@ -221,6 +265,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Inyectar Schema.org JSON-LD (RAG/GEO Optimization)
         generarSchemaColegio(colegio);
+        generarSchemaFAQ(colegio);
 
         // Inicializar sistema de opiniones
         inicializarOpiniones(colegio.id);
@@ -324,47 +369,114 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =======================================================
-    // == FUNCIÓN PARA MOSTRAR COLEGIOS SIMILARES ==
+    // == FUNCIÓN PARA GENERAR SCHEMA FAQPAGE (JSON-LD) ==
+    // =======================================================
+    function generarSchemaFAQ(colegio) {
+        // 1. Prevención de Duplicados
+        const scriptPrevio = document.getElementById('schema-faq');
+        if (scriptPrevio) {
+            scriptPrevio.remove();
+        }
+
+        // 2. Calcular dinámicamente servicios para la respuesta de conciliación
+        let serviciosDisponibles = [];
+        if (colegio.servicios.comedor) serviciosDisponibles.push("comedor escolar");
+        if (colegio.servicios.transporte_escolar) serviciosDisponibles.push("transporte escolar");
+        if (colegio.servicios.horario_ampliado) serviciosDisponibles.push("horario ampliado (servicio de madrugadores)");
+        if (colegio.servicios.gabinete_psicopedagogico) serviciosDisponibles.push("gabinete psicopedagógico");
+
+        let answerConciliacion = "";
+        if (serviciosDisponibles.length > 0) {
+            answerConciliacion = `El ${colegio.nombre} facilita la conciliación de la vida laboral y familiar a través de los siguientes servicios: ${serviciosDisponibles.join(", ").replace(/,([^,]*)$/, " y$1")}.`;
+        } else {
+            answerConciliacion = `Actualmente, el ${colegio.nombre} no ha reportado servicios especiales de comedor, transporte o madrugadores. Te recomendamos contactar directamente con la secretaría del centro para consultar cualquier servicio de conciliación.`;
+        }
+
+        const answerAdmision = `El proceso de solicitud de plaza en el ${colegio.nombre} para el curso escolar 2027/2028 se gestiona principalmente a través de la aplicación oficial 'admisionalumnado' de la Xunta de Galicia o entregando la documentación física en la secretaría del centro. El plazo de presentación de solicitudes suele abrirse anualmente durante el mes de marzo. Es fundamental estar atento a las fechas oficiales publicadas por la Consellería de Educación y aportar los documentos justificativos (padronamiento, rentas, etc.) para el baremo de puntos de admisión.`;
+
+        // 3. Estructura JSON-LD FAQPage
+        const schemaJSON = {
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+                {
+                    "@type": "Question",
+                    "name": `¿Qué servicios de conciliación ofrece el ${colegio.nombre}?`,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": answerConciliacion
+                    }
+                },
+                {
+                    "@type": "Question",
+                    "name": `¿Cómo solicitar plaza en el ${colegio.nombre} para el curso 2027?`,
+                    "acceptedAnswer": {
+                        "@type": "Answer",
+                        "text": answerAdmision
+                    }
+                }
+            ]
+        };
+
+        // 4. Inyección Segura con textContent
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.id = 'schema-faq';
+        script.textContent = JSON.stringify(schemaJSON, null, 2);
+
+        document.head.appendChild(script);
+    }
+
+    // =======================================================
+    // == FUNCIÓN PARA MOSTRAR COLEGIOS SIMILARES (Centros Cercanos) ==
     // =======================================================
     function renderSimilar(todosLosColegios, colegioActual) {
         const similarContainer = document.getElementById('colegios-similares-container');
         if (!similarContainer) return;
 
-        const tipoActual = colegioActual.tipo;
-        const idActual = colegioActual.id;
-        const MAX_SIMILARES = 3;
+        // 1. Filtrar de la misma zona excluyendo al colegio actual
+        let recomendados = todosLosColegios.filter(c => c.zona === colegioActual.zona && c.id !== colegioActual.id);
+        
+        // Barajar para rotar el link juice y ofrecer dinamismo
+        recomendados.sort(() => 0.5 - Math.random());
+        
+        // 2. Si la zona tiene menos de 3 colegios, rellenamos con colegios del mismo "tipo"
+        if (recomendados.length < 3) {
+            const idsElegidos = new Set(recomendados.map(c => c.id));
+            idsElegidos.add(colegioActual.id);
+            
+            let relleno = todosLosColegios.filter(c => c.tipo === colegioActual.tipo && !idsElegidos.has(c.id));
+            relleno.sort(() => 0.5 - Math.random());
+            
+            const necesarios = 3 - recomendados.length;
+            recomendados = recomendados.concat(relleno.slice(0, necesarios));
+        } else {
+            recomendados = recomendados.slice(0, 3);
+        }
 
-        const colegiosSimilares = todosLosColegios.filter(c => {
-            return c.tipo === tipoActual && c.id !== idActual;
-        });
-
-        const similaresBarajados = colegiosSimilares.sort(() => 0.5 - Math.random());
-        const listaFinal = similaresBarajados.slice(0, MAX_SIMILARES);
-
-        if (listaFinal.length === 0) {
+        if (recomendados.length === 0) {
             similarContainer.style.display = 'none';
             return;
         }
 
-        let htmlSimilares = '<h2 class="mb-4">Otros colegios que te podrían interesar</h2><div class="row g-4">';
+        let htmlSimilares = `<h3 class="mb-4 text-dark fw-bold h4">📍 Otros colegios que te pueden interesar en la zona de ${colegioActual.zona}</h3><div class="row g-4">`;
 
-        listaFinal.forEach(colegio => {
+        recomendados.forEach(colegio => {
             htmlSimilares += `
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm card-colegio">
-                        <img src="${colegio.imagen_principal}" class="card-img-top" alt="Fachada de ${colegio.nombre}" loading="lazy" width="400" height="250" style="object-fit: cover;" onerror="this.onerror=null; this.src=\'/img/default-ferrol.jpg\';">
-                        <div class="card-body d-flex flex-column">
-                            <h5 class="card-title">
-                                <a href="/colegio/${colegio.slug}" class="text-decoration-none text-dark">${colegio.nombre}</a>
-                            </h5>
-                            <h6 class="card-subtitle mb-2 text-muted">${colegio.zona}</h6>
-                            <p class="card-text">${colegio.descripcion_corta.substring(0, 90)}...</p>
-                            <span class="badge bg-primary mb-2" style="width: fit-content;">${colegio.tipo}</span>
-                            <div class="mt-auto pt-3 position-relative" style="z-index: 2;">
-                                <button class="btn btn-outline-primary w-100 mb-2 btn-comparar" data-id="${colegio.id}" onclick="event.preventDefault(); event.stopPropagation(); toggleComparar(${colegio.id})">
-                                    + Añadir al comparador
-                                </button>
-                                <a href="/colegio/${colegio.slug}" class="btn btn-primary w-100">Ver ficha completa</a>
+                <div class="col-lg-4 col-md-6 col-12">
+                    <div class="card h-100 border-0 shadow-sm overflow-hidden" style="transition: transform 0.2s;">
+                        <div class="row g-0 h-100">
+                            <div class="col-4">
+                                <img src="${colegio.imagen_principal}" class="img-fluid h-100" style="object-fit: cover; min-height: 120px;" alt="${colegio.nombre}" onerror="this.onerror=null; this.src=\'/img/default-ferrol.jpg\';">
+                            </div>
+                            <div class="col-8 d-flex align-items-center">
+                                <div class="card-body py-3 px-3 position-relative">
+                                    <span class="badge bg-light text-primary border rounded-pill mb-1.5" style="font-size: 0.7rem;">${colegio.tipo}</span>
+                                    <h4 class="h6 fw-bold mb-1">
+                                        <a href="/colegio/${colegio.slug}" class="text-decoration-none text-dark stretched-link">${colegio.nombre}</a>
+                                    </h4>
+                                    <p class="text-muted mb-0 small"><i class="bi bi-geo-alt-fill text-danger fs-8"></i> ${colegio.zona}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
